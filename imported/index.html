@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/mui.zoom.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <style>
+    	i{
+    		font-style:normal;
+    		font-family:arial;
+    	}
+	    html,body{
+	    	height:100%;
+	    	background: #fafafa;
+	    }	    
+	    body{
+	    	font-family:"微软雅黑";
+	    }
+	    ul,li{
+	    	margin:0;
+	    	padding:0;
+	    	list-style: none;
+	    }
+	    .mui-content{
+	    	height:100%;
+	    	background: #fafafa;
+	    	/*position:relative;*/
+	    }
+	    .mui-bar-nav~.mui-content{
+			padding-top:1.173333rem;
+		}
+		.mui-bar{
+			height:1.173333rem;
+			line-height: 1.173333rem;
+			background:#fff;
+		}
+		.mui-bar-nav{
+			box-shadow:none;
+		}
+		.mui-bar .mui-title{
+			left:1.173333rem;
+			right:1.173333rem;
+			font-family:"苹方";
+			font-size:18px;
+			font-weight:bold;
+			height:1.173333rem;
+			line-height: 1.173333rem;
+			color:#2b2b2b;
+		}
+		[data-dpr="2"] .mui-title{
+			font-size:36px;
+		}
+		[data-dpr="3"] .mui-title{
+			font-size:54px;
+		}
+		.mui-bar-nav.mui-bar .mui-icon:first-child{
+			width:1.173333rem;
+			height:1.173333rem;
+			background:url(img/header/index2.png) no-repeat center center;
+			background-size:contain;
+		}
+		.mui-bar-nav.mui-bar .mui-icon:last-child{
+			width:1.173333rem;
+			height:1.173333rem;
+			background:url(img/header/code2.png) no-repeat center center;
+			background-size:contain;
+		}
+    	nav{
+    		height:1.706666rem;
+    		line-height:1.706666rem;
+    		position:absolute;
+			top:6.186666rem;
+    	}
+    	
+    	.mui-segmented-control{
+    		z-index:99;
+    		border:none;
+   			background:#fff;
+   			border-radius:0;
+   			border-top:1px solid #D6D7DC;
+   			border-bottom:1px solid #D6D7DC;
+   			position:absolute;
+   			overflow:initial ;
+   		}
+   		.mui-segmented-control .mui-control-item.mui-active{
+   			background:none;
+   		}
+   		.mui-segmented-control .mui-control-item{
+			height:1.706666rem;
+			display:table-cell;
+			width:2.506666rem;
+			border-left:0;
+			position:relative;
+			overflow: initial;
+		}
+		/*.mui-control-content{
+			height:100%;
+		}*/
+		.mui-bar-tab .mui-tab-item{
+			height:1.706666rem;
+		}
+		.icon{
+			height:0.96rem;
+			width:0.96rem;
+			display:inline-block;
+			position:relative;
+			top:0.186666rem;
+		}
+		.icon img{
+			width:100%;
+			display:block;
+    		-webkit-transform:scale(1) rotate(0) translate3d(0,0,0);
+    		transform:scale(1) rotate(0) translate3d(0,0,0);
+		}
+		.arrow{
+			width:0.266666rem;
+			height:0.32rem;
+			position:absolute;
+			display: block;
+			z-index:100;
+			/*bottom:-0.24rem;*/
+			left:50%;
+			margin-left:-0.133333rem;
+			-webkit-transform:scale(1) rotate(0) translate3d(0,0,0);
+    		transform:scale(1) rotate(0) translate3d(0,0,0);
+		}
+		.mui-control-item span{
+			display:block;
+			line-height:0.533333rem;
+			color:#323232;
+			font-size:12px;
+			position:relative;
+			bottom:0;
+		}
+		[data-dpr="2"] .mui-control-item span{
+			font-size:24px;
+		}
+		[data-dpr="3"] .mui-control-item span{
+			font-size:36px;
+		}
+    	.body{
+    		position:relative;
+    		top:1.92rem;
+    		/*padding-bottom:0.266666rem;*/
+    	}
+    	.banner1{
+    		position:relative;
+    		top:0;
+    		width:100%;
+    		height:4.8rem;
+    		left:0;
+    		overflow: hidden;
+    		border:1px solid #e1e1e1;
+    	}
+    	.banner1 img{
+    		width:100%;
+    		height:100%;
+    		display:block;
+    	}
+    	.banner2{
+    		position:absolute;
+    		top:0;
+    		width:100%;
+    		height:4.8rem;
+    		left:0;
+    		overflow: hidden;
+    		border:1px solid #e1e1e1;
+    	}
+    	.banner2 img{
+    		width:100%;
+    		height:100%;
+    		display:block;
+    	}
+    	.banner3{
+    		position:absolute;
+    		top:0;
+    		width:100%;
+    		height:4.8rem;
+    		left:0;
+    		overflow: hidden;
+    		border:1px solid #e1e1e1;
+    	}
+    	.banner3 img{
+    		width:100%;
+    		height:100%;
+    		display:block;
+    	}
+    	.banner4{
+    		position:absolute;
+    		top:0;
+    		width:100%;
+    		height:4.8rem;
+    		left:0;
+    		overflow:hidden;
+    		border:1px solid #e1e1e1;
+    	}
+    	.banner4 img{
+    		width:100%;
+    		height:100%;
+    		display:block;
+    	}
+    	/*产品信息*/
+    	.information{
+    		padding:0 0.32rem;
+    		padding-top:0.64rem;
+    	}
+    	.information ul li{
+    		line-height:0.6rem;
+    		color:#2b2b2b;
+    		font-size:15px;
+    	}
+    	[data-dpr="2"] .information ul li{
+    		font-size:30px;
+    	}
+    	[data-dpr="3"] .information ul li{
+    		font-size:45px;
+    	}
+    	.li-tit{
+    		width:2.026666rem;
+    	}
+    	.li-body{
+    		margin-left:2.026666rem;
+    	}
+    	.over{
+    		width:2.666666rem;
+    	}
+    	.text{
+    		font-size:13px;
+    		line-height:0.52rem;
+    	}
+    	[data-dpr="2"] .text{
+    		font-size:26px;
+    	}
+    	[data-dpr="3"] .text{
+    		font-size:39px;
+    	}
+    	/*质检信息*/
+    	.vertify-body{
+    		padding:0.573333rem 0.32rem 0;
+    	}
+    	.vertifies{
+    		padding-bottom:0.346666rem;
+    	}
+    	.vertifies .line:first-child{
+    		margin-bottom:0.266666rem;
+    	}
+    	.line{
+    		width:100%;
+    		color:#2b2b2b;
+    		/*height:0.533333rem;
+    		line-height:0.533333rem;*/
+    		overflow:hidden;
+    		font-size:12px;
+    	}
+    	[data-dpr="2"] .line{
+    		font-size:24px;
+    	}
+    	[data-dpr="3"] .line{
+    		font-size:36px;
+    	}
+    	.vertify-icon{
+    		min-width:0.56rem;
+    		height:0.48rem;
+    		line-height:0.346666rem;
+    		display:inline-block;
+    		vertical-align:bottom;
+    		/*padding-left:0.56rem;*/
+    		vertical-align:middle;
+    	}
+    	.vertify-icon img{
+    		margin-top:5px;
+    		margin-right:0.106666rem;
+    		/*float:left;*/
+    		width:0.346666rem;
+    		height:0.346666rem;
+    		border-radius:4px;
+    		
+    		box-shadow:2px 2px 2px #6c200b;
+    		display:inline-block;
+    	}
+    	.active{
+    		text-decoration: underline;
+    		color:#ec4b1f;
+    		padding-bottom:0.013333rem;
+    	}
+    	.vertify-banner{
+    		position:relative;
+    		width:100%;
+    		height:6.6rem;
+    		background:url(img/banner.png) no-repeat center center;
+    		background-size:contain;
+    	}
+    	.triangles{
+    	    font-size:0; 
+    		width:100%;
+    		height:3.693333rem;
+    		padding:0 0.48rem;
+    		display:flex;
+    		justify-content:center;
+    	}
+    	.triangle{
+    		display:inline-block;
+    		width:4.2rem;
+    		height:3.693333rem;
+    	}
+    	.triangle img{
+    		width:100%;
+    		display:block;
+    	}
+    	.top{
+    		position:absolute;
+    		top:-1.846666rem;
+    		left:50%;
+    		margin-left:-2.1rem;
+    		z-index:99;
+    	}
+    	.bottom{
+    		position:relative;
+    		top:-1.846666rem;
+    		z-index:99;
+    	}
+    	.vertify-place{
+    		padding-top:0.293333rem;
+    		position:absolute;
+    		top:1.846666rem;
+    		left:50%;
+    		text-align:center;
+    		width:4.2rem;
+    		padding-right:0.453333rem;
+    		padding-left:0.453333rem;
+    		margin-left:-2.1rem;
+    		font-size:16px;
+    		line-height:0.666666rem;
+    		color:#ec4b1f;
+    		font-weight:bold;
+    		letter-spacing: -1px;
+    		text-shadow:#a32c0b 0px 2px 2px,0 5px 5px #e03c0f,0 0 3px #ffffbe;
+    		z-index:88;
+    		
+    	}
+    	[data-dpr="2"] .vertify-place{
+    		font-size:32px;
+    	}
+    	[data-dpr="3"] .vertify-place{
+    		font-size:48px;
+    	}
+    	
+    	.vertify-place img{
+    		/*position:absolute;*/
+    		/*left:50%;*/
+    		/*margin-left:-0.373333rem;*/
+    		/*bottom:50%;*/
+    		width:0.64rem;
+    		height:0.64rem;
+    		line-height:0.64rem;
+    		display:block;
+    		margin:0.186666rem auto 0;
+    		box-shadow:3px 3px 3px #080103;
+    		background:transparent;
+    		border-radius:10px;
+    	}
+    	/*物流信息*/
+    	.trans-information{
+			padding:0.64rem 0.32rem;
+		}
+		.trans-company{
+			height:0.853333rem;
+			line-height:0.853333rem;
+			font-size:15px;
+			color:#2b2b2b;
+		   	border-bottom:1px solid #d6d7dc;
+		} 
+		[data-dpr="2"] .trans-company{
+			font-size:30px;
+			border-bottom:1px solid #d6d7dc;
+		} 
+		[data-dpr="3"] .trans-company{
+			font-size:45px;
+			border-bottom:1.5px solid #d6d7dc;
+		}  
+		.iconfont.vedio{
+			font-size:26px;
+			vertical-align:middle;
+			color:#0f2646;
+			margin-right:0.106666rem;
+		}
+		[data-dpr="2"] .iconfont.vedio{
+			font-size:52px;
+		}
+		[data-dpr="3"] .iconfont.vedio{
+			font-size:78px;
+		}
+		.trans-content{
+			margin-top:0.426666rem;
+		}
+		.trans-content p{
+			color:#646464 !important;
+			font-size:14px;
+			line-height:0.56rem;
+			margin-bottom:0 !important;
+		}
+		.trans-content p span{
+			line-height:0.56rem;
+			display:inline-block;
+		}
+		[data-dpr="2"] .trans-content p{
+			font-size:28px;
+		}
+		[data-dpr="3"] .trans-content p{
+			font-size:42px;
+		}
+		.trans-time{
+			margin-top:-0.093333rem;
+		}
+		.trans-content>ul>li{
+			position:relative;
+			padding-left:0.426666rem;
+			border-left:1px solid #d6d7dc;
+			padding-bottom:0.12rem;
+			margin-left:0.1rem;
+		}
+		.trans-information .radio{
+			width:0.2rem;
+			height:0.2rem;
+			border-radius:100%;
+			background:#b4b4b4;
+			position:absolute;
+			top:0;
+			left:-0.106666rem;
+		}
+		.tlcom{
+	   		overflow:hidden;
+	   		height:0.853333rem;
+	   		line-height:0.853333rem;
+	   	}
+	   	.trans-company-logo{
+	   		height:0.853333rem;
+	   		line-height:0.853333rem;
+	   		display:inline-block;
+	   	}
+	   	.trans-company-logo img{
+	   		width:0.48rem;
+	   		height:0.48rem;
+	   		vertical-align:middle;
+	   		margin:0 0.16rem;
+	   	}
+	    /*物流页面向下按钮*/
+	   .mui-table-view-cell>a:not(.mui-btn){
+	   		margin:0;
+	   		padding:0;
+	   }
+	    .iconfont.down-arrow{
+	    	text-align:center;
+	    	cursor:pointer;
+	    	color:#0f2646 !important;
+	    	margin-top:0.213333rem !important;
+	    	margin-bottom:0.213333rem !important;
+	    }
+	    .iconfont.down-arrow img{
+	    	height:0.213333rem;
+	    	width:0.36rem;
+	    }
+	    /*物流页面向上箭头*/
+	    .up-arrow{
+	    	text-align:center;
+	    	cursor:pointer;
+	    	color:#0f2646 !important;
+	    	margin-top:0.213333rem !important;
+	    	margin-bottom:0.213333rem !important;
+	    }
+	    .iconfont.up-arrow img{
+	    	height:0.213333rem;
+	    	width:0.36rem;
+	    }
+	    /*物流页面li的样式改写*/
+	   .collapse.mui-table-view-cell{
+	   		padding:0;
+	   	}
+	    .trans-content .mui-table-view-cell.mui-active{
+	    	background:#fafafa !important;
+	    }
+	    .trans-content .mui-table-view-cell>a.mui-active{
+	    	background:#fafafa !important;
+	    }
+	    .trans-content .mui-table-view-cell:after{
+	    	height:0 !important
+	   	}
+	   	.mui-table-view-cell.mui-collapse .mui-table-view{
+	   		margin-left:0;
+	   		margin-bottom:0;
+	   		margin-top:0.213333rem;
+	   	}
+	   	.mui-table-view-cell.mui-collapse .mui-table-view>p{
+	   		font-size:14px;
+	   		color:#ec4b1f !important;	   	
+	   	}
+	   	[data-dpr="2"] .mui-table-view-cell.mui-collapse .mui-table-view>p{
+	   		font-size:28px;	   	
+	   	}
+	   	[data-dpr="3"] .mui-table-view-cell.mui-collapse .mui-table-view>p{
+	   		font-size:42px;	   	
+	   	}
+	   	.trans-time span:last-child{
+	   		margin-left:0.213333rem;
+	   	}
+	   	.logistic-detail{
+	   		position:relative;
+	   		width:100%;
+	   		background:#fafafa;
+	   	}
+	   	
+	   	/*推荐商品*/
+	   	.product-lists{
+	   		padding:0.533333rem 0.32rem 0;
+	   		display:flex;
+	   		display: -webkit-box;
+	   		display: -ms-flexbox;
+	   		display: -webkit-flex;
+	   		justify-content:space-between;
+	   	}
+	   	.product-lists .list{
+	   		width:50%;
+	   	}
+	   	.product-lists .list:first-child{
+	   		margin-right:0.32rem;
+	   	}
+	   	.product-lists .list ul li{
+	   		border:1px solid #d6d7dc;
+	   		margin-bottom:0.32rem;
+	   	}
+	   	.product-lists .list ul li img{
+	   		width:100%;
+	   	}
+	   	.tit{
+	   		height:0.866666rem;
+	   		line-height:0.853333rem;
+	   		padding-bottom:0.213333rem;
+	   		font-family: "ADAM,CG PRD";
+	   		color:#646464;
+	   		font-size:14px;
+	   		border-bottom:1px solid #d6d7dc;
+	   		margin-bottom:0.213333rem;
+	   	}
+	   	[data-dpr="2"] .tit{
+	   		font-size:28px;
+	   	}
+	   	[data-dpr="3"] .tit{
+	   		font-size:42px;
+	   	}
+	   	.tit em{
+	   		line-height:0.653333rem;
+	   		/*height:0.866666rem;*/
+	   		font-style:normal;
+	   		font-family:"Pier Sans";
+	   		color:#2b2b2b;
+	   		font-size:32px;
+	   		margin-right:0.106666rem;
+	   	}
+	   	[data-dpr="2"] .tit em{
+	   		font-size:64px;
+	   	}
+	   	[data-dpr="3"] .tit em{
+	   		font-size:128px;
+	   	}
+	   	.tit span{
+	   		display:inline-block;
+	   		line-height:0.346666rem;
+	   		color:#646464;
+	   		font-size:11px;
+	   		padding-top:0.306666rem;
+	   	}
+	   	[data-dpr="2"] .tit span{
+	   		font-size:22px;
+	   	}
+	   	[data-dpr="3"] .tit span{
+	   		font-size:33px;
+	   	}
+	   	.tit span i{
+	   		color:#2b2b2b;
+	   		font-size:13px;
+	   		margin-right:0.106666rem;
+	   	}
+	   	[data-dpr="2"] .tit span i{
+	   		font-size:26px;
+	   	}
+	   	[data-dpr="3"] .tit span i{
+	   		font-size:39px;
+	   	}
+	   	.product-name{
+	   		padding:0.213333rem 0;
+	   		margin:0 0.213333rem;
+	   		border-bottom:1px solid #d6d7dc;
+	   	}
+	   	.product-name h3{
+	   		color:#2b2b2b;
+	   		font-size:16px;
+	   		line-height:16px;
+	   		font-weight:normal;
+	   		margin-bottom:0.213333rem;
+	   		margin-top:0;
+	   	}
+	   	[data-dpr="2"] 	.product-name h3{
+	   		font-size:32px;
+	   		line-height:32px;
+	   	}
+	   	[data-dpr="3"] 	.product-name h3{
+	   		font-size:48px;
+	   		line-height:48px;
+	   	}
+	   	.product-name p{
+	   		line-height:0.48rem;
+	   		margin-top:-0.08rem;
+	   		color:#2b2b2b;
+	   		font-size:12px;
+	   		margin-bottom:0;
+	   	}
+	   	[data-dpr="2"] 	.product-name p{
+	   		font-size:24px;
+	   	}
+	   	[data-dpr="3"] 	.product-name p{
+	   		font-size:36px;
+	   	}
+	   	.card-bottom{
+	   		padding:0 0.213333rem;
+	   		height:0.826666rem;
+	   		line-height:0.826666rem;
+	   		color:#F75555;
+	   		font-size:20px;
+	   	}
+	   	[data-dpr="2"] .card-bottom{
+	   		font-size:40px;
+	   	}
+	   	[data-dpr="3"] .card-bottom{
+	   		font-size:60px;
+	   	}
+	   	.card-bottom span{
+	   		height:0.826666rem;
+	   		line-height:0.826666rem;
+	   		display:inline-block;
+	   	}
+	   	.mark{
+	   		color:#f75555;
+	   		font-size:12px;
+	   	}
+	   	[data-dpr="2"] 	.mark{
+	   		font-size:24px;
+	   	}
+	   	[data-dpr="3"] 	.mark{
+	   		font-size:36px;
+	   	}
+	   	.favorite{
+	   		min-width:0.48rem;
+	   		padding-left:0.066666rem;
+	   	}
+	   	.favorite img{
+	   		width:0.413333rem !important;
+	   		height:0.413333rem;
+	   		-webkit-transform:scale(1) rotate(0) translate3d(0,0,0);
+    		transform:scale(1) rotate(0) translate3d(0,0,0);
+    		vertical-align: middle;
+    		margin-right:0.106666rem;
+	   	}
+	   	.favorite i{
+	   		font-size:12px;
+	   		color:#909090;
+	   	}
+	   	[data-dpr="2"] 	.favorite i{
+	   		font-size:24px;
+	   	}
+	   	[data-dpr="3"] 	.favorite i{
+	   		font-size:36px;
+	   	}
+	   	/*动画层*/
+	   	.animation{
+	   		width:7.173333rem;
+	   		height:7.173333rem;
+	   		border-radius:100%;
+	   		position:absolute;
+	   		top:50%;
+	   		margin-top:-3.586666rem;
+	   		left:50%;
+	   		margin-left:-3.586666rem;
+	   		z-index:101;
+	   	}
+	   	.disappear{
+	   		animation:disappear 0.6s ease-in-out forwards;
+	   	}
+	   	@keyframes disappear{
+	   		0 {
+	   			opacity:1;
+	   		}
+	   		50% {
+	   			opacity:0.6;
+	   		}
+	   		80% {
+	   			opacity:0.3;
+	   		}
+	   		100% {
+	   			opacity:0;
+	   		}
+	   	}
+	   	@-webkit-keyframes disappear{
+	   		0 {
+	   			opacity:1;
+	   		}
+	   		50% {
+	   			opacity:0.6;
+	   		}
+	   		80% {
+	   			opacity:0.3;
+	   		}
+	   		100% {
+	   			opacity:0;
+	   		}
+	   	}
+	   	.banner img{
+	   		width:100%;
+	   	}
+	   	.content{
+	   		width:5.72rem;
+	   		height:5.72rem;
+	   		border-radius:100%;
+	   		position:absolute;
+	   		top:50%;
+	   		left:50%;
+	   		margin-top:-2.86rem;
+	   		margin-left:-2.86rem;
+	   	}
+	   	.scale{
+	   		animation:scale 0.5s ease-in;
+	   	}
+	   	.content img{
+	   		width:100%;
+	   	}
+	   	.content-inner{
+	   		position:absolute;
+	   		width:100%;
+	   		left:0;
+	   		top:50%;
+	   		height:1.333333rem;
+	   		line-height:1.333333rem;
+	   		margin-top:-0.666666rem;
+	   		text-align: center;
+	   		font-size:40px;
+	   		color:#0f2646;
+	   		z-index:102;
+	   	}
+	   	[data-dpr="2"] .content-inner{
+	   		font-size:80px;
+	   	}
+	   	[data-dpr="3"] .content-inner{
+	   		font-size:120px;
+	   	}
+	   	.slideOut{
+	   		animation:slideOut 1.2s ease-out forwards;
+	   	}
+	   	.inner-content{
+	   		width:5.466666rem;
+	   		height:5.466666rem;
+			border-radius:50%;
+	   		position:absolute;
+	   		top:50%;
+	   		left:50%;
+	   		opacity:1;
+	   		margin-top:-2.733333rem;
+	   		margin-left:-2.733333rem;
+	   		opacity: 0;
+	   		z-index:101;
+	   	}
+	   	.enter{
+	   		animation:slideIn 0.5s ease forwards,scroll 1s forwards;
+	   	}
+		.enter{
+			animation-timing-function:cubic-bezier(0.1,1,1,1);
+		}
+	   	/*验证次数消失*/
+	   	@keyframes slideOut{
+	   	0   {
+	   			opacity:1;
+	   		}
+	    50% {
+	   			opacity:0.8;
+	   		}
+	   	60% {
+	   			opacity:0.6;
+	   		}
+	   	80% {
+	   		    opacity:0.5;
+	   		}
+	   	85% {
+	   			opacity:0.4;
+	   		}
+	   	90% {
+	   			 opacity:0.2;
+	   	    }
+	   	100%{
+	   			opacity:0;
+	   		}
+	   	}
+	   	@-webkit-keyframes slideOut{
+	   	0   {
+	   			opacity:1;
+	   		}
+	   	20% {
+	   			opacity:0.8;
+	   	}
+	   	40% {
+	   			opacity:0.6;
+	   		}
+	   	60% {
+	   			opacity:0.4;
+	   		}
+	   	80% {
+	   		    opacity:0.2;
+	   		}	
+	   	100%{
+	   			opacity:0;
+	   		}
+	   	}
+	   	/*cake旋转*/
+	   	@keyframes scroll{
+	   		to{
+	   			transform: rotate(3600deg);
+	   		}
+	   	}
+	   	@-webkit-keyframes scroll{
+	   		to{
+	   			transform: rotate(3600deg);
+	   		}
+	   	}
+	   	/*cake的出现*/
+	   	@keyframes slideIn{
+	   	0   {
+	   			opacity:0;
+	   		}
+	   	20% {
+	   			opacity:0.2;
+	   	}
+	   	40% {
+	   			opacity:0.4;
+	   		}
+	   	60% {
+	   			opacity:0.6;
+	   		}
+	   	80% {
+	   		    opacity:0.8;
+	   		}	
+	   	100%{
+	   			opacity:1;
+	   		}
+	   	}
+	   	@-webkit-keyframes slideIn{
+	   	0   {
+	   			opacity:0;
+	   		}
+	   	20% {
+	   			opacity:0.2;
+	   	}
+	   	40% {
+	   			opacity:0.4;
+	   		}
+	   	60% {
+	   			opacity:0.6;
+	   		}
+	   	80% {
+	   		    opacity:0.8;
+	   		}	
+	   	100%{
+	   			opacity:1;
+	   		}
+	   	}
+	   	@keyframes scale{
+	   	0   {
+	   			transform: scale(0)
+	   		}
+	   	20% {
+	   			transform: scale(0.2);
+	   		}
+	   	40% {
+	   			transform: scale(0.8);
+	   		}
+	   	60% {
+	   			transform: scale(1.2);
+	   		}	
+	   	80% {
+	   			transform: scale(1.8);
+	   		}
+	   	100%{
+	   			transform: scale(1)
+	   		}
+	   	}
+	   	
+	   	
+	   	@-webkit-keyframes scale{
+	   	0   {
+	   			transform: scale(0)
+	   		}
+	   	20% {
+	   			transform: scale(0.2);
+	   		}
+	   	40% {
+	   			transform: scale(0.8);
+	   		}
+	   	60% {
+	   			transform: scale(1.2);
+	   		}	
+	   	80% {
+	   			transform: scale(1.8);
+	   		}
+	   	100%{
+	   			transform: scale(1)
+	   		}
+	   	}
+	   	.inner-content img{
+	   		width:100%;
+	   	}
+	   	.inner-text{
+	   		height:5.466666rem;
+	   		line-height:5.466666rem;
+	   		width:100%;
+	   		position:absolute;
+	   		top:0;
+	   		/*margin-top:-0.586666rem;*/
+	   		left:0;
+	   		text-align: center;
+	        color:#2b2b2b;
+	        font-size:19px;
+	   	}
+	   	[data-dpr="2"] .inner-text{
+	   		font-size:38px;
+	   	}
+	   	[data-dpr="3"] .inner-text{
+	   		font-size:57px;
+	   	}
+	   	.inner-text em{
+	   		font-family:arial;
+	   		font-style:normal;
+	   		font-size:123px;
+	   		color:#0f2646;
+	   		text-shadow:0 4px 8px #a87a10;
+	   		/*animation:slideIn 0.8s ease-in-out forwards;*/
+	   	}
+	   	[data-dpr="2"] .inner-text em{
+	   		font-size:246px;
+	   	}
+	   	[data-dpr="3"] .inner-text em{
+	   		font-size:369px;
+	   	}
+	   	.code-date{
+			min-width:1.706666rem;
+	   		left:0.32rem;
+	   		position:absolute;
+	   		top:50%;
+	   		margin-top:-0.746666rem;
+	   	}
+	   	.flowLeft{
+	   		animation:flowLeft 0.5s ease-in-out forwards; 
+	   	}
+	   	.code-date p{
+	   		line-height:0.853333rem;
+	   		color:#2b2b2b;
+	   		font-size:24px;
+	   		margin-bottom:0;
+	   		font-family:"Brush Script MT";
+	   	}
+	   	[data-dpr="2"] .code-date p{
+	   		font-size:48px;
+	   	}
+	   	[data-dpr="3"] .code-date p{
+	   		font-size:48px;
+	   	}
+	   	.code-date img{
+	   		width:0.64rem;
+	   		height:0.64rem;
+	   		display:block;
+	   		margin:0 auto;
+	   	}
+	   	/*日期飘进来的动画*/
+	   	@keyframes  flowLeft{
+	   		from{
+	   			transform: translatex(-1200px);
+	   			opacity:0;
+	   		}
+	   		to{
+	   			transform:translatex(0);
+	   			opacity:1;
+	   		}
+	   	}
+	   	@-webkit-keyframes flowLeft{
+	   		from{
+	   			transform: translatex(-1200px);
+	   			opacity:0;
+	   		}
+	   		to{
+	   			transform:translatex(0);
+	   			opacity:1;
+	   		}
+	   	}
+	   	@keyframes flowRight{
+	   		from{
+	   			transform: translatex(1000px);
+	   			opacity:0;
+	   		}
+	   		to{
+	   			transform:translatex(0);
+	   			opacity:1;
+	   		}
+	   	}
+	   	@-webkit-keyframes flowRight{
+	   		from{
+	   			transform: translatex(1000px);
+	   			opacity:0;
+	   		}
+	   		to{
+	   			transform:translatex(0);
+	   			opacity:1;
+	   		}
+	   	}
+	   	.unit{
+	   		height:0.533333rem;
+	   		line-height:0.533333rem;
+	   		position:absolute;
+	   		bottom:1.573333rem;
+	   		right:1.12rem;
+	   	}
+	   	.flowRight{
+	   		animation:flowRight 0.5s ease-in-out forwards; 
+	   		
+	   	}
+    </style>
+</head>
+<body>
+	<!--顶部-->
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-icon mui-pull-left"></a>
+	    <h1 class="mui-title">Ulife溯源平台</h1>
+	    <a class="mui-icon mui-pull-right"></a>
+	</header>
+	<!--body-->
+	<div class="mui-content">
+		<!--动画效果-->
+		<div class="animation" id="animation" style="display:none">
+			<!--第一层-->
+	    	<div class="banner">
+	    		<img src="img/animation.png" alt="" />
+	    	</div>
+	    	<!--第二层-->
+	    	<div class="content">
+	    		<img src="img/animation1.png"/>
+	    		<div class="content-inner" id="word">验证次数</div>
+	    	</div>
+	    	<!--第三层-->
+			<div class="inner-content" id="cake">
+	   			<img src="img/animation2.png"/>
+	   		 	<div class="inner-text">
+	   			     <div class="code-date" id="small-word" style="display:none">
+	   			     	<p>01.13</p>
+	   			     	<img src="img/sole.png" alt="" />
+	   			     </div>
+	   			     <em id="number">2</em>
+	   			     <div class="unit" id="unit" style="display:none">次</div>
+	    		</div>
+	    	</div>
+	    </div>
+	    <!--顶部背景图片动态切换-->
+		<div class="banner1" id="banner"> 
+	   		<img src="img/banner1.jpg" alt="" />
+	    </div>
+	    <!--顶部选择切换-->
+	    <nav  id="nav" class="nav mui-segmented-control">
+	    	<a class="mui-control-item mui-active" href="#product">
+	    		<div class="icon">
+    				<img  src="img/product2.png" alt="" />
+    			</div>
+	    		<span>产品信息</span>
+	    		<img class="arrow" style="display:block" src="img/arrow1.png" alt="" />
+			</a>
+	    	<a class="mui-control-item" href="#vertify">
+				<div class="icon">
+    				<img  src="img/quality.png" alt="" />
+    			</div>
+	    		<span>质检信息</span>
+	   			<img class="arrow" style="display:none" src="img/arrow2.png" alt="" />
+			</a>
+    		<a class="mui-control-item" href="#logistic">
+				<div class="icon" id="">
+    				<img  src="img/logistic.png" alt="" />
+    			</div>
+    			<span>物流信息</span>
+    			<img class="arrow" style="display:none" src="img/arrow3.png" alt="" />
+    		</a>
+    		<a class="mui-control-item" href="#push">
+    			<div class="icon" id="">
+    				<img  src="img/recommend.png" alt="" />
+    			</div>
+    			<span>推荐商品</span>
+    			<img class="arrow" style="display:none" src="img/arrow4.png" alt="" />
+			</a>
+	    </nav>
+	    <!--子页面-->
+	    <div id="product" class="mui-control-content mui-active">
+	    	<div class="body">
+	    		<div class="information">
+	    			<ul>
+	    				<li>
+	    					<div class="li-tit mui-pull-left">
+	    						产品名称
+	    					</div>
+	    					<div class="li-body">
+	    						诺优能奶粉
+	    					</div>
+	    				</li>
+	    				<li>
+	    					<div class="li-tit mui-pull-left">
+	    						溯源编码
+	    					</div>
+	    					<div class="li-body"><i>888716668729</i></div>
+	    				</li>
+	    				<li>
+	    					<div class="li-tit mui-pull-left">原产地</div>
+	    					<div class="li-body">荷兰</div>
+	    				</li>
+	    				<li>
+	    					<div class="li-tit mui-pull-left over">进口商/代理商</div>
+	    					<div class="li-body">武汉温丝莱特食品有限公司</div>
+	    				</li>
+	    				<li>
+	    					<div class="li-tit mui-pull-left">进口口岸</div>
+	    					<div class="li-body">宁波口岸</div>
+	    				</li>
+	    				<li>
+	    					<div class="li-tit mui-pull-left">报关日期</div>
+	    					<div class="li-body">2016年11月11日</div>
+	    				</li>
+	    				<li>
+	    					<div class="li-tit mui-pull-left">报关单号</div>
+	    					<div class="li-body">
+	    						<i>310522541236548521</i>
+	    					</div>
+	    				</li>
+	    				<li>
+	    					<div class="li-tit mui-pull-left">保质期</div>
+	    					<div class="li-body">6个月</div>
+	    				</li>
+	    				<li>
+	    					<div class="li-tit mui-pull-left">储存方法</div>
+	    					<div class="li-body">放置于2℃-6℃的干燥环境中</div>
+	    				</li>
+	    				<li>
+	    					<div class="li-tit mui-pull-left">生产厂家</div>
+	    					<div class="li-body">荷兰李思源食品有限公司</div>
+	    				</li>
+	    				<li>
+	    					<div class="li-tit mui-pull-left">产品简介</div>
+	    					<div class="li-body text">Nutrilon诺优能 幼儿配方奶粉3段800g(荷兰进口)12-36个月产地：荷兰重量：800g规格：800g*1适用人群：12-36月幼儿</div>
+	    				</li>
+	    			</ul>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div id="vertify" class="mui-control-content">
+	    	<div class="body">
+	    		<div class="vertify-body">
+	    			<div class="vertifies">
+	    				<div class="line">
+	    					<div class="vertify-icon active">
+	    						<img src="img/licenceR.png" alt="" />政府认证证书
+	    					</div>
+	    				</div>
+	    				<div class="line">
+	    					<div class="mui-pull-left">
+	    						<div class="vertify-icon">
+	    							<img src="img/licenceR.png" alt="" />第三方认证证书
+	    						</div>
+	    					</div>
+	    					<div class="mui-pull-right">
+	    						<div class="vertify-icon">
+	    							<img src="img/licenceR.png" alt="" />报检信息认证
+	    						</div>
+	    					</div>
+	    				</div>
+	    			</div>
+	    			<div class="vertify-banner">
+	    				<div class="triangles">
+	    					<div class="triangle top" point="government">
+	    						<img src="img/government-active.png" alt="" />
+	    					</div>
+	    				</div>
+	    				<div class="triangles">
+	    					<div class="triangle bottom" point="third-party">
+	    						<img src="img/third.png" alt="" />
+	    					</div>
+	    					<div class="triangle bottom" point="inspection">
+	    						<img src="img/inspection.png" alt="" />
+	    					</div>
+	    				</div>
+	    				<div class="vertify-place">
+	    					武汉农产品质量监管局
+	    					<img src="img/licenceR.png" alt="" />
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div id="logistic" class="mui-control-content">
+	    	<div class="body" id="body">
+	    		<div class="trans-information">
+				<div class="trans-content">
+					<ul>
+					    <li>
+					    	<div class="radio"></div>
+					    	<div class="collapse mui-table-view-cell mui-collapse">
+					    		<p class="trans-time"><span><i>2015-03-16</i></span><span><i>14:08:12</i></span></p>
+					    		<p class="trans-state">您的快件已签收</p>
+					    		<a class="iconfont down-arrow" style="display:block" href="#"><img src="img/down.png"/></a>
+					    		<div class="logistic-detail  mui-table-view mui-table-view-chevron">
+									<p>物流车牌：<i>WJ18-12345</i></p>
+									<p>货车司机：罗贯中</p>
+									<p>司机工号：<i>0888208820</i></p>
+									<p>发货人：吴承恩</p>
+									<p>卸货人：施耐庵</p>
+									<p>运输工具：卡车</p>
+									<p>运输公司：顺丰</p>
+								</div>
+								<a class="iconfont up-arrow" style="display:none" href="#"><img src="img/up.png"/></a>
+					    	
+					    	</div>
+					    </li>
+					    <li>
+					    	<div class="radio"></div>
+					    	<div class="collapse mui-table-view-cell mui-collapse">
+					    		<p class="trans-time"><span><i>2015-03-16</i></span><span><i>07:08:12</i></span></p>
+					    		<p class="trans-state">您所订购的商品已到达【武汉航空中转部】，中转中</p>
+					    		<a class="iconfont down-arrow" style="display:block" href="#"><img src="img/down.png"/></a>
+					    		<div class="logistic-detail mui-table-view mui-table-view-chevron">
+									<p>物流车牌：<i>WJ18-12345</i></p>
+									<p>货车司机：罗贯中</p>
+									<p>司机工号：<i>0888208820</i></p>
+									<p>发货人：吴承恩</p>
+									<p>卸货人：施耐庵</p>
+									<p>运输工具：卡车</p>
+									<p>运输公司：顺丰</p>
+								</div>
+								<a class="iconfont up-arrow" style="display:none" href="#"><img src="img/up.png"/></a>
+					    	</div>
+					    </li>
+					    <li>
+					    	<div class="radio"></div>
+					    	<div class="collapse mui-table-view-cell mui-collapse">
+					    		<p class="trans-time"><span><i>2015-03-15</i></span><span><i>19:08:12</i></span></p>
+					    		<p class="trans-state">您所订购的商品已从【武汉白沙洲分拣站】发货</p>
+					    		<a class="iconfont down-arrow" style="display:block" href="#"><img src="img/down.png"/></a>
+					    		<div class="logistic-detail mui-table-view mui-table-view-chevron">
+									<p>物流车牌：<i>WJ18-12345</i></p>
+									<p>货车司机：罗贯中</p>
+									<p>司机工号：<i>0888208820</i></p>
+									<p>发货人：吴承恩</p>
+									<p>卸货人：施耐庵</p>
+									<p>运输工具：卡车</p>
+									<p>运输公司：顺丰</p>
+								</div>
+								<a class="iconfont up-arrow" style="display:none" href="#"><img src="img/up.png"/></a>
+					    	</div>
+					    </li>
+					    <li>
+					    	<div class="radio"></div>
+					    	<div class="collapse mui-table-view-cell mui-collapse">
+					    		<p class="trans-time"><span><i>2015-03-16</i></span><span><i>19:08:12</i></span></p>
+					    		<p class="trans-state">顺丰速递&nbsp;&nbsp;湖北省武汉市白沙洲收件员已揽件</p>
+					    		<a class="iconfont down-arrow" style="display:block" href="#"><img src="img/down.png"/></a>
+					    		<div class="logistic-detail mui-table-view mui-table-view-chevron">
+									<p>物流车牌：<i>WJ18-12345</i></p>
+									<p>货车司机：罗贯中</p>
+									<p>司机工号：<i>0888208820</i></p>
+									<p>发货人：吴承恩</p>
+									<p>卸货人：施耐庵</p>
+									<p>运输工具：卡车</p>
+									<p>运输公司：顺丰</p>
+								</div>
+								<a class="iconfont up-arrow" style="display:none" href="#"><img src="img/up.png"/></a>
+					    	</div>
+					    </li>
+					    <li>
+					    	<div class="radio"></div>
+					    	<div class="collapse mui-table-view-cell mui-collapse">
+					    		<p class="trans-time"><span><i>2015-03-16</i></span><span><i>14:08:12</i></span></p>
+					    		<p class="trans-state">包裹正在等待收揽</p>
+					    		<a class="iconfont down-arrow" style="display:block" href="#"><img src="img/down.png"/></a>
+					    		<div class="logistic-detail mui-table-view mui-table-view-chevron">
+									<p>物流车牌：<i>WJ18-12345</i></p>
+									<p>货车司机：罗贯中</p>
+									<p>司机工号：<i>0888208820</i></p>
+									<p>发货人：吴承恩</p>
+									<p>卸货人：施耐庵</p>
+									<p>运输工具：卡车</p>
+									<p>运输公司：顺丰</p>
+								</div>
+								<a class="iconfont up-arrow" style="display:none" href="#"><img src="img/up.png"/></a>
+					    	</div>
+					    </li>
+					    					
+					</ul>
+				</div>
+			</div>	    		 
+	    	</div>
+	    </div>
+	    <div id="push" class="mui-control-content">
+	    	<div class="body">
+	    		<div class="product-lists">
+	    			<div class="list">
+	    				<div class="tit">
+	    					<em>12</em>JAN
+	    					<span class="mui-pull-right"><i>09:21</i>发布</span>
+	    				</div>
+	    				<ul>
+	    					<li>
+	    						<img src="img/food1.jpg" alt="" />
+	    						<div class="product-name">
+	    							<h3>德国西酪</h3>
+	    							<p>德国人称它为'kaese',奶酪是一种发酵的牛奶制品</p>
+	    						</div>
+	    						<div class="card-bottom">
+	    							<span class="mui-pull-left"><i class="mark">￥</i><i>86.6</i></span>
+	    							<span class="mui-pull-right favorite"><img src="img/favorite.png" alt="" /><i>226</i></span>
+	    						</div>
+	    					</li>
+	    					<li>
+	    						<img src="img/food6.jpg" alt="" />
+	    						<div class="product-name">
+	    							<h3>德国西酪</h3>
+	    							<p>德国人称它为'kaese',奶酪是一种发酵的牛奶制品</p>
+	    						</div>
+	    						<div class="card-bottom">
+	    							<span class="mui-pull-left"><i class="mark">￥</i><i>86.6</i></span>
+	    							<span class="mui-pull-right favorite"><img src="img/favorite.png" alt="" /><i>226</i></span>
+	    						</div>
+	    					</li>
+	    					<li>
+	    						<img src="img/food2.jpg" alt="" />
+	    						<div class="product-name">
+	    							<h3>德国西酪</h3>
+	    							<p>德国人称它为'kaese',奶酪是一种发酵的牛奶制品</p>
+	    						</div>
+	    						<div class="card-bottom">
+	    							<span class="mui-pull-left"><i class="mark">￥</i><i>86.6</i></span>
+	    							<span class="mui-pull-right favorite"><img src="img/favorite.png" alt="" /><i>226</i></span>
+	    						</div>
+	    					</li>
+	    				</ul>
+	    			</div>
+	    			<div class="list">
+	    				<ul>
+	    					<li>
+	    						<img src="img/food3.jpg" alt="" />
+	    						<div class="product-name">
+	    							<h3>德国西酪</h3>
+	    							<p>德国人称它为'kaese',奶酪是一种发酵的牛奶制品</p>
+	    						</div>
+	    						<div class="card-bottom">
+	    							<span class="mui-pull-left"><i class="mark">￥</i><i>86.6</i></span>
+	    							<span class="mui-pull-right favorite"><img src="img/favorite.png" alt="" /><i>226</i></span>
+	    						</div>
+	    					</li>
+	    					<li>
+	    						<img src="img/food4.jpg" alt="" />
+	    						<div class="product-name">
+	    							<h3>德国西酪</h3>
+	    							<p>德国人称它为'kaese',奶酪是一种发酵的牛奶制品</p>
+	    						</div>
+	    						<div class="card-bottom">
+	    							<span class="mui-pull-left"><i class="mark">￥</i><i>86.6</i></span>
+	    							<span class="mui-pull-right favorite"><img src="img/favorite.png" alt="" /><i>226</i></span>
+	    						</div>
+	    					</li>
+	    					<li>
+	    						<img src="img/food5.jpg" alt="" />
+	    						<div class="product-name">
+	    							<h3>德国西酪</h3>
+	    							<p>德国人称它为'kaese',奶酪是一种发酵的牛奶制品</p>
+	    						</div>
+	    						<div class="card-bottom">
+	    							<span class="mui-pull-left"><i class="mark">￥</i><i>86.6</i></span>
+	    							<span class="mui-pull-right favorite"><img src="img/favorite.png" alt="" /><i>226</i></span>
+	    						</div>
+	    					</li>
+	    				</ul>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+</body>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+//    	mui.plusReady(function(){
+      		//物流页面js事件
+			mui('body .trans-content').on('tap','.mui-table-view-cell',function(){
+				var down = this.querySelector('.iconfont.down-arrow');
+				var up = this.querySelector('.up-arrow');
+				if(down.style.display == 'block' && up.style.display == 'none'){
+					down.style.display = 'none';
+					up.style.display = 'block';	
+				}else{
+					down.style.display = 'block';
+					up.style.display = 'none';	
+				}
+			})
+			
+			//中间导航点击效果切换
+			mui('nav').on('tap','a',function(){
+				//防止出现页面中的scrollTop相互影响
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+				
+				mui('nav a').each(function(index,item){
+					var imgSrc = item.children[0].children[0].getAttribute('src');
+					if(imgSrc.indexOf('2')){
+						item.children[0].children[0].src = imgSrc.replace('2.png','.png');
+					}
+					item.children[2].style.display="none";
+				})
+				this.children[0].children[0].src = this.children[0].children[0].getAttribute('src').replace('.png','2.png');
+				this.children[2].style.display="block";
+				
+				if(this.href.indexOf("#product")>=0){
+					mui('#banner')[0].children[0].src="img/banner1.jpg";
+				}else if(this.href.indexOf("#vertify")>=0){
+					mui('#banner')[0].children[0].src="img/banner1.jpg";
+				}else if(this.href.indexOf("#logistic")>=0){
+					mui('#banner')[0].children[0].src="img/banner2.jpg";
+				}else if(this.href.indexOf("#push")>=0){
+					mui('#banner')[0].children[0].src="img/banner3.jpg";
+				}
+			})
+			
+			//导航条的滚动事件
+			window.onscroll = function(){
+				var h = mui('.banner1')[0].offsetHeight;
+				var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+				console.log(h);
+				if(scrollTop>=h){
+					document.getElementById('nav').style.position="fixed";
+					document.getElementById('nav').style.top=1.16333 +"rem";
+				}else{
+					document.getElementById('nav').style.position="absolute";
+					document.getElementById('nav').style.top= 6.186666 +"rem";
+				}
+			}
+
+
+			document.body.ontouchmove = function(e){
+//				 e.preventdefault();
+				 
+//				console.log(document.body.scrollTop);
+			}
+			//证书打开页面
+			mui('.vertifies').on('tap','.vertify-icon',function(){
+				this.classList.add('active');
+				mui('.vertifies .vertify-icon').each(function(index,item){
+					item.classList.remove('active');
+				})
+				mui.openWindow({
+					url:'vertify.html',
+					id:'vertify.html'
+				})
+			})
+			
+			//证书检测方
+			mui('.vertify-banner .triangle').each(function(index,item){
+				item.addEventListener('tap',function(){
+					
+					var href = this.getAttribute('point');
+					var imgObj = this.children[0];
+	//				var objSrc = imgObj.getAttribute('src');
+					mui('.vertify-icon').each(function(index,item){
+						item.classList.remove('active');
+					})
+					mui('.vertify-icon')[index].classList.add('active');
+					mui('.vertify-banner .triangle img').each(function(index,item){
+						var objSrc = this.getAttribute('src');
+						if(objSrc.indexOf('active')){
+							this.src = objSrc.replace('-active.png','.png');
+						}
+					})
+						
+					imgObj.src=imgObj.getAttribute('src').replace('.png','-active.png');
+					var text = mui('.vertify-place')[0];
+						if(href=="government"){
+							text.innerHTML="武汉农产品质量监管局<img src='img/licenceR.png'/>"
+						}else if(href=="third-party"){
+							text.innerHTML="武汉进出口产品质量监管局<img src='img/licenceR.png'/>"
+						}else if(href=="inspection"){
+							text.innerHTML= "武汉进出口海关<img src='img/licenceR.png'/>"
+						}
+				})
+			})
+			
+			
+			//动画效果
+			var animation = document.getElementById('animation');
+			//动画外框的显示
+			setTimeout(function(){
+				animation.style.display="block";
+				animation.classList.add('scale');
+			},200)
+			//验证次数的消失
+			var word = document.getElementById('word');
+			setTimeout(function(){
+				word.classList.add('slideOut');
+			},1000)
+			//中间cake的推出
+			var cake = document.getElementById('cake');
+			var num = document.getElementById('number');
+			setTimeout(function(){
+				cake.style.display = "block";
+				cake.classList.add('enter');
+				num.classList.add('enter');
+			},1400)
+			//cake上文字的飘进
+			var small_word = document.getElementById('small-word');
+			var unit = document.getElementById('unit');
+			setTimeout(function(){
+				small_word.style.display ="block";
+				small_word.classList.add('flowLeft');
+				unit.style.display = "block";
+				unit.classList.add('flowRight');
+			},2500)
+			//最后整个动画消失的动画效果
+			setTimeout(function(){
+				animation.classList.remove('scale');
+				animation.classList.add('disappear');
+			},4500)
+			//删掉整个动画在页面上的占位
+			setTimeout(function(){
+				animation.style.display="none";
+			},5200)
+//    	})
+    </script>
+
+</html>

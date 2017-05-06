@@ -1,0 +1,90 @@
+{
+	"index.html": {
+		"resources": [
+			"img/food3.jpg",
+			"img/government-active.png",
+			"img/product/banner2.jpg",
+			"img/product/lojistic.png",
+			"img/product/arrow4.png",
+			"img/down.png",
+			"img/food4.jpg",
+			"img/animation2.png",
+			"img/third.png",
+			"js/mui.min.js",
+			"img/header/index2.png",
+			"img/food2.jpg",
+			"img/animation1.png",
+			"img/product/recommend.png",
+			"img/food1.jpg",
+			"img/food5.jpg",
+			"img/product/banner1.jpg",
+			"img/header/code2.png",
+			"img/product/banner3.jpg",
+			"img/product/product2.png",
+			"img/animation.png",
+			"img/sole.png",
+			"img/up.png",
+			"img/food6.jpg",
+			"img/product/arrow3.png",
+			"img/product/arrow2.png",
+			"css/mui.min.css",
+			"img/inspection.png",
+			"img/product/quality.png",
+			"img/product/arrow1.png",
+			"js/flexible.js",
+			"img/banner.png",
+			"img/inspection-active.png",
+			"img/third-active.png",
+			"img/licence2.png",
+			"img/licence1.png",
+			"img/product/quality2.png",
+			"img/product/product.png",
+			"img/licence3.png",
+			"img/government.png",
+			"img/favorite.png",
+			"img/product/recommend2.png",
+			"img/product/lojistic2.png",
+			"img/product2.png",
+			"img/licenceR.png",
+			"img/banner3.jpg",
+			"js/mui.zoom.js",
+			"img/recommend.png",
+			"img/arrow3.png",
+			"img/logistic.png",
+			"img/quality.png",
+			"img/arrow4.png",
+			"img/banner1.jpg",
+			"img/arrow1.png",
+			"img/banner2.jpg",
+			"img/arrow2.png",
+			"img/product.png",
+			"img/recommend2.png",
+			"img/quality2.png",
+			"img/logistic2.png"
+		],
+		"refer": [
+			"vertify.html"
+		]
+	},
+	"vertify.html": {
+		"resources": [
+			"img/vertify.png",
+			"img/cancel.png",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/flexible.js",
+			"js/mui.previewimage.js",
+			"css/imageviewer.css",
+			"js/mui.zoom.js"
+		]
+	},
+	"enter.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"index.html"
+		]
+	}
+}
