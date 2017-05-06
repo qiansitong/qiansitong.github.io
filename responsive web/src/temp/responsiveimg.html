@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Responsive image</title>
+</head>
+<body>
+<div class="content">
+    <img src="" alt=""/>
+</div>
+</body>
+<script src="../js/vendor/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        function makeImageResponsive(){
+            var width = $(window).width();
+            var img = $('.content img');
+            if(width <=480 ){
+                img.attr('src','../img/ad001.png');
+            }else if(width <=800){
+                img.attr('src','../img/ad001-m.png');
+            }else{
+                img.attr('src','../img/ad001-l.png')
+            }
+        }
+        $(window).on('resize load',makeImageResponsive);
+    })
+</script>
+</html>

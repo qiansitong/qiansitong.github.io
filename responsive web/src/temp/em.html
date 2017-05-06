@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        html{
+            font-size:200%;
+        }
+        .px p{
+            font-size:16px;
+            margin-top:16px
+        }
+        .px-sub{
+            font-size:80%;
+        }
+        .px-sub p{
+            font-size:12px;
+        }
+        .em p{
+            font-size:1em;
+            margin-top:1em;
+        }
+        .em-sub{
+            font-size:62.5%
+        }
+        .em-sub p{
+            font-size:1em;
+        }
+        .rem p{
+            font-size:1rem;
+            margin-top:1rem;
+        }
+        .rem-sub{
+            font-size:62.5%;
+        }
+        .rem-sub p{
+            font-size:1rem;
+        }
+    </style>
+</head>
+
+<body>
+  <div class="px">
+      <p>
+          jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jh
+          hhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi
+          hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh hhggdg shi shu hgg hio
+          class item progress gg confident money pp hgenglish
+      </p>
+      <div class="px-sub">
+          <p>
+              jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jh
+              hhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi
+              hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh hhggdg shi shu hgg hio
+              class item progress gg confident money pp hgenglish
+          </p>
+      </div>
+  </div>
+  <hr>
+  <div class="em">
+      <p>
+          jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jh
+          hhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi
+          hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh hhggdg shi shu hgg hio
+          class item progress gg confident money pp hgenglish
+      </p>
+      <div class="em-sub" >
+          <p id="em-sub">
+              jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jh
+              hhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi
+              hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh hhggdg shi shu hgg hio
+              class item progress gg confident money pp hgenglish
+          </p>
+      </div>
+  </div>
+  <hr>
+  <div class="rem">
+      <p>
+          jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jh
+          hhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi
+          hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh hhggdg shi shu hgg hio
+          class item progress gg confident money pp hgenglish
+      </p>
+      <div class="rem-sub">
+          <p id="rem-sub">
+              jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jh
+              hhhkjh  hh claxxk ss hhjg shi  hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi
+              hhikhkh jhf jhshfhhf hdjhj jhh jd jhhhhkjh  hh claxxk ss hhjg shi  hhikhkh hhggdg shi shu hgg hio
+              class item progress gg confident money pp hgenglish
+          </p>
+      </div>
+  </div>
+
+  <script>
+      var emp = document.getElementById("em-sub");
+      var remp = document.getElementById("rem-sub");
+      alert("em-sub p :"+window.getComputedStyle(emp,null)['fontSize']);
+      alert("rem-sub p :"+window.getComputedStyle(remp,null)['fontSize']);
+  </script>
+</body>
+</html>

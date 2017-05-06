@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul li{
+            list-style: none;
+        }
+        .main li a,
+        .second li a{
+            font-size:24px;
+
+        }
+        .quarter{
+            width:100px;
+            height:100px;
+            background:blue;
+            border-radius:100px 0 0 0;
+        }
+        *{
+            padding:0;
+            margin:0;
+        }
+        .quarter{
+            animation: myAnimation 5s ;
+        }
+
+        @keyframes myAnimation{
+            from{
+               opacity:1;
+            }
+            to{
+                opacity:0.3;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="quarter"></div>
+ <div id="time"></div>
+<ul class="main">
+    <li><a href="">fsdf</a></li>
+    <li><a href="">sfsf</a></li>
+    <li></li>
+    <li></li></ul>
+<ul class="second">
+    <li><a href="">asf</a></li>
+    <li><a href="">sfsa</a></li>
+    <li></li>
+    <li></li>
+</ul>
+<canvas id="mycanvas"></canvas>
+<script>
+//    var string ="hello-world-english";
+//    var words = string.split("-");
+//    console.log(words);
+//    console.log(words.join("-"));
+
+//    var time = document.getElementById("time");
+//    var Date = new Date();
+//    var dateYear = Date.getFullYear();
+//    var month = Date.getMonth();
+//    var date =Date.getDate();//日期
+//
+//    var arrDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+//    var weekDay = arrDays[Date.getDay()];
+//
+//    var hours = Date.getHours();
+//    var minutes = Date.getMinutes();
+//    var seconds = Date.getSeconds();
+//    function fnw(str){
+//        var num;
+//        str>=10?(num =str):(num="0"+str);
+//        return num;
+//    }
+//    time.innerHTML= dateYear+"年"+fnw(month)+"月"+fnw(date)+"日"+weekDay+"&nbsp;&nbsp;"+fnw(hours)+":"+fnw(minutes)+":"+fnw(seconds) ;
+
+//    var strDate = dateYear.toString();
+//    console.log(typeof(dateYear));
+//   var pattern = "yyyy-MM-dd hh:mm:ss";
+//    console.log(Date.format(pattern));
+
+   var canvas = document.getElementById("mycanvas");
+   var ctx=canvas.getContext('2d');
+   ctx.fillStyle='#FF0000';
+   ctx.fillRect(0,0,80,100);//0,0表示x，y坐标，
+
+
+</script>
+</body>
+</html>

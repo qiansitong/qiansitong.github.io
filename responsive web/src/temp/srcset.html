@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive image</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .content{
+            width:100%;
+            margin:0 auto;
+        }
+        .content img{
+            /*width:100%;*/
+            max-width:100%;
+            display:block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <img class="image" src="../img/ad001.png"
+             srcset="../img/ad001.png 480w, ../img/ad001-m.png 800w, ../img/ad001-l.png 1600w"
+                sizes="(min-width:800px) calc(100w - 30em),100vm"/>
+    </div>
+</body>
+</html>
