@@ -1,607 +1,63 @@
 <!doctype html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" href="fonts/iconfont.css"/>
 		<link href="css/mui.min.css" rel="stylesheet" />
-		<script src="js/font.js"></script>
-		<style>
-			em{
-				font-style:normal;
-				font-family:arial;
-			}
-			b{
-				font-style:normal;
-				font-weight:400;
-			}
-			ul{
-				margin:0;
-				padding:0;
-			}
-			ul li{
-				
-				list-style: none;
-			}
-			button{
-				padding:0;
-				margin:0;
-			}
-			body{
-				font-family:"微软雅黑" !important;
-				background-color:#FFFFFF !important;
-				color:#2b2b2b !important;
-			}
-			.mui-content{
-				background-color:#FFFFFF !important;
-			}
-			.divider{
-				height:1px;
-				width:7.02rem;
-				margin:0 auto;
-				background:#e1e1e1;			
-			}
-			/*公告*/
-			.note{
-				height:32px;
-				line-height:32px;
-				padding:0 12px;
-				background:#fafafa;
-				vertical-align:middle;	
-			}
-			.note span{
-				display:block;
-				font-size:0;
-				color:#323232;
-				overflow: hidden;
-			}
-			.note b{
-				font-size:15px;
-				display:inline-block;
-				height:32px;
-				line-height:32px;
-				vertical-align:middle;	
-			}
-			.note .iconfont{
-				height:32px;
-				line-height:32px;
-				font-size:0.32rem;
-				color:#f55555;
-				margin-left:0.16rem;
-				vertical-align:middle;	
-			}
-			.scroll-note{
-				display:inline-block;
-				font-size:14px;
-				color:#909090;
-				overflow:hidden;
-			}
-			.scroll-note .mui-scroll-wrapper{
-				margin-left:1.44rem;
-				height:32px;
-				line-height:32px;
-				overflow:hidden;
-			}
-			.mui-segmented-control.mui-scroll-wrapper .mui-scroll{
-				height:32px;
-			}
-			.mui-segmented-control.mui-segmented-control-inverted{
-				width:80%;
-			}
-			.scroll-note .mui-scroll-wrapper p{
-				overflow:hidden;
-			}
-			.scroll-note .mui-slider-indicator.mui-segmented-control{
-				position:absolute;
-			}
-			.news p{
-				text-align:left;
-				margin-bottom:0;
-				height: 32px;
-				line-height:32px;
-			}
-			/*顶部轮播*/
-			.imgbox{
-				height:1.94rem;
-			}
-			.imgbox img{
-				height:1.94rem;
-			}
-			/*扫码*/
-			.input-row{
-				background:#fff;
-				height:0.56rem;
-				overflow:hidden;
-				border-radius:0.05rem;
-				position:relative;
-				-webkit-box-flex:1; /* OLD - iOS 6-, Safari 3.1-6 */
-				-webkit-flex:1; /* Chrome */
-				-ms-flex:1;  /* IE 10 */
-				-moz-box-flex:1;  /* OLD - Firefox 19- */
-				flex:1;  /* NEW, Spec - Opera 12.1, Firefox 20+ */
-				margin-right:0.24rem;
-			}
-			.code .search{
-				vertical-align:top;
-				position:absolute;
-				top:0;
-				right:0.08rem;
-				line-height:0.56rem;
-				font-size:0.38rem;
-				color:#909090;
-			}
-			.code{
-				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
-                display:-ms-flexbox;  /* TWEENER - IE 10 */
-                display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-                display:-webkit-flex;  /* NEW - Chrome */
-                display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
-				background:#e6eaee;
-				height:0.88rem;
-				line-height:0.88rem;
-				padding:0 0.24rem;
-				align-items:center;
-				justify-content:space-between;
-			}
-			.code input{
-				vertical-align:top;
-				padding:0;
-				margin:0;
-				height:0.56rem;
-				border:0;
-				font-size:0.28rem;
-				text-indent:0.08rem;
-				color:#909090;
-				line-height:normal;
-			}
-			/*输入框提示文字颜色*/
-			input::-webkit-input-placeholder{
-				color:#909090;
-			}
-			.code-button{
-				padding:0;
-				margin:0;
-				border:0;
-				display:inline-block;
-				text-align:center;
-				border-radius:0.08rem;
-				width:1.66rem;
-				line-height:0.44rem;
-				height:0.44rem;
-				font-size:0.22rem;
-				background:#f55555;
-				color:#fff;
-				box-shadow:0 2px 0 rgba(0,0,0,0.1);
-			}
-			/*资讯中心*/
-			.news-center{
-				padding:0.32rem 0.48rem;
-			}
-			.news-center ul{
-				font-size:0;
-				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
-                display:-ms-flexbox;  /* TWEENER - IE 10 */
-                display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-                display:-webkit-flex;  /* NEW - Chrome */
-                display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
-				flex-flow:row nowrap;
-				justify-content:space-between;	
-			}
-			.news-center ul li{
-				font-size:0.22rem;
-				float:left;
-				
-			}
-			.news-center a{
-				display:block;
-				overflow: hidden;
-			}
-			.news-center ul li span{
-				margin-top:0.08rem;
-				display:block;
-				text-align:center;
-				color:#646464 !important;
-			}
-			.center-item{
-				height:1.02rem;
-				width:1.02rem;
-				margin:0 auto;
-				border-radius:0.51rem;
-			}
-			.center-img{
-				float:left;
-				width:4.5rem;
-				
-			}
-			/*诚信企业*/
-			
-			.honest-enterprise{
-				margin-bottom:0.32rem;
-				padding:0 0.24rem;
-			}
-			.title{
-				margin:0.32rem 0 0.24rem 0;
-				text-align:center;
-				color:#323232;
-				line-height:0.32rem;
-				font-size:0.32rem;
-			}
-			.img-slider{				
-				position: relative;
-			}
-			.img-slider img{
-				display:block;				
-			}
-			.img-slider ul{
-				padding:0 !important;
-				margin:0 !important;
-			}
-			.img-slider .mui-slider-item{
-				padding-left: 0.44rem !important;
-				padding-right: 0.44rem !important;
-			}
-			.img-slider ul li{
-				border:1px solid #b4b4b4;
-				box-shadow:2px 2px 2px rgba(225,225,225,0.6);
-				width:2rem;
-				height:2rem;
-				padding:0 !important;
-				margin:0 !important;
-			}
-			.img-slider ul li a{
-				padding:0 !important;
-				margin:0 !important;
-			} 
-			.img-slider .mui-slider-item{
-				padding:0 0.29rem 0.04rem;
-			}
-			.slider-indicator span{
-				display:inline-block;
-				line-height:100%;
-				vertical-align:bottom;
-			}
-			.slider-indicator span:first-child{
-				top:0.91rem;
-				left:0;
-				position:absolute;
-			}
-			.slider-indicator span:last-child{
-				top:0.91rem;
-				right:0;
-				position:absolute;
-			}
-			.slider-indicator span.iconfont{
-				font-size:0.3rem;
-				color:#909090;
-				
-			}
-			.after{
-				transform:rotate(180deg);
-				-webkit-transform: rotate(180deg);
-			}
-			/*推荐*/
-			.price{
-				color:#f75555;
-				font-size:0.24rem;
-			}
-			.time{
-				font-size:0.22rem;
-			}
-			.change{
-				line-height:0.28rem;
-				padding:0 0.24rem 0.08rem 0;
-			}
-			.change span{
-				color:#909090;
-				font-size:0.22rem;
-			}
-			.change span .iconfont{
-				font-size:0.28rem !important;
-			}
-			.push-center .mui-table-view-cell{
-				padding:0.24rem 0;
-				
-			}
-			.mui-table-view-cell>a:not(.mui-btn){
-				padding:0;
-				margin:0;
-			}
-			.push-center .mui-table-view{
-				margin:0 0.24rem;
-				
-			}
-			.push-center .mui-table-view-cell:after{
-				left:0;
-			}
-			.pu sh-center{
-				padding-bottom:0.1rem;
-			}
-			.push-item img{
-				border:1px solid #e1e1e1;
-				width:2.08rem;
-				height:1.6rem;
-				display:block;	
-			}
-			.push-detail{
-				height:1.6rem;
-				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
-	            display:-ms-flexbox;  /* TWEENER - IE 10 */
-	            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-	            display:-webkit-flex;  /* NEW - Chrome */
-	            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
-				flex-flow:column wrap;
-				justify-content:space-between;
-				margin-left:2.16rem;
-				overflow:hidden;
-			}
-			.product-code p:first-child{
-				font-size:0.32rem;
-				line-height:0.32rem;
-				height:0.32rem;
-				color:#323232;
-			}
-			.product-code p:last-child{
-				font-size:0.32rem;
-				line-height:0.32rem;
-				height:0.32rem;
-				color:#909090;
-				margin-top:0.08rem;
-			}
-			
-			.product-detail p{
-				height:0.26rem !important;
-				font-size:0.26rem;
-				color:#909090;
-				
-			}
-			.product-detail p:last-child{
-				margin-top:0.14rem;
-			}
-			.product-detail p span{
-				line-height:0.26rem;
-				float:left;
-				display:inline-block;
-				vertical-align: middle;
-			}
-			.product-detail p span.smalllogo img{
-				width:0.32rem;
-				height:0.32rem;
-				border:0;
-			}
-			.img-box{
-				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
-	            display:-ms-flexbox;  /* TWEENER - IE 10 */
-	            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
-	            display:-webkit-flex;  /* NEW - Chrome */
-	            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
-				flex-flow:row nowrap;
-				justify-content: space-between;
-				
-			}
-			
+		<link rel="stylesheet" type="text/css" href="fonts/iconfont.css"/>
+		<script src="js/app/common.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			html,body{
+			background: #fff;
+		}
+		html,body,h1,h2,h3,h4,h5,h6{
+			color: #323232;
+		}
+         .iconfont{
+         	color: #fff;
+         }
+         .mui-content{
+         	background: #fff;
+         }
+        header .mui-pull-left {
+        	padding-right: 40px;
+        	/*border: 1px solid #659aea;*/
+        }        
+		header{
+				background: #649be9 !important;
+			}
+		header a{
+			color: #fff;
+			font-size: 0.44rem;
+		}
+		header h1{
+			color: #fff !important;
+			font-weight: bold !important;
+		}
+		nav span{
+			color: #646464;
+		}
 		</style>
 	</head>
 
-	<body>		
-		<div class="mui-content">
-		    <div class="note">
-		    	<span><b>公告</b><b class="iconfont">&#xe627;</b></span>
-		    	<div class="scroll-note">
-		    		<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-						<div id="scrollBox2" class="news mui-scroll">
-							<p>B族西红柿将于近日隆重推出！</p>
-							<p>我们的产品有更新啦!</p>
-						</div>
-					</div>
-		    	</div>
-		    </div>
-		  
-		    <!--轮播图-->
-		    <div class="imgbox">
-		    	<div id="slider" class="mui-slider">
-					<div class="mui-slider-group mui-slider-loop">
-						<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="img/index/index.jpg"/></a></div>
-						<div class="mui-slider-item"><a href="#"><img src="img/index/index.jpg" /></a></div>
-						<div class="mui-slider-item"><a href="#"><img src="img/index/index.jpg" /></a></div>
-						<div class="mui-slider-item"><a href="#"><img src="img/index/index.jpg" /></a></div>
-						<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="img/index/index.jpg" /></a></div>
-					</div>
-				</div>
-		    </div>
-		    <!--扫码-->
-		    <div class="code">
-		    	<div class="input-row">
-		    		<input type="text" name="" id="" placeholder="请输入溯源码" />
-		    		<span class="search iconfont">&#xe628;</span>
-		    	</div>		    	
-		    	<span class="code-button" onclick="clicked('./code/barcode_scan.html',true,true);">点我扫码</span>
-		    </div>
-		    <!--资讯中心-->
-		    <div class="news-center">
-		    	<ul>
-		    		<li>
-		    			<a href="#">
-		    				<div class="center-item" style="background:url(img/index/supply.png) no-repeat center center;background-size:contain;"></div>
-		    				<span>供应</span>
-		    			</a>
-		    		</li>
-		    		<li>
-			    		<a href="#">
-			    			<div class="center-item" style="background:url(img/index/news.png) no-repeat center center;background-size:contain;"></div>
-			    			<span>资讯</span>
-			    		</a>
-			    	</li>
-			    	<li>
-			    		<a href="#">
-			    			<div class="center-item" style="background:url(img/index/policy.png) no-repeat center center;background-size:contain;"></div>
-			    			<span>政策</span>
-			    		</a>
-			    	</li>
-		    		
-		    		<li>
-		    			<a href="#">
-		    				<div class="center-item" style="background:url(img/index/logistic.png) no-repeat center center;background-size:contain;"></div>
-		    				<span>物流</span>
-		    			</a>
-		    		</li>
-		    	</ul>
-		    	<ul style="margin-top:0.24rem;">
-		    		<li>
-		    			<a href="#">
-		    				<div class="center-item" style="background:url(img/index/exposure.png) no-repeat center center;background-size:contain;"></div>
-		    				<span>曝光台</span>
-		    			</a>
-		    		</li>
-		    		
-		    		<li>
-		    			<a href="#">
-		    				<div class="center-item" style="background:url(img/index/water.png) no-repeat center center;background-size:contain;"></div>
-		    				<span>水利</span>
-		    			</a>
-		    		</li>
-		    		<li>
-		    			<a href="#">
-		    				<div class="center-item" style="background:url(img/index/solution.png) no-repeat center center;background-size:contain;"></div>
-		    				<span>方案</span>
-		    			</a>
-		    		</li>
-		    		<li>
-		    			<a href="#">
-		    				<div class="center-item" style="background:url(img/index/more.png) no-repeat center center;background-size:contain;"></div>
-		    				<span>更多</span>
-		    			</a>
-		    		</li>
-		    	</ul>
-		    </div>
-		    <div class="divider"></div>
-		    <!--诚信企业-->
-		    <div class="honest-enterprise">
-		    	<div class="title">诚信企业</div>
-		    	<div class="img-slider">
-		    		<div id="slider" class="mui-slider">
-						<div id="main" class="mui-slider-group mui-slider-loop">
-							<div class="mui-slider-item mui-slider-item-duplicate">
-								<ul class="mui-table-view mui-grid-view">
-								  <div class="img-box">
-								    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="img/index/logo1.jpg"></a></li> 
-								    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="img/index/logo2.jpg"></a></li> 
-								    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="img/index/logo3.png"></a></li> 
-								  </div>
-								</ul>
-							</div>
-						    <div class="mui-slider-item">
-								<ul class="mui-table-view mui-grid-view">
-								   <div class="img-box">
-								    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="img/index/logo1.jpg"></a></li> 
-								    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="img/index/logo2.jpg"></a></li> 
-								    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="img/index/logo3.png"></a></li> 
-								  </div>
-								</ul>
-							</div>
-							<div class="mui-slider-item mui-slider-item-duplicate">
-								<ul class="mui-table-view mui-grid-view">
-								   <div class="img-box">
-								    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="img/index/logo1.jpg"></a></li> 
-								    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="img/index/logo2.jpg"></a></li> 
-								    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="img/index/logo3.png"></a></li> 
-								  </div>
-								</ul>
-							</div>
-						</div>
-						 <div class="slider-indicator" >
-			            	<span class="iconfont prev">&#xe631;</span>
-			            	<span class="iconfont after">&#xe631;</span>
-			        	</div>
-				</div>	
-		    	</div>
-		    </div>
-		     <div class="divider"></div>
-		    <!--为您推荐-->
-		    <div class="push">
-		    	<div class="title">
-		    		为您推荐
-		    	</div>
-		    	<div class="change mui-clearfix"><span class="mui-pull-right">换一批&nbsp;&nbsp;<b class="iconfont">&#xe62c;</b></span></div>
-		    	<div class="push-center">
-		    		<ul class="mui-table-view">
-					<li class="mui-table-view-cell mui-media push-item mui-ellipsis">
-						<a href="" class="mui-ellipsis">
-							<img class="mui-pull-left" src="img/index/index-list.jpg"/>
-							
-							<div class="push-detail">
-								<div class="product-code">
-									<p><span><em>B</em>族豌豆</span><span><span class="price mui-pull-right">2.8元/斤</span></p>
-							    	<p><em>007008208820</em><span class="time mui-pull-right">2天前</span></p>
-								</div>
-							   	<div class="product-detail">
-								    <p><span>产地:</span><span>天吉科技有限公司&nbsp;&nbsp;</span><span class="smalllogo"><img src="img/index/smalllogo1.jpg"/></span></p>
-								   	<p><span>苹果重:</span><span>四两以上&nbsp;&nbsp;</span><span>等级:</span><span>1级</span></p>
-							    </div>
-							</div>
-						</a>
-					</li>
-					<li class="mui-table-view-cell mui-media push-item">
-						<a href="">
-							<img class="mui-pull-left" src="img/index/index-list.jpg"/>
-							<div class="push-detail">
-							   <div class="product-code">
-									<p><span><em>B</em>族豌豆</span><span><span class="price mui-pull-right">2.8元/斤</span></p>
-							    	<p><em>007008208820</em><span class="time mui-pull-right">2天前</span></p>
-								</div>
-							   	<div class="product-detail">
-								    <p><span>产地:</span><span>天吉科技有限公司&nbsp;&nbsp;</span><span class="smalllogo"><img src="img/index/smalllogo1.jpg"/></span></p>
-								   	<p><span>苹果重:</span><span>四两以上&nbsp;&nbsp;</span><span>等级:</span><span>1级</span></p>
-							    </div> 
-							</div>
-						</a>
-					</li>
-					<li class="mui-table-view-cell mui-media push-item">
-						<a href="">
-							<img class="mui-pull-left" src="img/index/index-list.jpg"/>
-							<div class="push-detail">
-							   	<div class="product-code">
-									<p><span><em>B</em>族豌豆</span><span><span class="price mui-pull-right">2.8元/斤</span></p>
-							    	<p><em>007008208820</em><span class="time mui-pull-right">2天前</span></p>
-								</div>
-							   	<div class="product-detail">
-								    <p><span>产地:</span><span>天吉科技有限公司&nbsp;&nbsp;</span><span class="smalllogo"><img src="img/index/smalllogo1.jpg"/></span></p>
-								   	<p><span>苹果重:</span><span>四两以上&nbsp;&nbsp;</span><span>等级:</span><span>1级</span></p>
-							    </div> 
-							</div>
-						</a>
-					</li>
-					<li class="mui-table-view-cell mui-media push-item">
-						<a href="">
-						<img class="mui-pull-left" src="img/index/index-list.jpg"/>
-						<div class="push-detail">
-						   	<div class="product-code">
-								<p><span><em>B</em>族豌豆</span><span><span class="price mui-pull-right">2.8元/斤</span></p>
-							    	<p><em>007008208820</em><span class="time mui-pull-right">2天前</span></p>
-							</div>
-						   	<div class="product-detail">
-							    <p><span>产地:</span><span>天吉科技有限公司&nbsp;&nbsp;</span><span class="smalllogo"><img src="img/index/smalllogo1.jpg"/></span></p>
-							   	<p><span>苹果重:</span><span>四两以上&nbsp;&nbsp;</span><span>等级:</span><span>1级</span></p>
-						    </div>   
-						</div>
-						</a>
-					</li>
-				</ul>
-		    	</div>
-		    </div>
-		    
-		    
-		</div>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+        	<a class="mui-icon mui-pull-left iconfont" style="display: none;">&#xe66e;</a>
+			<h1 class="mui-title">正大溯源云平台</h1>
+			<a class="mui-icon mui-pull-right iconfont" onclick="clicked('./code/barcode_scan.html',true,true);" style="display: none;">&#xe67b;</a>
+		</header>	
+
+	</body>
 		<script src="js/mui.min.js"></script>
-		<script src="js/app/common.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
+		<script type="text/javascript">			
+			// mui初始化
 			mui.init();
-			
-			//扫描触发
 			//二维码扫描数据返回开始
 			function scaned(type, result) {
 				mui.openWindow({
-					url:'./code/code.html#&code='+result ,  //这里接受扫描数据
+					url:'./code/code.html#&code='+result ,
 					id: 'scan',
 					styles: {
 						top: '0px',
@@ -609,64 +65,137 @@
 						bounce: 'vertical'
 					}
 				});
+			}		
+			
+			// 子页参数
+			var Index = 0;
+			var subpages = ['news.html','aliance.html','product-center.html','mine.html'];
+			var subpage_style = {
+				top: '45px',
+				bottom: '50px',
+				zindex:999
+			};
+			
+			// 创建首页
+			var ind = null;
+			var inding = "main.html";
+			var inding_style = {
+				top:"45px",
+				bottom:"50px",
+				zindex:1
 			}
 			
-			mui('.mui-scroll-wrapper').scroll({
-				scrollY: true, //是否竖向滚动
-	 			scrollX: true, //是否横向滚动
-	 			startX: 0, //初始化时滚动至x
-	 			startY: 0, //初始化时滚动至y
-	 			indicators:false, //是否显示滚动条
-	 			bounce:true, //是否启用回弹	
-				deceleration: 0.0007 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+			// 底部导航栏
+			var tw = null;
+			var tabbar = "ifrom.html";
+			var tabbar_style = {
+				height:"50px",
+				bottom:"0px",
+				background: "transparent",
+				zindex:9999
+			}
+			
+			// 创建当前子页面，首个选项卡页面显示
+			mui.plusReady(function(){
+				
+				//获取当前webview作为父webview
+				var self = plus.webview.currentWebview();
+				// 创建当前指定子页
+				
+				var subIndex = plus.webview.create(inding, inding, subpage_style);//创建首页
+				
+				subIndex.setBounce({position:{top:"0px"},changeoffset:{top:"0px"}});//设置窗口的回弹效果
+				
+				self.append(subIndex);//添加首页
+				
+				plus.webview.show(subIndex);//显示首页
+				// 创建底部栏
+				tw = plus.webview.create(tabbar,tabbar,tabbar_style);//创建底部导航页面
+				
+				self.append(tw);//添加导航页面
+				
+				//头部左侧返回主页事件
+				mui(".mui-icon")[0].addEventListener("tap",function(){
+					window.location.reload();//重新加载当前页面
+					//alert(plus.webview.currentWebview()) ;
+				})
+				
+				
+			})
+			//当前激活选项
+			
+			var activeTab = inding;	//当前显示子页面为index.html，而不是news.html	
+			
+			// 添加targetTab自定义事件监听
+			window.addEventListener('targetTab',function(event){
+			  	// 获得选项卡点击事件参数
+			  	var targetTitle = event.detail.targetTitle;
+			  	var targetTab = event.detail.targetTab;
+			  	// 如果为当前选项则返回
+			  	
+			  	if (targetTab == activeTab ) return;
+			  	// 更换标题
+			  	if (targetTab == subpages[4]) {
+			  		
+//			  		mui(".mui-title")[0].style.display = 'none';
+			  		mui(".mui-icon")[0].style.display = 'none';
+			  		mui(".mui-icon")[1].style.display = 'none';
+//					mui(".mui-segmented-control")[0].style.display = 'block';
+			  	}else{
+//			  		mui(".mui-title")[0].style.display = 'block';
+//					mui(".mui-segmented-control")[0].style.display = 'none';
+//					mui(".mui-title")[0].innerHTML = targetTitle;
+					mui(".mui-icon")[0].style.display = 'block';
+					mui(".mui-icon")[1].style.display = 'block';
+			  	}	
+				
+				if(!plus.webview.getWebviewById(targetTab)){
+					var sub = plus.webview.create(targetTab, targetTab, subpage_style);//创建底部导航栏指向的四个页面
+					
+					sub.setBounce({position:{top:"0px"},changeoffset:{top:"0px"}});//设置回弹效果
+					
+					plus.webview.currentWebview().append(sub);//添加子页面
+					
+					plus.webview.show(sub,'pop-in',300);
+					// 重新加载tabbar
+					tw.show();
+				}else{
+					//显示目标选项卡
+					plus.webview.show(targetTab);
+					// 重新加载tabbar
+					tw.show();
+				}			
+				//隐藏当前;
+				plus.webview.hide(activeTab);
+				//更改当前活跃的选项卡
+				activeTab = targetTab;
 			});
 			
-			// mui.plusReady(function(){
-				mui(".news-center").on('tap','li',function(){
-				  //获取id
-				  //var id = this.getAttribute("class");
-				  //传值给详情页面，通知加载新数据
-//				  mui.fire(detail,'getDetail',{id:id});
-				  //打开新闻详情	
-				  mui.openWindow({
-				    id:'suppy',
-				    url:'./examples/suppy_main.html',
-				    createNew:true,
-				    waiting: {
-							autoShow: false,
-						},
-					extras:{
-						name:this.innerText,
-					},//自定义扩展参数
-					subpages:[{
-						url:'./examples/suppy.html',
-						id:'suppy.html',
-						styles:{
-							top: '90px',
-							bottom: '0px'
-						}
-					}]//预加载页面的子页面
-  				});
-			 })
-			
-			//诚信企业
-			mui("#main").on("tap","li",function(){
-				mui.openWindow({
-					url:'./faith/alianceText.html',
-					id: 'aliance'
-					});
-			})
-					
-				
-			//为您推荐
-			mui(".push-center").on('tap','li',function(){
-					mui.openWindow({
-					url:'./examples/shop.html',
-					id: 'shop'
-					});
-				})
-			// })	
+			//备份mui.back，mui.back已将窗口关闭逻辑封装的比较完善（预加载及父子窗口），因此最好复用mui.back
+		var old_back = mui.back;
+		mui.back = function() {
+			var btn = ["确定", "取消"];
+			mui.confirm('确认关闭应用吗？', '正大云客户端', btn, function(e) {
+				if (e.index == 0) {
+					plus.runtime.quit();
+				}
+			});
+		}
+			//退出事件
+//			var first=null;
+//			mui.back = function() {
+//				//首次按键，提示‘再按一次退出应用’
+//				if (!first) {
+//					first = new Date().getTime();
+//					mui.toast('再按一次退出应用');
+//					setTimeout(function() {
+//						first = null;
+//					}, 1000);
+//				} else {
+//					if (new Date().getTime() - first < 1000) {
+//						plus.runtime.quit();
+//					}
+//				}
+//			};
 		</script>
-	</body>
-<script src="js/app/Gdong.js" type="text/javascript" charset="utf-8"></script>
 </html>
