@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont.css" />
+		<script src="../js/font.js"></script>
+		<style>
+			em{
+				font-style:normal;
+				font-family: arial;
+			}
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li,p{
+				margin:0;
+				padding:0;
+				color:#2b2b2b !important;
+			}
+			a{
+				text-decoration: none;
+				/*color:#b9b9b9 !important;*/
+			}
+			img{
+				border:none;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#f4f4f4 !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#f4f4f4 !important;
+			}
+			.mui-bar{
+				height:0.88rem;
+				line-height:0.88rem;
+				box-shadow:none;
+			}
+			.mui-title{
+				height:0.88rem;
+				line-height:0.88rem;
+				font-family:"苹方";
+				font-size:0.36rem;
+				font-weight:bold;
+				color:#fafafa;
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top:0.88rem;
+			}
+			/*顶部导航*/
+	    	header{
+	    		background:#0f2646 !important
+	    	}
+	    	header.mui-bar{
+	    		padding:0 0.24rem;
+	    	}
+	    
+	    	.mui-bar .mui-icon{
+	    		font-size:0.48rem;
+	    		padding:0.2rem;
+				color:#fafafa;
+			}
+			.edit{
+				color:#fafafa;
+				font-size:0.3rem;
+			}
+			.complain{
+				color:#fafafa;
+				font-size:0.3rem;
+			}
+			
+			/*账号*/
+			.account-box{
+				margin-top:0.32rem;
+			}
+			.account-box ul{
+				background:#fff;
+				padding:0 0.24rem;
+			}
+			.account-box ul li{
+				border-bottom:1px solid #d6d7dc;
+				height:0.88rem;
+				line-height:0.88rem;
+				display:flex;
+				justify-content:flex-start;
+				align-items: center;
+			}
+			.account-box ul li:last-child{
+				border-bottom:0;
+			}
+			.object{
+				position:relative;
+				width:0.7rem;
+				height:0.7rem;
+			}
+			.object img{
+				width:100%;
+			}
+			.username{
+				margin-left:0.16rem;
+				color:#323232;
+				font-size:0.3rem;
+			}
+			.logout{
+				margin-top:0.32rem;
+				height:0.88rem;
+				line-height:0.88rem;
+				background:#fff;
+				text-align:center;
+				font-size:0.32rem;
+				color:#ec4b1f;
+			}
+			.login.iconfont{
+				line-height:0.26rem;
+				position:absolute;
+				font-size:0.26rem;
+				color:#4dbf0d;
+				right:0;
+				bottom:0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部-->
+		<header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href=""></a>
+            <h1 class="mui-title">账号管理</h1>
+    	</header>
+    	<div class="mui-content">
+    		<div class="account-box">
+	    		<ul>
+	    			<li>
+	    				<div class="object">
+	    					<img src="../img/personal/account-user.png"/>
+	    					<span class="login iconfont">&#xe64f;</span>
+	    				</div>
+	    				<div class="username">
+	    					<em>mouseshit</em>
+	    				</div>
+	    			</li>
+	    			<!--添加账号-->
+	    			<li>
+	    				<div class="add object">
+	    					<img src="../img/personal/add-account.png"/>
+	    				</div>
+	    				<div class="username">
+	    					添加账号
+	    				</div>
+	    			</li>
+	    		</ul>
+	    		<div id="logout" class="logout">退出当前账号</div>
+    		</div>
+    	</div>
+    	
+    	
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

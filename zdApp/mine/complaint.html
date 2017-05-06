@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont.css" />
+		<script src="../js/font.js"></script>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li,p{
+				margin:0;
+				padding:0;
+				color:#2b2b2b !important;
+			}
+			a{
+				text-decoration: none;
+				/*color:#b9b9b9 !important;*/
+			}
+			img{
+				border:none;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#e8e8e8 !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#e8e8e8 !important;
+			}
+			.mui-bar{
+				height:0.88rem;
+				line-height:0.88rem;
+				box-shadow:none;
+			}
+			.mui-title{
+				font-family:"苹方";
+				font-size:0.36rem;
+				font-weight:bold;
+				color:#fafafa;
+				height:0.88rem;
+				line-height:0.88rem;
+			}
+			/*顶部导航*/
+	    	header{
+	    		background:#0f2646 !important
+	    	}
+	    	header.mui-bar{
+	    		padding:0 0.24rem;
+	    	}
+	    	.mui-bar-nav~.mui-content{
+	    		padding-top:0.88rem;
+	    	}
+	    	.mui-icon{
+				color:#fafafa;
+			}
+			/*投诉列表*/
+			.input-row{
+				padding-left:0.24rem;
+				margin-top:0.32rem;
+				line-height:0.88rem;
+				height:0.88rem;
+				background:#fff;
+			}
+			.input-row div{
+				display:inline-block;
+			}
+			.input-row .logo{
+				width:23%;
+				float:left;
+			}
+			.input-row .logo span{
+				display:inline-block;
+				float:left;
+			}
+			.input{
+				margin-left:0.24rem;
+			}
+			.input-row input{
+				padding:0;
+				margin:0;
+				line-height:0.44rem;
+				height:0.88rem;
+				border:0;
+				float:left;
+				font-size:0.24rem;
+				color:#b4b4b4;
+			}
+			.word{
+				margin-left:0.24rem;
+				line-height:0.88rem;
+				height:0.88rem;
+				font-size:0.3rem;
+				color:#2b2b2b;
+				vertical-align:middle;
+			}
+			.iconfont{
+				line-height:0.88rem;
+				height:0.88rem;
+				font-size:0.44rem;
+				color:#0f2646;
+				
+			}
+			.phone.iconfont{
+				color:#0f2646;
+				font-size:0.5rem;
+			}
+			.online{
+				text-align:center;
+				margin-top:0.32rem;
+				height:0.88rem;
+				line-height:0.88rem;
+				background:#0f2646;
+				color:#fafafa;
+				font-size:0;
+			}
+			.online span{
+				display:inline-block;
+				height:0.88rem;
+				line-height:0.88rem;
+				vertical-align: middle;
+				font-size:0.36rem;
+			}
+			.online span:first-child{
+				width:0.46rem;
+				height:0.88rem;
+				background:url(../img/ali.png) no-repeat 0 center;
+				background-size:0.46rem 0.4rem;
+				margin-right:0.08rem;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<!--顶部-->
+		<header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href=""></a>
+            <h1 class="mui-title">投诉</h1>
+    	</header>
+    	
+    	<div class="mui-content">
+    	    <div class="complaint-list">
+    	    	<div class="input-row">
+    	    		<div class="logo">
+	    	    		<span class="state iconfont">&#xe681;</span>
+	    	    		<span class="word">地点</span>
+    	    		</div>
+    	    		<div class="input">
+    	    			<input type="text" placeholder="请输入你的地址"/>
+    	    		</div>
+    	    	</div>
+    	    	<div class="input-row">
+    	    		<div class="logo">
+	    	    		<span class="person iconfont">&#xe658;</span>
+	    	    		<span class="word">举报人</span>
+    	    		</div>
+    	    		<div class="input">
+    	    			<input type="text" placeholder="请输入你的姓名"/>
+    	    		</div>
+    	    	</div>
+    	    	<div class="input-row">
+    	    		<div class="logo">
+	    	    		<span class="phone iconfont">&#xe680;</span>
+	    	    		<span class="word">电话</span>
+    	    		</div>
+    	    		<div class="input">
+    	    			<input type="text" placeholder="请输入你的电话"/>
+    	    		</div>
+    	    	</div>
+    	    	<div class="online"><span></span><span>客服在线</span></div></div>
+    	    </div>
+    	</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+		</script>
+	</body>
+
+</html>

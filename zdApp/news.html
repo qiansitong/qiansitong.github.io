@@ -1,0 +1,457 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="fonts/iconfont.css" />
+		<script src="js/font.js"></script>
+		<style>
+			em{
+				font-family:arial;
+				font-style:normal;
+			}
+			.num{
+				font-family:arial;
+				font-style:normal;
+			}
+			ul{
+				margin:0;
+				padding:0;
+			}
+			ul li{
+				
+				list-style: none;
+			}
+			button{
+				padding:0;
+				margin:0;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#FFFFFF !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#FFFFFF !important;
+			}
+			.divider{
+				height:1px;
+				width:7.2rem;
+				margin:0 auto;
+				background:#e1e1e1;			
+			}
+			/*顶部切换样式*/
+			.nav{
+				border-top:1px solid #d6d7dc;
+				padding:0 0.24rem;
+				height:0.64rem;
+				line-height:0.64rem;
+				position:relative;
+			}
+			.push.iconfont{
+				color:#ec4b1f;
+				font-size:0.32rem;
+				display: inline-block;
+			}
+			.search.iconfont{
+				color:#646464;
+				font-size:0.32rem;
+				display: inline-block;
+			}
+			nav{
+				padding:0.1rem 0.88rem 0.08rem;
+				height:0.44rem;
+				line-height:0.44rem;
+				vertical-align:bottom;
+			}
+			nav .mui-control-item{
+				border-left:none !important;
+				line-height:0.42rem !important;
+				height:0.42rem !important;
+				color:#646464 !important;
+				font-size:0.3rem !important;
+			}
+			.mui-control-item.mui-active{
+				background:none !important;
+				color:#646464 !important;
+				border-bottom:2px solid #ec4b1f;
+			}
+			nav.mui-segmented-control{
+				position:absolute;
+				height:0.44rem;
+				line-height:0.44rem;
+				left:0.58rem;
+				right:0.58rem;
+				width:auto;
+				top:0;
+				border:none
+			}
+			/*中间大图片及标题*/
+			.img-center{
+				width:100%;
+				position:relative;
+				height:5.02rem;
+				overflow:hidden;
+			}
+			.img-center img{
+				width:100%;
+				height:100%;
+				display:block;
+			}
+			.img-opacity{
+				opacity:0.48;
+				background:#000;
+				position:absolute;
+				bottom:0;
+				left:0;
+				height:0.64rem;
+				width:100%;
+			}
+			.img-tit{
+				position:absolute;
+				bottom:0;
+				left:0;
+				line-height:0.64rem;
+				height:0.64rem;
+				width:100%;
+				text-align:center;
+				color:#fafafa;
+				font-size:0.3rem;
+			}
+			.title.iconfont{
+				color:#f41212;
+				font-size:0.32rem;
+			}
+			/*图文列表*/
+			.mui-table-view .mui-media-object{
+				max-width:2.06rem !important;
+			}
+			.newslist{
+				overflow: hidden;
+			}
+			.newslist .mui-media-object{
+				width:2.06rem !important;
+				height:1.3rem !important;
+				display:block;
+				border:1px solid #d6d7dc;
+			}
+			.newslist .mui-table-view{
+				margin:0 0.24rem;
+			}
+			.newslist .mui-table-view:before{
+				height:0;
+			}
+			.newslist .mui-table-view-cell{
+				padding:0.32rem 0 0.24rem;
+				
+				
+			}
+			.newslist .mui-table-view-cell:after{
+				left:0;
+			}
+			.newslist .mui-table-view-cell>a:not(.mui-btn){
+				margin:0;
+				padding:0;
+			}
+			.mui-table-view .mui-media-object.mui-pull-right{
+				margin-left:0.24rem;
+			}
+			.mui-table-view .mui-media-body{
+				height:1.3rem;
+				white-space:normal;
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+          		display:-ms-flexbox;  /* TWEENER - IE 10 */
+          		display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+          		display:-webkit-flex;  /* NEW - Chrome */
+          		display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				flex-flow:column wrap;
+				justify-content: space-between;
+			}
+			.mui-table-view .mui-media-body p:first-child{
+				font-size:0.3rem;
+				color:#323232;
+				line-height:0.38rem;
+			}
+			.dive{
+				line-height:0.3rem;
+			}
+			.up-time{
+				color:#909090;
+				font-size:0.2rem;
+			}
+			.chat.iconfont{
+				margin-left:0.16rem;
+				color:#909090;
+				
+			}
+			.chat-num{
+				font-size:0.2rem;
+				color:#909090;
+			}
+			/*频道列表*/
+			.channel{
+				width:100%;
+				position:absolute;
+				top:0.64rem;
+				left:0;
+				z-index:2;
+				padding:0.32rem 0.24rem;
+				background:#e8e8e8;
+				border-bottom:0.01rem solid #d6d7dc;
+			}
+			.channel ul{
+				font-size:0;
+			}
+			.channel ul li{
+				display:inline-block;
+				text-align:center;
+				width:1.27rem;
+				height:0.45rem;
+				line-height:0.45rem;
+				background:#fff;
+			}
+			.channel ul li a{
+				width:100%;
+				height:100%;
+				display:block;
+				font-size:0.24rem;
+				color:#646464;
+			}
+			.channel ul li+li{
+				margin-left:0.16rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="nav">
+				<span id="channelButton" class="push iconfont mui-pull-left">&#xe63b;</span>
+				<nav class="mui-segmented-control">
+					<a href="#" class="mui-control-item mui-active">推荐</a>
+					<a href="#" class="mui-control-item">热点</a>
+					<a href="#" class="mui-control-item">农业</a>
+					<a href="#" class="mui-control-item">社会</a>
+				</nav>
+				<span id="search" class="search iconfont mui-pull-right">&#xe628;</span>
+		   	</div>
+		   	<!--频道列表-->
+		   	<div class="channel" id="channel-list" style="display:none">
+		   		<ul>
+		   			<li><a href="#">教育</a></li>
+		   			<li><a href="#">教育</a></li>
+		   			<li><a href="#">教育</a></li>
+		   			<li><a href="#">教育</a></li>
+		   			<li><a href="#">教育</a></li>
+		   		</ul>
+		   		<ul style="margin-top:0.16rem">
+		   			<li><a href="#">教育</a></li>
+		   			<li><a href="#">教育</a></li>
+		   			<li><a href="#">教育</a></li>
+		   			<li><a href="#">教育</a></li>
+		   			<li><a href="#">教育</a></li>
+		   		</ul>
+		   	</div>
+		   <div class="img-center">
+		   		<img src="img/news/index.jpg" alt="" />
+		   		<div class="img-opacity"></div>
+		   		<div class="img-tit"><span class="title iconfont">&#xe63d;</span>小麦种植成本增高，利润逐年减少</div>
+		   </div>
+		   <!--图文列表-->
+		   <div class="newslist">
+		   		<ul class="mui-table-view">
+				    <!--<li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-right" src="img/index/push3.jpg">
+				            <div class="mui-media-body">
+				               	<p> 三星新广告暗讽&nbsp;&nbsp;&nbsp;借iPad&nbsp;&nbsp;Air铅笔广告反击</p>
+				               	<p class="dive">
+				               		<span class="up-time"><em>2</em>小时前</span>
+				               		<span class="chat iconfont">&#xe63e;</span>
+				               		<span class="chat-num num">106</span>
+				               	</p>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-right" src="img/index/push3.jpg">
+				            <div class="mui-media-body">	
+				               <p> 三星新广告暗讽&nbsp;&nbsp;&nbsp;借iPad&nbsp;&nbsp;Air铅笔广告反击</p>
+				               <p class="dive">
+				               		<span class="up-time"><em>2</em>小时前</span>
+				               		<span class="chat iconfont">&#xe63e;</span>
+				               		<span class="chat-num num">106</span>
+				               	</p>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-right" src="img/index/push3.jpg">
+				            <div class="mui-media-body">
+				                <p> 三星新广告暗讽&nbsp;&nbsp;&nbsp;借iPad&nbsp;&nbsp;Air铅笔广告反击</p>
+				               	<p class="dive">
+				               		<span class="up-time num"><em>2</em>小时前</span>
+				               		<span class="chat iconfont">&#xe63e;</span>
+				               		<span class="chat-num num">106</span>
+				               	</p>
+				            </div>
+				        </a>
+				    </li>
+				    <li class="mui-table-view-cell mui-media">
+				        <a href="javascript:;">
+				            <img class="mui-media-object mui-pull-right" src="img/index/push3.jpg">
+				            <div class="mui-media-body">
+				                <p> 三星新广告暗讽&nbsp;&nbsp;&nbsp;借iPad&nbsp;&nbsp;Air铅笔广告反击</p>
+				               	<p class="dive">
+				               		<span class="up-time"><em>2</em>小时前</span>
+				               		<span class="chat iconfont">&#xe63e;</span>
+				               		<span class="chat-num num">106</span>
+				               	</p>
+				            </div>
+				        </a>
+				    </li>-->
+				</ul>
+		   </div>
+		  
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var channel;
+			var channelButton;
+			var searchButton;
+			mui.plusReady(function(){
+				//频道列表的下拉和隐藏
+				channel =  document.getElementById('channel-list');
+				channelButton = document.getElementById('channelButton');
+				channelButton.addEventListener('tap',function(){
+					if(channel.style.display == 'none'){
+						channel.style.display = 'block';
+					}else{
+						channel.style.display = 'none';
+					}					
+				})
+				mui('#channel-list ul').on('tap','a',function(){
+					channel.style.display = 'none';
+				})
+				
+				
+				//默认加载推荐
+				mui.ajax('./json/news.json',{
+					data:{},
+					dataType:'json',//服务器返回json格式数据
+					type:'get',//HTTP请求类型
+					success:function(data){
+						var result = data.result;
+					        document.getElementsByClassName("img-center")[0].innerHTML = '<img src="'+data.newsImg1+'" alt="" />\
+		   					<div class="img-opacity"></div><div class="img-tit"><span class="title iconfont">&#xe63d;</span>'+data.newsImgText1+'</div>';
+						    chackBox(result);
+						    Click();
+					}  
+			 	});
+				
+				//点击头部标签更换
+				mui('.mui-segmented-control').on('tap','a',function(){
+					mos=this
+					getJson();
+				})
+				 //点击搜索图标
+		  	    document.getElementById("search").addEventListener("tap",function(){
+		   			mui.openWindow({
+							id:'search',
+							url:'search.html'
+						})
+		   });
+			
+			});
+			
+			//ajax()调用 头部Tab标签动态数据交互
+			function getJson(){
+				mui.ajax('./json/news.json',{
+					data:{},
+					dataType:'json',//服务器返回json格式数据
+					type:'get',//HTTP请求类型
+					success:function(data){
+						var result = data.result;
+						var result2 = data.result2;
+						if(mos.innerText == data.status1){
+							document.getElementsByClassName("img-center")[0].innerHTML = '<img src="'+data.newsImg1+'" alt="" />\
+		   					<div class="img-opacity"></div><div class="img-tit"><span class="title iconfont">&#xe63d;</span>'+data.newsImgText1+'</div>';
+						     //加载调用信息
+						    chackBox(result);
+						    //因为是Get请求,我们等加载完毕传值到下个页面
+						    Click();
+						}else if(mos.innerText == data.status2){
+							document.getElementsByClassName("img-center")[0].innerHTML = '<img src="'+data.newsImg2+'" alt="" />\
+		   					<div class="img-opacity"></div><div class="img-tit"><span class="title iconfont">&#xe63d;</span>'+data.newsImgText2+'</div>';
+		   					var content = "";		      	
+		      			 for (var i = 0, len = result2.length; i < len; i++) {
+		      			 	var Detail2 = JSON.stringify(result2[i]);
+		      			 	console.log(Detail2);
+					   		content +='<li data-detail='+ Detail2 +' class="mui-table-view-cell mui-media">\
+							        <a href="javascript:;">\
+							            <img class="mui-media-object mui-pull-right" src="'+result2[i].productImage+'">\
+							            <div class="mui-media-body">\
+							                <p>'+result2[i].productName+'</p>\
+							               	<p class="dive">\
+							               		<span class="up-time">'+result2[i].pastWhen+'</span>\
+							               		<span class="chat iconfont">&#xe63e;</span>\
+							               		<span class="chat-num">'+result2[i].productPrice+'</span>\
+							               	</p>\
+							            </div>\
+							        </a>\
+							    </li>';
+					   		};		      
+					   		document.getElementsByClassName("mui-table-view")[0].innerHTML = content;
+					   		Click();
+						}
+					}  
+			 	});
+			}
+		   //调用信息		   
+		   function chackBox(result){
+		   		 var content = "";		      	
+		      	 for (var i = 0, len = result.length; i < len; i++) {
+		      	 	// 将单个商品对象序列化后，存在data-detail属性中，后面传参用
+				var Detail = JSON.stringify(result[i]);
+		   		content +='<li data-detail='+ Detail +' class="mui-table-view-cell mui-media">\
+				        <a href="javascript:;">\
+				            <img class="mui-media-object mui-pull-right" src="'+result[i].productImage+'">\
+				            <div class="mui-media-body">\
+				                <p>'+result[i].productName+'</p>\
+				               	<p class="dive">\
+				               		<span class="up-time">'+result[i].pastWhen+'</span>\
+				               		<span class="chat iconfont">&#xe63e;</span>\
+				               		<span class="chat-num">'+result[i].productPrice+'</span>\
+				               	</p>\
+				            </div>\
+				        </a>\
+				    </li>';
+		   		};		      
+		   	document.getElementsByClassName("mui-table-view")[0].innerHTML = content;
+		   };
+			
+		 //点击列表进入详情页面
+		 //商家页面点击跳转
+		 function Click(){
+				mui(".mui-table-view").on("tap","li",function(){
+					shopId = this.getAttribute("data-detail");
+					mui.openWindow({
+							id:'supply',
+							url:'./examples/supply.html',
+							extras:{
+								point:shopId
+							}
+						})
+				});
+			}
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,416 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont.css" />
+		<script src="../js/font.js"></script>
+		<style>
+			em{
+				font-style:normal;
+				font-family: arial;
+			}
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li,p{
+				margin:0;
+				padding:0;
+				color:#2b2b2b !important;
+			}
+			a{
+				text-decoration: none;
+				/*color:#b9b9b9 !important;*/
+			}
+			img{
+				border:none;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#f4f4f4 !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#f4f4f4 !important;
+			}
+			.mui-bar{
+				line-height:0.88rem;
+				height:0.88rem;
+				box-shadow:none;
+			}
+			.mui-title{
+				line-height:0.88rem;
+				height:0.88rem;
+				font-family:"苹方";
+				font-size:0.36rem;
+				font-weight:bold;
+				color:#fafafa;
+			}
+			/*顶部导航*/
+	    	header{
+	    		background:#0f2646 !important
+	    	}
+	    	header.mui-bar{
+	    		padding:0 0.24rem;
+	    	}
+	    	
+	    	.mui-bar .mui-icon{
+	    		font-size:0.48rem;
+	    		padding:0.2rem;
+				color:#fafafa;
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top:0.88rem;
+				padding-bottom:0.88rem;
+			}
+			.edit{
+				color:#fafafa;
+				font-size:0.3rem !important;
+			}
+			.complain{
+				color:#fafafa;
+				font-size:0.3rem !important;
+			}
+			/*收藏夹*/
+			.collection-box{
+				margin-top:0.32rem;
+			}
+			.collection-tit{
+				margin-top:0.24rem;
+				line-height:0.3rem;
+				font-size:0.3rem;
+				color:#323232;
+			}
+			.collection-box ul{
+				padding:0 0.24rem;
+				background:#fff;
+				overflow:hidden;
+				margin-bottom:0.24rem;
+			}
+			.collection-box ul:last-child{
+				margin-bottom:0;
+			}
+			.collection-box ul li{
+				position:relative;
+				padding:0.24rem 0;
+				border-bottom:1px solid #d6d7dc;
+			}
+			.collection-box ul li a{
+				display:block;
+				overflow:hidden;
+				padding:0;
+			}
+			.collection-box ul li:last-child{
+				border-bottom:0;
+			}
+			.object{
+				width:2.58rem;
+				height:1.6rem;
+				border:1px solid #d6d7dc;
+				overflow: hidden;
+			}
+			.object img{
+				width:100%;
+			}
+			.body{
+				position:relative;
+				padding:0.16rem 0;
+				margin-left:2.74rem;
+				display:flex;
+				height:1.6rem;
+				justify-content:space-between;
+				flex-flow:column nowrap;
+			}
+			.body p{
+				text-overflow: ellipsis;
+				white-space:nowrap;
+				overflow:hidden;
+			}
+			.body p:first-child{
+				color:#323232;
+				line-height:0.3rem;
+				font-size:0.3rem;
+			}
+			.body p:last-child{
+				line-height:0.36rem;
+				font-size:0.22rem;
+				color:#909090 !important;
+			}
+			.collection.iconfont{
+				line-height:0.36rem;
+				color:#909090;
+				font-size:0.36rem;
+				vertical-align: middle;
+			}
+			.time{
+				line-height:0.36rem;
+				font-size:0.22rem;
+				color:#909090;
+				margin-left:0.08rem;
+			}
+			.time em:first-child{
+				line-height:0.36rem;
+				margin-left:0.18rem;
+			}
+			/*底部编辑栏*/
+			.footer-edit{
+				height:0.88rem;
+				position:fixed;
+				font-size:0;
+				width:100%;
+				bottom:0;
+				background:#fff;
+			}
+			.footer-edit  div{
+				font-size:0.3rem;
+				color:#fafafa;
+				display:inline-block;
+				line-height:0.88rem;
+				width:1.82rem;
+				text-align:center;
+				margin-left:0.08rem;
+			}
+			.footer-edit  div:first-child{
+				margin-left:0;
+			}
+			.footer-edit  div:last-child{
+				margin-left:0;
+				color:#909090;
+			}
+			.delete{
+				background:#eb4e1f;
+			}
+			.share{
+				background:#0f2646;
+			}
+			.move{
+				background:#0f2646;
+			}
+			.select{
+				width:0.3rem;
+				height:0.3rem;
+				position:absolute;
+				right:0;
+				bottom:0.24rem;
+			}
+			.select-i{
+				
+				display:inline-block;
+				width:0.3rem !important;
+				height:0.3rem ;
+			}
+			.select-i img{
+				width:100%;
+				display:block;
+			}
+			.select img{
+				width:100%;
+				display:block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部-->
+		<header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href=""></a>
+            <h1 class="mui-title">我的收藏</h1>
+            <a class="edit  mui-pull-right" id="edit" href="javascript:;">编辑</a>
+           
+    	</header>
+    	<div class="mui-content">
+    		<div class="collection-box">
+    			<ul>
+    				<div class="collection-tit"><em>8</em>月</div>
+    				<li class="mui-clearfix">
+    					<a href="javascript:;">
+						<div class="object mui-pull-left">
+    						<img class="" src="../img/index/push3.jpg">
+    					</div>
+						<div class="body">
+							<p><em>B</em>族豌豆</p>
+							<p><span class="collection iconfont">&#xe600;</span><span class="time">收藏时间<em>08</em>月<em>01</em>日</span>
+							</p>
+						</div>
+						</a>
+						<div class="select" style="display:none"><img src="../img/select.png" alt=""/></div>
+    				</li>
+    				<li class="mui-clearfix">
+    					<a href="javascript:;">
+						<div class="object mui-pull-left">
+    						<img  src="../img/index/push3.jpg">
+    					</div>
+						<div class="body">
+							<p><em>B</em>族豌豆</p>
+							<p><span class="collection iconfont">&#xe600;</span><span class="time">收藏时间<em>08</em>月<em>01</em>日</span>
+							</p>
+						</div>
+						</a>
+						<div class="select" style="display:none"><img src="../img/select.png" alt=""/></div>
+    				</li>
+    				<li class="mui-clearfix">
+    					<a href="javascript:;">
+    					<div class="object mui-pull-left">
+    						<img  src="../img/index/push3.jpg">
+    					</div>
+						<div class="body">
+							<p><em>B</em>族豌豆</p>
+							<p><span class="collection iconfont">&#xe600;</span><span class="time">收藏时间<em>08</em>月<em>01</em>日</span>
+							</p>	
+						</div>
+						</a>
+						<div class="select" style="display:none"><img src="../img/select.png" alt=""/></div>
+    				</li>
+    				
+    			</ul>
+    			<ul>
+    				<div class="collection-tit"><em>9</em>月</div>
+    				<li class="mui-clearfix">
+    					<a href="javascript:;">
+						<div class="object mui-pull-left">
+    						<img class="" src="../img/index/push3.jpg">
+    					</div>
+						<div class="body">
+							<p><em>B</em>族豌豆</p>
+							<p><span class="collection iconfont">&#xe600;</span><span class="time">收藏时间<em>08</em>月<em>01</em>日</span>
+							</p>	
+						</div>
+						</a>
+						<div class="select" style="display:none"><img src="../img/select.png" alt=""/></div>
+    				</li>
+    				<li class="mui-clearfix">
+    					<a href="javascript:;">
+						<div class="object mui-pull-left">
+    						<img  src="../img/index/push3.jpg">
+    					</div>
+						<div class="body">
+							<p><em>B</em>族豌豆</p>
+							<p><span class="collection iconfont">&#xe600;</span><span class="time">收藏时间<em>08</em>月<em>01</em>日</span>
+							</p>
+						</div>
+						</a>
+						<div class="select" style="display:none"><img src="../img/select.png" alt=""/></div>
+    				</li>
+    				<li class="mui-clearfix">
+    					<a href="javascript:;">
+    					<div class="object mui-pull-left">
+    						<img  src="../img/index/push3.jpg">
+    					</div>
+						<div class="body">
+							<p><em>B</em>族豌豆</p>
+							<p><span class="collection iconfont">&#xe600;</span><span class="time">收藏时间<em>08</em>月<em>01</em>日</span>
+							</p>
+						</div>
+						</a>
+						<div class="select" style="display:none"><img src="../img/select.png" alt=""/></div>
+    				</li>
+    				
+    			</ul>
+    		</div>
+			<div class="footer-edit" style="display:none">
+    		<div class="delete" id="delete">移出收藏夹</div>
+    		<div class="share" id="share">分享宝贝</div>
+    		<div class="select-box mui-pull-right">
+    			<label>全选</label>
+    			<div class="select-i" id="all-select"><img src="../img/select.png" alt=""/></div>
+    		</div>
+    	</div>
+    	</div>
+    	</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+//			mui.plusReady({
+				var selectArray = mui('.collection-box .select');
+			//点击编辑时的事件
+				mui('#edit')[0].addEventListener('tap',function(){
+					if(mui('.footer-edit')[0].style.display == 'none'){
+						mui('.footer-edit')[0].style.display = 'block';
+						this.innerHTML = "完成";
+					}else{
+						mui('.footer-edit')[0].style.display = 'none';
+						this.innerHTML = "编辑";
+					}
+					selectArray.each(function(i,item){
+					if(item.style.display == "none"){
+							item.style.display = "block";
+						}else{
+							item.style.display = "none";
+						}
+						
+					})
+				})
+				//点击全选时的事件
+				mui('#all-select')[0].addEventListener('tap',function(){
+					var srcAll = this.children[0].getAttribute('src');
+					if(srcAll.indexOf('d')!=-1){
+						this.children[0].setAttribute('src','../img/select.png');
+						selectArray.each(function(i,item){
+							item.children[0].setAttribute('src','../img/select.png');
+						})
+					}else{
+						this.children[0].setAttribute('src','../img/selected.png');
+						selectArray.each(function(i,item){
+							item.children[0].setAttribute('src','../img/selected.png');
+						})
+					}
+					mui('#delete')[0].addEventListener('tap',function(){
+						mui('.collection-box')[0].style.display = "none";
+					})
+				})
+				//点击单个选择时的事件
+				selectArray.each(function(i,item){
+					item.addEventListener('tap',function(){
+						var src = this.children[0].getAttribute('src');
+						if(src.indexOf('d')!=-1){
+							this.children[0].setAttribute('src','../img/select.png');
+						}else{
+							this.children[0].setAttribute('src','../img/selected.png');
+						}
+						
+						mui('#delete')[0].addEventListener('tap',function(){
+							//获取当前选中的select标签所在li标签
+								var li = item.parentNode; 
+							//获取当前包裹这些li标签的ul标签
+								var ul = li.parentNode;
+							//remove掉ul里面当前选中的li标签
+								ul.removeChild(li);
+								mui.toast("已移出收藏夹!");
+							//判断ul中是否还含有li标签，有则保留，否则删掉当前ul标签
+								if(ul.children.length<=1){
+									ul.parentNode.removeChild(ul);
+								}else{
+									return;
+								}
+						})
+					
+					})
+				})
+				
+				
+				//点击分享的事件
+				mui('#share')[0].addEventListener('tap',function(){
+					mui.openWindow({
+						id:"",
+						url:"../mine/share.html",     //替换一张分享页面
+						show:{
+					      	autoShow:true,//页面loaded事件发生后自动显示，默认为true
+					      	aniShow:"slide-in-bottom",//页面显示动画，默认为”slide-in-right“；
+					      	duration:220//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					    },
+					})
+				})
+//			})
+		</script>
+	</body>
+
+</html>

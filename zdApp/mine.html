@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="fonts/iconfont.css" />
+		<script src="js/font.js"></script>
+		<style>
+			ul{
+				margin:0;
+				padding:0;
+			}
+			ul li{
+				
+				list-style: none;
+			}
+			button{
+				padding:0;
+				margin:0;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#e8e8e8 !important;
+				color:#2b2b2b !important;
+			}
+			b{
+				font-weight:normal;
+			}
+			
+			.mui-content{
+				background: #e8e8e8 !important;
+			}
+			
+			.mui-table-view .mui-media-object{
+				width:1.28rem !important;
+				height:1.28rem !important;
+				border-radius:0.64rem;
+				max-width:1.28rem;	
+			}
+			.mui-table-view .mui-table-view-cell{
+				padding:0.24rem 0;
+				margin:0 0.24rem;
+	
+			}
+			.mui-table-view .mui-table-view-cell:after{
+				background:#d6d7dc;
+				left:0;
+			}
+			.mui-table-view .mui-table-view-cell a{
+				padding:0;
+				margin:0;
+				color:#2b2b2b;
+				line-height:0.48rem;
+				font-size:0.3rem;
+			}
+			.mui-table-view:after{
+				height:0 !important
+			}
+			.mui-table-view:before{
+				height:0 !important
+			}
+			.mui-content>.userimg.mui-table-view:first-child{
+				margin-top:0.32rem !important;
+			}
+			.userimg .mui-table-view-cell{
+				padding:0.24rem 0;
+				
+			}
+			.userimg .mui-table-view-cell a{
+				padding:0;
+				margin:0;
+				
+			}
+			.mui-table-view .mui-media-object.mui-pull-left{
+				margin-right:0.24rem;
+			}
+			.mui-media-body{
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+          		display:-ms-flexbox;  /* TWEENER - IE 10 */
+          		display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+          		display:-webkit-flex;  /* NEW - Chrome */
+          		display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				flex-flow:column wrap;
+				justify-content:center;
+				color:#2b2b2b;
+				height:1.28rem;
+				font-size:0.3rem;
+			}
+			.mui-media-body p{
+				margin-top:0.16rem;
+				line-height:0.24rem;
+				color:#909090;
+				font-size:0.24rem;
+			}
+			/*未登录*/
+			.login-sign{
+				color:#2b2b2b !important;
+				font-size:0.3rem !important;
+				line-height: 0.3rem !important;
+			}
+			span.iconfont.mui-pull-left{
+				color:#0f2646;
+				font-size:0.44rem;
+			}
+			.mui-table-view .mui-table-view-cell span{
+				margin-left:0.08rem;
+				margin-right:0.24rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+		    <ul class="userimg mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell mui-media">
+					<a class="" href="#">
+						<img class="mui-media-object mui-pull-left head-img" id="head-img" src="img/user.png">
+						<div id="after-login" style="display:block">
+							<div class="mui-media-body" >
+								清云
+							   <p class='mui-ellipsis'>溯源号：<b>clound</b></p>
+							</div>
+						</div>
+						<div id="before-login" style="display:none">
+							<div class="mui-media-body">
+							   <p class='login-sign mui-ellipsis'>登录/注册</p>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		    <ul class="mui-table-view mui-table-view-chevron" style="margin-top:0.32rem">
+				<li class="mui-table-view-cell">
+					<a href="#notifications" ><span class="iconfont mui-pull-left">&#xe67f;</span>分享应用</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#privacy"><span class="iconfont mui-pull-left">&#xe711;</span>意见反馈</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#general"><span class="iconfont mui-pull-left">&#xe67d;</span>投诉</a>
+				</li>
+			</ul>
+		    <ul class="mui-table-view mui-table-view-chevron" style="margin-top:0.32rem">
+				<li class="mui-table-view-cell">
+					<a href="#account1"><span class="iconfont mui-pull-left">&#xe697;</span>关于溯源</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view mui-table-view-chevron" style="margin-top:0.32rem">
+				<li class="mui-table-view-cell">
+					<a href="#account2"><span class="iconfont mui-pull-left">&#x3434;</span>设置</a>
+				</li>
+			</ul>
+		    
+		        
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+				//打开登陆注册页面
+				document.getElementById("after-login").addEventListener("tap",function(){
+					mui.openWindow({
+							id:'personal/personal.html',
+							url:'./personal/personal.html'
+						})
+				})
+				
+				mui(".mui-table-view").on("tap","a",function(){
+					if (this.getAttribute('href') =="#notifications") {
+						mui.openWindow({
+							id:'share',
+							url:'./mine/share.html'
+						})
+					}else if(this.getAttribute('href') =="#privacy"){
+						mui.openWindow({
+							id:'feedback.html',
+							url:'./mine/feedback.html'
+						})
+					}else if(this.getAttribute('href') =="#general"){
+						mui.openWindow({
+							id:'complaint.html',
+							url:'./mine/complaint.html'
+						})
+					}else if(this.getAttribute('href') =="#account1"){
+						mui.openWindow({
+							id:'about.html',
+							url:'./mine/about.html'
+						})
+					}else if(this.getAttribute('href') =="#account2"){
+						mui.openWindow({
+							id:'setting.html',
+							url:'./setting-index/setting.html'
+						})
+					}	
+				})
+				//分享应用	
+			})
+		</script>
+	</body>
+
+</html>

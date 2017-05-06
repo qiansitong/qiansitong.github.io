@@ -1,0 +1,592 @@
+{
+  "index.html": {
+    "resources": [
+      "js/font.js",
+      "fonts/mui.ttf",
+      "img/index/push3.jpg",
+      "img/index/logistic.png",
+      "img/index/index.jpg",
+      "img/index/push4.jpg",
+      "img/index/more.png",
+      "img/index/news.png",
+      "img/index/smalllogo1.jpg",
+      "fonts/iconfont.woff",
+      "img/index/exposure.png",
+      "img/index/water.png",
+      "img/index/solution.png",
+      "img/index/supply.png",
+      "img/index/logo3.png",
+      "img/index/push1.jpg",
+      "img/index/logo1.jpg",
+      "img/index/policy.png",
+      "img/index/push2.jpg",
+      "img/index/logo2.jpg",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/app/common.js",
+      "img/index/index-list.jpg",
+      "js/app/Gdong.js"
+    ],
+    "refer": [
+      "examples/suppy.html",
+      "examples/suppy_main.html",
+      "examples/shop.html",
+      "code/barcode_scan.html",
+      "faith/alianceText.html"
+    ]
+  },
+  "main.html": {
+    "resources": [
+      "index.html",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/app/common.js",
+      "fonts/iconfont.woff",
+      "aliance.html"
+    ],
+    "refer": [
+      "index.html",
+      "ifrom.html",
+      "aliance.html",
+      "mine.html",
+      "product-center.html",
+      "news.html",
+      "code/barcode_scan.html"
+    ]
+  },
+  "mine.html": {
+    "resources": [
+      "img/nouser.png",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/iconfont.woff",
+      "img/user.png"
+    ],
+    "refer": [
+      "login/login.html",
+      "mine/share.html",
+      "mine/feedback.html",
+      "mine/complaint.html",
+      "faith/alianceArticle.html",
+      "setting-index/setting.html",
+      "personal/personal.html",
+      "mine/about.html"
+    ]
+  },
+  "product-center.html": {
+    "resources": [
+      "img/arrow.png",
+      "img/product2.jpg",
+      "img/product1.jpg",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "fonts/iconfont.woff",
+      "img/arrow-active.png",
+      "json/productCenter.json",
+      "img/product.jpg"
+    ],
+    "refer": [
+      "examples/shop.html",
+      "search.html"
+    ]
+  },
+  "news.html": {
+    "resources": [
+      "img/news/index.jpg",
+      "json/news.json",
+      "js/font.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/iconfont.css",
+      "fonts/iconfont.woff",
+      "img/index/push3.jpg"
+    ],
+    "refer": [
+      "examples/supply.html",
+      "search.html"
+    ]
+  },
+  "ifrom.html": {
+    "resources": [
+      "img/icon/vertify.png",
+      "img/icon/more-active.png",
+      "img/icon/product.png",
+      "img/icon/aliance.png",
+      "img/icon/more.png",
+      "img/icon/vertify-active.png",
+      "img/icon/aliance-active.png",
+      "img/icon/product-active.png",
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "aliance.html": {
+    "resources": [
+      "json/data.json",
+      "js/font.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "fonts/iconfont.css",
+      "fonts/iconfont.woff",
+      "img/index/logo3.png"
+    ],
+    "refer": [
+      "faith/alianceText.html",
+      "search.html"
+    ]
+  },
+  "examples/supply.html": {
+    "resources": [
+      "img/189120-12060215034551.jpg",
+      "js/font.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "fonts/iconfont.css",
+      "fonts/iconfont.woff",
+      "img/2624055a3348f7fbcd4661d08ac2658a.jpg",
+      "js/app/app.js",
+      "img/enterprise2.jpg",
+      "img/icon/609.png"
+    ],
+    "refer": [
+      "examples/share.html",
+      "examples/mshare.html"
+    ]
+  },
+  "faith/alianceText.html": {
+    "resources": [
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "img/index/logo.png",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "fonts/iconfont.woff"
+    ],
+    "refer": [
+      "faith/alianceArticle.html",
+      "faith/license_spec.html",
+      "faith/card.html"
+    ]
+  },
+  "faith/alianceArticle.html": {
+    "resources": [
+      "img/enterprise2.jpg",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "faith/license_spec.html": {
+    "resources": [
+      "js/font.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/gshan.png"
+    ],
+    "refer": []
+  },
+  "examples/share.html": {
+    "resources": [
+      "examples/icon_share/btn_tengxunweibo@3x_67.png",
+      "examples/icon_share/gengduo.png",
+      "examples/icon_share/btn_weixin@3x.png",
+      "examples/icon_share/btn_yixin@3x_62.png",
+      "examples/icon_share/btn_weibo@3x_37.png",
+      "examples/icon_share/btn_kongjian@3x.png",
+      "examples/icon_share/btn_qq@3x.png",
+      "examples/icon_share/btn_pengyouquan@3x.png",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "faith/card.html": {
+    "resources": [
+      "img/image/QR.png",
+      "img/image/store-logo.png",
+      "img/image/QR-border.png",
+      "js/font.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "examples/shop.html": {
+    "resources": [
+      "img/189120-12060215034551.jpg",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "fonts/iconfont.woff",
+      "img/product2.jpg"
+    ],
+    "refer": []
+  },
+  "search.html": {
+    "resources": [
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/iconfont.woff"
+    ],
+    "refer": []
+  },
+  "login/login.html": {
+    "resources": [
+      "img/login/password.png",
+      "img/personal.png",
+      "js/font.js",
+      "img/login/sina.png",
+      "img/login/user.png",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "img/login/wechat.png",
+      "css/mui.min.css",
+      "js/ajax.js",
+      "js/md5.js",
+      "json/login.json",
+      "js/own.js"
+    ],
+    "refer": [
+      "personal/personal.html",
+      "login/signUp.html",
+      "findPassword/findPassword.html"
+    ]
+  },
+  "mine/share.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/iconfont.woff"
+    ],
+    "refer": []
+  },
+  "mine/feedback.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/iconfont.woff"
+    ],
+    "refer": []
+  },
+  "mine/complaint.html": {
+    "resources": [
+      "img/ali.png",
+      "fonts/mui.ttf",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/iconfont.woff"
+    ],
+    "refer": []
+  },
+  "setting-index/setting.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "personal/personal.html": {
+    "resources": [
+      "img/user.png",
+      "img/personal/history.png",
+      "img/personal/collection.png",
+      "img/personal/account.png",
+      "img/personal/data.png",
+      "fonts/iconfont.woff",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/app/immersed.js",
+      "js/app/common.js"
+    ],
+    "refer": [
+      "personal/account.html",
+      "personal/address.html",
+      "personal/history.html",
+      "personal/personal-data.html",
+      "personal/place.html",
+      "personal/second.html"
+    ]
+  },
+  "personal/account.html": {
+    "resources": [
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/personal/add-account.png",
+      "img/personal/account-user.png",
+      "fonts/iconfont.woff"
+    ],
+    "refer": []
+  },
+  "personal/history.html": {
+    "resources": [
+      "img/personal/history.jpg",
+      "img/index/push3.jpg",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/selected.png",
+      "img/select.png"
+    ],
+    "refer": []
+  },
+  "personal/personal-data.html": {
+    "resources": [
+      "img/user.png",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "fonts/iconfont.woff"
+    ],
+    "refer": []
+  },
+  "personal/second.html": {
+    "resources": [
+      "img/personal/second.png",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "code/vertify.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "img/vertify1.jpg",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "img/vertify/vertify2.jpg",
+      "img/vertify/vertify3.jpg",
+      "img/vertify/vertify1.jpg"
+    ],
+    "refer": []
+  },
+  "code/code.html": {
+    "resources": [
+      "img/sj3.jpg",
+      "js/font.js",
+      "img/produce3.jpg",
+      "img/enterprise3.png",
+      "img/product.jpg",
+      "img/map.jpg",
+      "img/sj2.jpg",
+      "img/produce4.jpg",
+      "fonts/iconfont.woff",
+      "fonts/iconfont.css",
+      "img/enterprise2.jpg",
+      "img/enterprise1.jpg",
+      "img/produce1.jpg",
+      "js/mui.min.js",
+      "img/shunfeng.png",
+      "css/mui.min.css",
+      "img/sj1.jpg",
+      "img/chat-user.jpg",
+      "img/produce2.jpg"
+    ],
+    "refer": []
+  },
+  "code/barcode_scan.html": {
+    "resources": [
+      "js/app/common.js",
+      "fonts/mui.ttf",
+      "css/mui.css"
+    ],
+    "refer": []
+  },
+  "examples/video.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/font.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/iconfont.css",
+      "fonts/iconfont.woff",
+      "img/477131868907108898.jpg",
+      "js/lib/ckplayer.js",
+      "js/lib/bvd.js",
+      "css/bvd.css",
+      "examples/000.mp4"
+    ],
+    "refer": [
+      "examples/videoList.html"
+    ]
+  },
+  "examples/videoList.html": {
+    "resources": [
+      "js/font.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "fonts/iconfont.css",
+      "fonts/iconfont.woff"
+    ],
+    "refer": [
+      "examples/video.html"
+    ]
+  },
+  "examples/suppy.html": {
+    "resources": [
+      "img/189120-12060215034551.jpg",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "fonts/iconfont.woff"
+    ],
+    "refer": [
+      "examples/supply.html"
+    ]
+  },
+  "examples/suppy_main.html": {
+    "resources": [
+      "examples/suppy.html",
+      "fonts/iconfont.woff",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "examples/suppy.html",
+      "search.html"
+    ]
+  },
+  "login/signUp.html": {
+    "resources": [
+      "img/personal.png",
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "fonts/iconfont.woff"
+    ],
+    "refer": []
+  },
+  "personal/place.html": {
+    "resources": [
+      "js/font.js",
+      "fonts/iconfont.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "fonts/iconfont.woff"
+    ],
+    "refer": []
+  },
+  "guide.html": {
+    "refer": [
+      "main.html"
+    ],
+    "resources": [
+      "img/icon/2.jpg",
+      "img/icon/4.jpg",
+      "img/icon/3.jpg"
+    ]
+  },
+  "start.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "main.html",
+      "guide.html"
+    ]
+  },
+  "mine/about.html": {
+    "resources": [
+      "img/about.jpg",
+      "fonts/mui.ttf"
+    ],
+    "refer": []
+  },
+  "examples/videoS.html": {
+    "resources": [
+      "fonts/iconfont.css",
+      "js/lib/bvd.js",
+      "js/mui.min.js",
+      "css/bvd.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/477131868907108898.jpg",
+      "fonts/iconfont.woff"
+    ],
+    "refer": [
+      "examples/videoList.html"
+    ]
+  },
+  "examples/videoW.html": {
+    "resources": [
+      "fonts/iconfont.css",
+      "js/lib/bvd.js",
+      "js/mui.min.js",
+      "css/bvd.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/477131868907108898.jpg",
+      "fonts/iconfont.woff"
+    ],
+    "refer": []
+  },
+  "examples/mshare.html": {
+    "resources": [
+      "img/icon/weima (1).png",
+      "img/icon/weima (2).png",
+      "img/icon/weima (3).png",
+      "img/icon/weixin.png",
+      "img/icon/weibo.png",
+      "img/icon/QQ.png",
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": []
+  }
+}

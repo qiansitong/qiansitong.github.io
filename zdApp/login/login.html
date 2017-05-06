@@ -1,0 +1,342 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont.css" />
+		<script src="../js/font.js"></script>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li,p{
+				margin:0;
+				padding:0;
+				color:#2b2b2b !important;
+			}
+			a{
+				text-decoration: none;
+				/*color:#b9b9b9 !important;*/
+			}
+			img{
+				border:none;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#f4f4f4 !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#f4f4f4 !important;
+				
+			}
+			.mui-bar{
+				height:0.88rem;
+				line-height:0.88rem;
+				box-shadow:none;
+			}
+			.mui-title{
+				font-family:"苹方";
+				font-size:0.36rem;
+				font-weight:bold;
+				color:#0f2646;
+			}
+			/*顶部导航*/
+	    	header{
+	    		background:#f4f4f4 !important
+	    	}
+	    	header.mui-bar{
+	    		padding:0 0.24rem;
+	    	}
+	    	.mui-bar-nav~.mui-content{
+	    		padding-top:0.88rem;
+	    	}
+	    	.mui-icon{
+				color:#0f2646;
+			}
+			/*顶部图片*/
+			.user-img{
+				width:100%;
+				margin:0.32rem 0 0.56rem;
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	            display:-ms-flexbox;  /* TWEENER - IE 10 */
+	            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+	            display:-webkit-flex;  /* NEW - Chrome */
+	            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				align-items:center;
+				justify-content:center;
+				flex-flow: column wrap;
+			}
+			.img-center{
+				width:1.86rem;
+				height:1.86rem;
+				border-radius:50%;
+				overflow:hidden;
+				align-self:center;
+				background:url(../img/personal.png) no-repeat 0 center;
+				background-size:contain;
+			}
+			/*表单*/
+			.form-item{
+				padding:0 0.24rem;	
+			}
+			.form-item button{
+				width:100%;
+				height:1.08rem;
+				border-radius:5px;
+				background:#0f2646;
+				color:#8b9bb1;
+				border:0;
+				font-size:0.36rem;
+			}
+			.form-item p{
+				margin-top:0.24rem;
+				font-size:0.26rem;
+			}
+			.form-item p a{
+				color:#909090;
+			}
+			.input-row{
+				margin-bottom:0.24rem;
+				position:relative;
+			}
+			.input-row input{
+				width:100%;
+				line-height:normal;
+				height:1.08rem;
+				margin:0;
+				padding:0.32rem 0.84rem;
+				border-radius:5px;
+				color:#909090;
+				font-size:0.3rem;
+			}
+			.text{
+				background:url(../img/login/user.png) no-repeat 0.24rem center;
+				background-size:0.44rem 0.44rem;
+			}
+			.password{
+				background:url(../img/login/password.png) no-repeat 0.24rem center;
+				background-size:0.44rem 0.44rem;
+			}
+			.input-row span{
+				position:absolute;
+				left:0.24rem;
+				top:0.32rem;
+			}
+			.input-row span.iconfont{
+				font-size:0.44rem;
+				color:#909090;
+			}
+			/*其他登录方式*/
+			.others{
+				margin:2.64rem auto 0;
+			}
+			.divider{
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	            display:-ms-flexbox;  /* TWEENER - IE 10 */
+	            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+	            display:-webkit-flex;  /* NEW - Chrome */
+	            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				align-items: center;
+				flex-flow:row nowrap;
+				justify-content:center;
+			}
+			.divider-i{
+				width:2.02rem;
+				height:1px;
+				margin:0.11rem 0;
+				background:#d6d7dc;
+			}
+			.divider-w{
+				padding:0 0.24rem;
+			}
+			.divider span{
+				text-align:center;
+				display:inline-block;
+				color:#909090;
+				font-size:0.22rem;	
+			}
+			.social{
+				margin-top:0.48rem;
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	            display:-ms-flexbox;  /* TWEENER - IE 10 */
+	            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+	            display:-webkit-flex;  /* NEW - Chrome */
+	            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				align-items:center;
+				flex-flow:row nowrap;
+				justify-content:center;
+			}
+			.social div{
+				display:inline-block;
+			}
+			.social div+div{
+				margin-left:0.64rem;
+			}
+			.social a{
+				width:0.68rem;
+				height:0.68rem;
+				display:block;
+			}
+			.weixin{
+				background:url(../img/login/wechat.png) no-repeat center center;
+				background-size:0.68rem 0.68rem;
+			}
+			.qq{
+				background:url(../img/login/qq.png) no-repeat center center;
+				background-size:0.68rem 0.68rem;
+			}
+			.sina{
+				background:url(../img/login/sina.png) no-repeat center center;
+				background-size:0.68rem 0.68rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部-->
+		<header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href=""></a>
+            <h1 class="mui-title">登录</h1>
+    	</header>
+    	
+    	
+    	<!--主体部分-->
+    	<div class="mui-content">
+    	    <div class="user-img">
+    	    	<div class="img-center">
+    	    		<img class="realUser" style="display:none" src="img/user.jpg"/>
+    	    	</div>
+    	    </div>
+    	    <div class="form">
+    	    	<div class="form-item">
+    	    		<div class="input-row">
+    	    			<input type="text" class="mui-input-clear text" id="username" name="" autofocus="autofocus" placeholder="账号"/>
+    	    	    </div>
+    	    	    <div class="input-row">
+    	    	   		<input type="password" class="mui-input-clear password" id="userpassword" name="" value="" placeholder="密码"/>
+    	    	    </div>
+    	    	    <button type="button" id="login">登录</button>
+    	    	    <p><a class="mui-pull-left" id="signUp" href="javaScript:;">注册</a>	<a id="Password" class="mui-pull-right" href="javaScript:;">忘记密码</a></p>
+    	    	</div>
+    	    	
+    	    </div>
+    	    <div class="others">
+    	    	<div class="divider"><span class="divider-i"></span><span class="divider-w">其他登录方式</span><span class="divider-i"></span></div>
+    	    	<div class="social">
+	    	    	<div><a class="weixin" href="#"></a></div>
+	    	    	<div><a class="qq" href="#"></a></div>
+	    	    	<div><a class="sina" href="#"></a></div>
+	    	    </div>
+    	    </div>
+    	</div>
+    	
+    	
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/own.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			var username;
+			var userpassword;
+			var login;
+			var signUp;
+			var Password;
+			mui.plusReady(function(){
+				username = document.querySelector('input[type="text"]');
+				userpassword = document.querySelector('input[type="password"]');
+				login = document.getElementById("login");
+				signUp = document.getElementById("signUp");
+				Password = document.getElementById("Password");
+				loginWebview = plus.webview.currentWebview();
+				
+				//检测本地的登录过的账号。
+				if (localStorage.getItem('username')) {
+					username.value = localStorage.getItem('username');
+				}
+				
+				//登陆的点击事件
+				login.addEventListener("tap",function(){
+					//判断用户名或密码是否为空
+					if(username.value.length == 0){
+						plus.ui.toast("用户名不能为空");
+						return
+					}
+					if(userpassword.value.length == 0){
+						plus.ui.toast("密码不能为空");
+						return
+					}
+					
+					//登陆联网处理之后将页面close
+					ajax_login({
+						pwd:userpassword.value,
+						user_name:username.value
+					});
+					//添加事件接收close事件，并且要判断是否已经登录成功，然后页面close，因为login页面是预先加载的页面
+					//在这里向需要的页面发送消息事件通知已经登录做响应的处理
+					loginWebview.addEventListener('hide',function(){
+						
+						var cartwebview = plus.webview.getWebviewById('./index.html');
+						var minewebview = plus.webview.getWebviewById('./mine.html');
+						var xinyuandanwebview = plus.webview.getWebviewById('./ifrom.html');
+						
+						mui.fire(cartwebview,'loginSuccess',{});
+						mui.fire(minewebview,'loginSuccess',{});
+						mui.fire(xinyuandanwebview,'loginSuccess',{});
+						
+						loginWebview.close();
+					},false);
+					
+				},false);
+				
+				//注册按钮的点击事件
+				signUp.addEventListener('tap',function(){
+					mui.openWindow({
+						url: 'signUp.html',
+						id: 'signUp.html'
+					})
+				},false);
+				//忘记密码的点击事件
+				Password.addEventListener('tap', function() {
+					mui.openWindow({
+						url: '../findPassword/findPassword.html',
+						id: 'findPassword/findPassword.html'
+					})
+				}, false);
+					
+//				document.getElementById("login").addEventListener("tap",function(){
+//		   			mui.openWindow({
+//							id:'personal/personal.html',
+//							url:'../personal/personal.html'
+//						})
+//		   		});
+			})
+			
+			function loginSuccess(data){
+			//将用户信息和username分开存放是有好处的
+			if ('200' == data.code) {
+				var user = {
+					website_name:data.website_name,
+					website_logo:data.website_logo,
+					website_grade:data.website_grade,
+					website_id:data.website_id
+				}
+				//将两个数据存放起来，第一个是退出之后删除，第二个只要登录之后就会记录保存
+				localStorage.setItem('user',JSON.stringify(user));
+				localStorage.setItem('username',data.username);
+				mui.back();
+				mui.toast('登录成功');
+			}
+		}
+		</script>
+	</body>
+
+</html>

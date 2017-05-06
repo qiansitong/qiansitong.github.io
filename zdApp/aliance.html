@@ -1,0 +1,445 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="fonts/iconfont.css" />
+		<script src="js/font.js"></script>
+		<style>
+		
+			body{
+				background:#fff !important;
+				font-family: "微软雅黑";
+			}
+			.mui-content{
+				background:#fff !important
+			}
+    		b{
+    			font-weight:normal;
+    		}
+    		ul li{
+    			list-style:none;
+    		}
+    		ul{
+    			padding:0;
+    			margin:0;
+    		}
+    		
+    	/*顶部选择信息*/
+		.screenInfor{
+			padding:0 0.24rem;
+			height:0.88rem;
+			background:#fafafa;
+			width:100%;
+			font-size:0;
+			border-bottom:1px solid #d6d7dc;
+		}
+		.screenInfor>span{
+			display:inline-block;
+			line-height:0.86rem;
+			overflow:hidden;
+			vertical-align:top;
+		}
+		.screenInfor>p{
+			display:inline-block;
+			line-height:0.86rem;
+			overflow:hidden;
+			margin:0;
+			margin-left:0.08rem;
+		}
+		.screenInfor>p span{
+			vertical-align: middle;
+			height:0.44rem;
+			width:0.58rem;
+			color:#323232;
+			font-size:0.22rem;
+			padding:0.08rem 0.05rem;
+		}
+		.screenInfor>p span:last-child{
+			margin-left:0.12rem;
+		}
+		.selected{
+			font-size:0.24rem;
+			border-radius:0.1rem;
+			background:#0f2646;
+			color:#fafafa !important;
+		}
+		.box{
+			width:1.6rem;
+			height:0.44rem;
+			overflow:hidden;
+			border:1px solid #d6d7dc;
+		}
+		.box-item{
+			height:0.86rem;
+			display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+            display:-ms-flexbox;  /* TWEENER - IE 10 */
+            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+            display:-webkit-flex;  /* NEW - Chrome */
+            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+			flex-flow:column nowrap;
+			justify-content:center;	
+		}
+		.screenInfor .mui-table-view-cell{
+			padding:0;
+		}
+		.screenInfor .mui-table-view-cell a{
+			color:#323232;
+			padding:0;
+			margin:0;
+			height:0.44rem;
+			line-height: 0.44rem;
+		}
+		.screenInfor .mui-table-view-cell.mui-active{
+			background:#fafafa !important;
+		}
+		.screenInfor .selectbox a{
+			width:1.6rem;
+			font-size:0.22rem;
+			margin-right:-0.24rem;
+			padding-left:0.1rem;
+			margin-top:-0.02rem;
+			line-height:0.42rem;
+		}
+		.mui-navigate-right:after, .mui-push-right:after{
+			right:0.08rem;
+		}
+		.screenInfor .mui-table-view-cell>a.mui-active{
+			background:#fafafa !important;
+		}
+		.mui-table-view-cell.mui-collapse.mui-active{
+			margin-top:0 !important;
+		}
+		.selectbox{
+			margin-left:0.16rem;
+		}
+		.sort{
+			color:#323232;
+			font-size:0.28rem;
+			margin-left:0.32rem;
+		}
+		.category{
+			color:#323232;
+			font-size:0.28rem;
+		}
+		.search{
+			width:0.48rem;
+    		height:0.86rem;
+    		line-height:0.86rem;
+			position:absolute;
+			top:0;
+			right:0.24rem;
+			display:block;	
+		}
+		
+    	.collapse-body{
+    		width:100%;
+    		z-index:3;
+    		position:absolute;
+    		background:#fafafa;
+    		left:0;
+    		top:0.88rem;
+    	}
+    	
+    	.collapse-body li{
+    		padding-left:0.24rem;
+    		padding-right:0.24rem;
+    		font-size:0.24rem;
+    		line-height:0.64rem;
+    		border-bottom:1px solid #d6d7dc;
+    		color:#323232;
+    	}
+    	
+    	
+  		/*蒙层*/
+    	.aliance-info-layer{
+    		width:100%;
+    		height:100%;
+    		position:absolute;
+    		background:#fff;
+    		opacity:0.6;
+    		z-index:2;
+    	}
+    	/*下拉选择框选中icon*/
+    	.mui-pull-right.iconfont{
+    		color:#4dbf0d !important;
+    	}
+    	/*搜索框icon*/
+    	
+    	.search.iconfont{
+    		color:#0f2646 !important;
+    		font-size:0.44rem !important;
+    	}
+    	/*中间层主要内容*/
+    	.mui-media a{
+    		margin:0 !important;		
+    	}
+    	.mui-media-body{
+    		padding-left:0.08rem;
+    		height:1.36rem;
+    		
+    	}
+    	.mui-media-body p{
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			font-size:0.26rem;
+			line-height:0.26rem;
+			margin-bottom:0.14rem;
+    	}
+    	.mui-media-body p:last-child{
+    		margin-bottom:0;
+    	}
+    	.aliance-info-content{
+    		padding-bottom:10px;
+    	}
+    	.aliance-info-content .mui-table-view{
+    		margin:0 0.24rem;
+    	}
+    	.aliance-info-content .mui-table-view:before{
+    		height:0 !important;
+    	}
+    	.aliance-info-content .mui-table-view-cell>a:not(.mui-btn){
+    		padding:0;
+    	}
+    	.aliance-info-content .mui-table-view-cell:after{
+    		left:0;
+    	}
+    	.aliance-info-content .mui-table-view-cell{
+    		padding:0.24rem 0;
+    		position:relative;
+    	}
+		.aliance-item img{
+			width:2.58rem;
+			height:1.36rem;
+			border:1px solid #eee;
+		}
+		/*收藏*/
+		.collection{
+			position:absolute;
+			bottom:0;
+			right:0;
+		}
+		.collection span{
+			color:#b4b4b4;
+		}
+		.collection .iconfont{
+			font-size:0.32rem !important;
+		}
+		.collection .collectNum{
+			margin-left:0.05rem;
+			font-size:0.22rem !important;	
+		}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+		     <div class="screenInfor" id="screenInfor">
+				<span class="category">行业分类</span>
+				<span class="selectbox">
+					<div class="box-item">
+						<div class="mui-table-view-cell box mui-collapse">
+				    		<a id="select" class="mui-navigate-right" href="javascript:;">
+				    		    全部行业
+				    		</a>
+		            	</div>
+	            	</div>
+				</span>
+				<span class="sort">排序</span>
+				<p class="conditions"><span class="selected">默认</span><span>人气</span></p>
+				<a id="search" class="iconfont search mui-pull-right" href="javascript:;">&#xe628;</a>
+					<ul id="collapse-body" class="mui-collapse-content collapse-body" style="display:none;">
+				    	  	<li>全部行业<b style="display:block" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				    	  	<li>食品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				   		  	<li>药品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				   		  	<li>护肤品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				   		  	<li>奢侈品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				   		  	<li>服装<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+			    		  	<li>建材<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+			    		  	<li>生活用品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>		    		  	<li>金融理财产品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				    </ul>
+			</div>
+		    <div class="aliance-info-content">
+		    	<div class="aliance-info-layer" id="layer" style="display:none"></div>
+		    	<ul class="mui-table-view" id="aliance">
+		    		<!--<li class="mui-table-view-cell mui-media aliance-item">
+		    			<a href="javascript:;">
+						<img class="mui-pull-left" src="img/index/logo3.png">
+						<div class="mui-media-body">
+							<p class="mui-ellipsis">商家：<b>武汉一品正信科技有限公司</b></p>
+		    				<p class="mui-ellipsis">地址：<b>光谷步行街D区555号</b></p>
+		    				<p class="mui-ellipsis">电话：<b>054-2212345</b></p>
+		    				<p class="collection mui-pull-right"><span class="iconfont">&#xe600;</span><span class="collectNum">3600</span></p>
+						</div>
+					  </a>
+		    		</li>
+		    		<li class="mui-table-view-cell mui-media aliance-item">
+		    			<a href="javascript:;">
+		    				<img class="mui-pull-left" src="img/index/logo3.png"/>
+		    				<div class="mui-media-body">
+		    					<p class="mui-ellipsis">商家：<b>武汉一品正信科技有限公司</b></p>
+		    					<p class="mui-ellipsis">地址：<b>光谷步行街D区555号</b></p>
+		    					<p class="mui-ellipsis">电话：<b>054-2212345</b></p>
+		    					<p class="collection mui-pull-right"><span class="iconfont">&#xe600;</span><span class="collectNum" >3600</span></p>
+		    				</div>
+		    			</a>
+		    		</li>
+		    		<li class="mui-table-view-cell mui-media aliance-item">
+		    			<a href="javascript:;">
+		    				<img class="mui-pull-left" src="img/index/logo3.png"/>
+		    				<div class="mui-media-body">
+		    					<p class="mui-ellipsis">商家：<b>武汉一品正信科技有限公司</b></p>
+		    					<p class="mui-ellipsis">地址：<b>光谷步行街D区555号</b></p>
+		    					<p class="mui-ellipsis">电话：<b>054-2212345</b></p>
+		    					<p class="collection mui-pull-right"><span class="iconfont">&#xe600;</span><span class="collectNum">3600</span></p>
+		    				</div>
+		    			</a>
+		    		</li>
+		    		<li class="mui-table-view-cell mui-media aliance-item">
+		    			<a href="javascript:;">
+		    				<img class="mui-pull-left" src="img/index/logo3.png"/>
+		    				<div class="mui-media-body">
+		    					<p class="mui-ellipsis">商家：<b>武汉一品正信科技有限公司</b></p>
+		    					<p class="mui-ellipsis">地址：<b>光谷步行街D区555号</b></p>
+		    					<p class="mui-ellipsis">电话：<b>054-2212345</b></p>
+		    					<p class="collection mui-pull-right"><span class="iconfont">&#xe600;</span><span class="collectNum">3600</span></p>
+		    				</div>
+		    			</a>
+		    		</li>
+		    		<li class="mui-table-view-cell mui-media aliance-item">
+		    			<a href="">
+		    				<img class="mui-pull-left" src="img/index/logo3.png"/>
+		    				<div class="mui-media-body">
+		    					<p class="mui-ellipsis">商家：<b>武汉一品正信科技有限公司</b></p>
+		    					<p class="mui-ellipsis">地址：<b>光谷步行街D区555号</b></p>
+		    					<p class="mui-ellipsis">电话：<b>054-2212345</b></p>
+		    					<p class="collection mui-pull-right"><span class="iconfont">&#xe600;</span><span>3600</span></p>
+		    				</div>
+		    			</a>
+		    		</li>-->
+		    	</ul>
+		    </div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+		    //初始化页面
+			mui.init();
+		   	mui.plusReady(function(){
+		   		var select = document.getElementById('select');//选择框的获取
+				var layer  = document.getElementById('layer');//蒙层的获取
+				var selectContent = document.getElementById('collapse-body');//选择框下拉部分的获取
+				var searchButton = document.getElementById('search');
+//				searchButton.addEventListener('tap',function(){
+//					mui.openWindow({
+//						url:'search.html',
+//						id:'search'
+//					})
+//				})
+				
+				//唤出行业切换控制面板
+		   		select.addEventListener('tap',function(){
+					if(selectContent.style.display == 'none'){
+						selectContent.style.display = 'block';
+						layer.style.display = 'block';
+					}else{
+						selectContent.style.display = 'none';
+						layer.style.display = 'none';
+					}
+				});	
+				
+				//行业选择
+				mui("#collapse-body").on('tap','li',function(){
+					mui("#collapse-body li b").each(function(){
+						this.style.display = 'none';
+					})
+					var text = this.innerText;
+					select.innerText = text;//选择框内容的改变
+					select.parentNode.classList.remove('mui-active');
+					this.children[0].style.display = 'block';
+					selectContent.style.display = 'none';//行业控制面板的隐藏
+					layer.style.display = 'none';//蒙层隐藏
+					
+				})
+				
+				mui.ajax({
+					url: "./json/data.json",
+					type: "get",
+					async: true,
+					data: {},
+					dataType: "json",
+					timeout: 1000,
+					success: function(data) {
+						var result = data.result;
+						var productList = document.getElementById("aliance");
+						var content = "";
+						for (var i = 0, len = result.length; i < len; i++) {
+							// 将单个商品对象序列化后，存在data-detail属性中，后面传参用
+							var productDetail = JSON.stringify(result[i]);
+							// 第一行采用双引号包裹，是因为对象序列化以后，里面采用的是""，如果data-detail属性外面依旧用""，转义会出问题
+							content +='<li data-detail='+ productDetail +' class="mui-table-view-cell mui-media aliance-item">\
+		    			<a href="javascript:;">\
+		    				<img class="mui-pull-left" src="'+ result[i].Image + '"/>\
+		    				<div class="mui-media-body">\
+		    					<p class="mui-ellipsis">商家：<b>'+result[i].productId+'</b></p>\
+		    					<p class="mui-ellipsis">地址：<b>'+result[i].uaddress+'</b></p>\
+		    					<p class="mui-ellipsis">电话：<b>'+result[i].uphone+'</b></p>\
+		    					<p class="collection mui-pull-right"><span class="iconfont">&#xe67a;</span><span class="collectNum">'+result[i].productPrice+'</span></p>\
+		    				</div>\
+		    			</a>\
+		    		</li>';
+						}
+						productList.innerHTML = content;
+						// 由于是异步执行，所以在html部分拼接完成之后，才能对其进行添加点击事件的操作；
+						Click();
+					},
+					error: function(xhr, type, errorThrown) {
+						plus.nativeUI.toast(errorThrown);
+					}
+				});
+				
+				//商家页面点击跳转
+				function Click(){
+					var details = mui('.aliance-item');
+				mui.each(details,function(i,item){	
+					shopId = item.getAttribute("data-detail");
+					item.addEventListener('tap',function(){
+						mui.openWindow({
+							id:'alianceText',
+							url:'./faith/alianceText.html',
+							extras:{
+								name:shopId
+							}
+						})
+					})
+				})
+				}
+					
+				//排序条件切换
+				var screenInfor = document.getElementById('screenInfor').getElementsByTagName('p')[0];
+				var conditions = screenInfor.getElementsByTagName('span');
+				mui.each(conditions,function(i,item){
+					item.addEventListener('tap',function(){
+						mui.each(conditions,function(i,item){
+						item.classList.remove('selected');
+						})
+					  this.classList.add('selected');
+					})
+				});	
+				
+			//点击搜索图标
+		   document.getElementById("search").addEventListener("tap",function(){
+		   			mui.openWindow({
+							id:'search',
+							url:'search.html'
+						})
+		   });	
+				
+		   		})
+		   	
+		   	
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="fonts/iconfont.css"/>
+		<script src="js/app/common.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			html,body{
+			background: #fff;
+		}
+		html,body,h1,h2,h3,h4,h5,h6{
+			color: #323232;
+		}
+         .iconfont{
+         	color: #fff;
+         }
+         .mui-content{
+         	background: #fff;
+         }
+        header .mui-pull-left {
+        	padding-right: 40px;
+        	/*border: 1px solid #659aea;*/
+        }        
+		header{
+				background: #649be9 !important;
+			}
+		header a{
+			color: #fff;
+			font-size: 0.44rem;
+		}
+		header h1{
+			color: #fff !important;
+			font-weight: bold !important;
+		}
+		nav span{
+			color: #646464;
+		}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+        	<a class="mui-icon mui-pull-left iconfont" style="display: none;">&#xe66e;</a>
+			<h1 class="mui-title">正大溯源云平台</h1>
+			<a class="mui-icon mui-pull-right iconfont" onclick="clicked('./code/barcode_scan.html',true,true);" style="display: none;">&#xe67b;</a>
+		</header>	
+
+	</body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">			
+			// mui初始化
+			mui.init();
+			//二维码扫描数据返回开始
+			function scaned(type, result) {
+				mui.openWindow({
+					url:'./code/code.html#&code='+result ,
+					id: 'scan',
+					styles: {
+						top: '0px',
+						bottom: '0px',
+						bounce: 'vertical'
+					}
+				});
+			}		
+			
+			// 子页参数
+			var Index = 0;
+			var subpages = ['news.html','aliance.html','product-center.html','mine.html'];
+			var subpage_style = {
+				top: '45px',
+				bottom: '50px',
+				zindex:999
+			};
+			
+			// 创建首页
+			var ind = null;
+			var inding = "index.html";
+			var inding_style = {
+				top:"45px",
+				bottom:"50px",
+				zindex:1
+			}
+			
+			// 底部导航栏
+			var tw = null;
+			var tabbar = "ifrom.html";
+			var tabbar_style = {
+				height:"50px",
+				bottom:"0px",
+				background: "transparent",
+				zindex:9999
+			}
+			
+			// 创建当前子页面，首个选项卡页面显示
+			mui.plusReady(function(){
+				
+				//获取当前webview作为父webview
+				var self = plus.webview.currentWebview();
+				// 创建当前指定子页
+				
+				var subIndex = plus.webview.create(inding, inding, subpage_style);//创建首页
+				
+				subIndex.setBounce({position:{top:"0px"},changeoffset:{top:"0px"}});//设置窗口的回弹效果
+				
+				self.append(subIndex);//添加首页
+				
+				plus.webview.show(subIndex);//显示首页
+				// 创建底部栏
+				tw = plus.webview.create(tabbar,tabbar,tabbar_style);//创建底部导航页面
+				
+				self.append(tw);//添加导航页面
+				
+				//头部左侧返回主页事件
+				mui(".mui-icon")[0].addEventListener("tap",function(){
+					window.location.reload();//重新加载当前页面
+					//alert(plus.webview.currentWebview()) ;
+				})
+				
+				
+			})
+			//当前激活选项
+			
+			var activeTab = inding;	//当前显示子页面为index.html，而不是news.html	
+			
+			// 添加targetTab自定义事件监听
+			window.addEventListener('targetTab',function(event){
+			  	// 获得选项卡点击事件参数
+			  	var targetTitle = event.detail.targetTitle;
+			  	var targetTab = event.detail.targetTab;
+			  	// 如果为当前选项则返回
+			  	
+			  	if (targetTab == activeTab ) return;
+			  	// 更换标题
+			  	if (targetTab == subpages[4]) {
+			  		
+//			  		mui(".mui-title")[0].style.display = 'none';
+			  		mui(".mui-icon")[0].style.display = 'none';
+			  		mui(".mui-icon")[1].style.display = 'none';
+//					mui(".mui-segmented-control")[0].style.display = 'block';
+			  	}else{
+//			  		mui(".mui-title")[0].style.display = 'block';
+//					mui(".mui-segmented-control")[0].style.display = 'none';
+//					mui(".mui-title")[0].innerHTML = targetTitle;
+					mui(".mui-icon")[0].style.display = 'block';
+					mui(".mui-icon")[1].style.display = 'block';
+			  	}	
+				
+				if(!plus.webview.getWebviewById(targetTab)){
+					var sub = plus.webview.create(targetTab, targetTab, subpage_style);//创建底部导航栏指向的四个页面
+					
+					sub.setBounce({position:{top:"0px"},changeoffset:{top:"0px"}});//设置回弹效果
+					
+					plus.webview.currentWebview().append(sub);//添加子页面
+					
+					plus.webview.show(sub,'pop-in',300);
+					// 重新加载tabbar
+					tw.show();
+				}else{
+					//显示目标选项卡
+					plus.webview.show(targetTab);
+					// 重新加载tabbar
+					tw.show();
+				}			
+				//隐藏当前;
+				plus.webview.hide(activeTab);
+				//更改当前活跃的选项卡
+				activeTab = targetTab;
+			});
+			
+			//备份mui.back，mui.back已将窗口关闭逻辑封装的比较完善（预加载及父子窗口），因此最好复用mui.back
+		var old_back = mui.back;
+		mui.back = function() {
+			var btn = ["确定", "取消"];
+			mui.confirm('确认关闭应用吗？', '正大云客户端', btn, function(e) {
+				if (e.index == 0) {
+					plus.runtime.quit();
+				}
+			});
+		}
+			//退出事件
+//			var first=null;
+//			mui.back = function() {
+//				//首次按键，提示‘再按一次退出应用’
+//				if (!first) {
+//					first = new Date().getTime();
+//					mui.toast('再按一次退出应用');
+//					setTimeout(function() {
+//						first = null;
+//					}, 1000);
+//				} else {
+//					if (new Date().getTime() - first < 1000) {
+//						plus.runtime.quit();
+//					}
+//				}
+//			};
+		</script>
+</html>

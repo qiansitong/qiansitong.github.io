@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont.css" />
+		<script src="../js/font.js"></script>
+		<style>
+			em{
+				font-family:"arial";
+				font-style:normal;
+				
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li,p{
+				margin:0;
+				padding:0;
+				color:#2b2b2b !important;
+			}
+			a{
+				text-decoration: none;
+				/*color:#b9b9b9 !important;*/
+			}
+			img{
+				border:none;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#e8e8e8 !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#e8e8e8 !important;
+			}
+			.mui-bar{
+				line-height:0.88rem;
+				height:0.88rem;
+				box-shadow:none;
+			}
+			.mui-title{
+				line-height:0.88rem;
+				height:0.88rem;
+				font-family:"苹方";
+				font-size:0.36rem;
+				font-weight:bold;
+				color:#fafafa;
+				
+			}
+			/*顶部导航*/
+	    	header{
+	    		background:#0f2646 !important
+	    	}
+	    	header.mui-bar{
+	    		padding:0 0.24rem;
+	    	}
+	    	
+	    	.mui-bar .mui-icon{
+				color:#fafafa;
+				padding:0.2rem;
+				font-size:0.48rem;
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top:0.88rem;
+			}
+			
+			/*积分图片*/
+			.img-box{
+				height:4.12rem;
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	            display:-ms-flexbox;  /* TWEENER - IE 10 */
+	            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+	            display:-webkit-flex;  /* NEW - Chrome */
+	            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				flex-flow:column wrap;
+				justify-content:flex-end;
+				align-items:center;
+				overflow: hidden;
+			}
+			.img-radius img{
+				width:2.36rem;
+				height:2.36rem;
+				display:block;
+			}
+			.current-second{
+				color:#646464;
+				font-size:0.36rem;
+				margin-bottom:0.64rem;
+			}
+			.second-list{
+				background:#fff;
+			}
+			
+			.second-list ul li{
+				margin:0 0.24rem;
+				height:0.88rem;
+				line-height:0.88rem;
+				border-bottom:1px solid #d6d7dc;
+				color:#2b2b2b;
+				font-size:0.3rem;
+				overflow:hidden;
+			}
+			.second-list ul li:last-child{
+				border-bottom:0;	
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部-->
+		<header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href=""></a>
+            <h1 class="mui-title">我的积分</h1>
+    	</header>
+    	<div class="mui-content">
+    		<div class="img-box">
+    			<div class="img-radius" id="login"><img id="realImg" src="../img/personal/second.png" alt="" /></div>
+    	    	<div class="current-second">当前积分：<em >56</em></div>
+    		</div>
+    	  	<div class="second-list">
+    	  		<ul>
+    	  			<li>登录次数：
+    	  				<span class="login-num"><em>28</em>次</span>
+    	  				<span class="mui-pull-right"><em>28</em>分</span>
+    	  			</li>
+    	  			<li>分享次数：
+    	  				<span class="share-num"><em>28</em>次</span>
+    	  				<span class="mui-pull-right"><em>28</em>分</span>
+    	  			</li>
+    	  			<li>评论次数：
+    	  				<span class="chat-num"><em>28</em>次</span>
+    	  				<span class="mui-pull-right"><em>28</em>分</span>
+    	  			</li>
+    	  			<li>下载次数：
+    	  				<span class="download-num"><em>28</em>次</span>
+    	  				<span class="mui-pull-right"><em>28</em>分</span>
+    	  			</li>
+    	  		</ul>
+    	  	</div>
+    	</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

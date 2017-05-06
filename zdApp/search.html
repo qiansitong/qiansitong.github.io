@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="fonts/iconfont.css" />
+		<script src="js/font.js"></script>
+		<style>
+			/*重写mui.toast的样式*/
+			.mui-toast-container {
+				padding:0;
+				margin:0;
+			    bottom:50% !important;/*离布局底部的距离*/
+			   	height:1.76rem;
+			    line-height:1.76rem;/*toast中文字的位置*/
+			   	
+			}
+			.mui-toast-message {
+				background:#0f2646;
+			    font-size:0.28rem; 
+			    opacity: 0.48;/*toast中背景色的透明度*/
+			    color: #FFFFFF; /*toast中字体颜色*/
+			    width:4.6rem;	/*toast宽度*/   
+			}
+			body{
+				font-family:"微软雅黑";
+				background:#fff !important;
+			}
+			.mui-content{
+				background:#fff !important;
+			}
+			ul{
+				list-style:none;
+			}
+			ul,li{
+				padding:0;
+				margin:0;
+			}
+			.search-body{
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	            display:-ms-flexbox;  /* TWEENER - IE 10 */
+	            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+	            display:-webkit-flex;  /* NEW - Chrome */
+	            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				align-items:center;
+				height:0.88rem;
+	    		padding:0 0.24rem;
+	    		border-bottom:1px solid #d6d7dc;
+	    	}
+	    	.search.iconfont{
+	    		font-size:0.44rem;
+	    		color:#909090;
+	    	}
+    		.search-body input{
+				line-height:normal;
+    			font-size:0.28rem;
+    			color:#909090;
+    			margin-left:0.24rem;
+    			margin-right:0.24rem;
+    			border:none;
+    			margin-bottom:0;
+    			padding:0;
+    		}
+    		.search-body .button{
+    			
+    			border:none;
+    			font-size:0.28rem;
+    			color:#323232;
+    		
+    		}
+    		.content-body{
+    			padding:0 0.24rem;
+    			margin:0.32rem auto 0;
+    		}
+    		.content-body p{
+    			margin-bottom:0;
+    		}
+    		
+    		.content-body ul li{
+    			position:relative;
+    			display:inline-block;
+    			height:0.6rem;
+    			margin-top:0.16rem;
+    			margin-left:0.08rem;
+    			padding:0 0.56rem;
+    			background:#fafafa;
+    			border-radius:0.04rem;
+    		}
+    		.content-body ul>li>a{
+    			display:inline-block;
+    			line-height:0.6rem;
+    			color:#646464;
+    			font-size:0.3rem;
+    		}
+    		.content-body ul>li>span{
+    			position:absolute;
+    			top:0;
+    			right:0.16rem;
+    			display:block;
+    			line-height:0.6rem;
+    		}
+    		.history{
+    			color:#909090;
+    			font-size:0.28rem;
+    			line-height:0.28rem;
+    		}
+    		.delete.iconfont{
+    			font-size:0.28rem;
+    			color:#909090;
+    			padding:0 0.14rem;
+    			vertical-align: middle;
+    			line-height:0.28rem;
+    		}
+    		.mui-input-row{
+    			-webkit-box-flex:1; /* OLD - iOS 6-, Safari 3.1-6 */
+				-webkit-flex:1; /* Chrome */
+				-ms-flex:1;  /* IE 10 */
+				-moz-box-flex:1;  /* OLD - Firefox 19- */
+				flex:1;  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    		}
+    		.select{
+    			vertical-align: middle;
+    			margin-right:0.08rem;
+    			font-size:0.22rem;
+    			line-height:0.28rem;
+    			color:#909090;
+    		}
+    		.error.iconfont{
+    			font-size:0.24rem;
+    			color:#909090;	
+    		}
+    		.selected{
+    			color:#45b208 !important;
+    		}
+    		.cancle.iconfont{
+    			font-size:0.28rem;
+    			color:#b4b4b4;
+    			margin-right:0.24rem;
+    		}
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+		    <div class="search-body">
+		    	<label for="" class="search iconfont">&#xe628;</label>
+		    	<div class="mui-input-row">
+		    		<input id="search" type="text" class="mui-input-clear" placeholder="请输入关键词"/>
+		    	</div>
+			    <span class='button mui-action-back mui-pull-right'>取消</span>
+		    </div>
+		    <div id="content_body" class="content-body">
+			   	<p><span class="history">历史搜索：</span><span id="icon_delete" class="delete mui-pull-right iconfont" >&#xe662;</span><span id="all_select" class="select mui-pull-right" style="display:none">全选</span></p>
+			    <ul>
+			    	<li><a href="#">原青林公社农业有限公司</a><span style="display:none" class="mui-pull-right error iconfont">&#xe683;</span></li>
+			    	<li><a href="#">袁隆平</a><span style="display:none" class="mui-pull-right error iconfont">&#xe683;</span></li>
+			    	<li><a href="#">蓝瘦,香菇!</a><span style="display:none" class="mui-pull-right error iconfont">&#xe683;</span></li>
+			    </ul>
+			</div>
+			
+				
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+			var all_select = document.getElementById('all_select');//获取全选按钮
+			var icon_delete = document.getElementById('icon_delete');//获取删除按钮
+			
+			icon_delete.addEventListener('tap',function(){
+			 	all_select.style.display = 'block';//全选按钮显示
+				mui('body ul li').each(function(index,item){
+					//针对其中某个元素做相应处理
+					item.children[1].style.display = "block";//删除按钮显示
+					item.addEventListener('tap',function(){						
+						this.children[1].classList.add('selected');//点击添加选择样式
+						icon_delete.addEventListener('tap',function(){//添加点击样式之后，点击删除按钮，删除当前选择对象
+							item.style.display = 'none';
+							mui.toast("正在删除......");
+					    })
+					});
+					//针对其中所有元素做相应处理
+					all_select.addEventListener('tap',function(){
+			 			item.children[1].classList.add('selected');//全选按钮点击添加样式
+			 			icon_delete.addEventListener('tap',function(){//添加点击样式之后，点击删除按钮，删除当前选择对象
+							item.style.display = 'none';
+							mui.toast("正在删除......");
+						})
+			 		})	
+				})
+			})	
+		</script>
+	</body>
+
+</html>

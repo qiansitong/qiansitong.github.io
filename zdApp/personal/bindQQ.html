@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont.css" />
+		<script src="../js/font.js"></script>
+		<style>
+			em{
+				font-style:normal;
+				font-family: arial;
+			}
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li,p{
+				margin:0;
+				padding:0;
+				color:#2b2b2b !important;
+			}
+			a{
+				text-decoration: none;
+				/*color:#b9b9b9 !important;*/
+			}
+			img{
+				border:none;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#f4f4f4 !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#f4f4f4 !important;
+			}
+			.mui-bar{
+				line-height:0.88rem;
+				height:0.88rem;
+				box-shadow:none;
+			}
+			.mui-title{
+				line-height:0.88rem;
+				height:0.88rem;
+				font-family:"苹方";
+				font-size:0.36rem;
+				font-weight:bold;
+				color:#fafafa;
+				
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top:0.88rem;
+			}
+			/*顶部导航*/
+	    	header{
+	    		background:#0f2646 !important
+	    	}
+	    	header.mui-bar{
+	    		padding:0 0.24rem;
+	    	}
+	    	
+	    	.mui-icon{
+	    		font-size:0.48rem;
+	    		padding:0.2rem;
+				color:#fafafa;
+			}
+			.edit{
+				color:#fafafa;
+				font-size:0.3rem;
+				
+			}
+			.complain{
+				color:#fafafa;
+				font-size:0.3rem;
+				
+			}
+			.bind-box{
+				margin-top:0.24rem;
+				padding:0 0.24rem;
+			}
+			.input-row{
+				height:0.88rem;
+				line-height:0.88rem;
+				
+			}
+			.input-row input{
+				vertical-align:bottom;
+				border-top:0;
+				border-left:0;
+				border-right:0;
+				border-bottom:1px solid #ec4b1f;
+				background:#f4f4f4;
+				font-size:0.3rem;
+				height:0.38rem;
+				color:#b4b4b4;
+				padding:0 0 0.08rem 0.08rem;
+				margin:0;
+				border-radius:0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部-->
+		<header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href=""></a>
+            <h1 class="mui-title">绑定QQ号</h1>
+            <a class="complain mui-pull-right" href="">完成</a>
+    	</header>
+    	<div class="mui-content">
+    		<div class="bind-box">
+	    		<div class="input-row">
+	    			<input type="text" placeholder="QQ号" />
+	    		</div>
+	    		<div class="input-row">
+	    			<input type="text" placeholder="QQ密码"/>
+	    		</div>
+	    		
+    		</div>
+    	</div>
+    	
+    	
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

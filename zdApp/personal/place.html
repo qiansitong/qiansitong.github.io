@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont.css" />
+		<script src="../js/font.js"></script>
+		<style>
+			em{
+				font-style:normal;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li,p{
+				margin:0;
+				padding:0;
+				color:#2b2b2b !important;
+			}
+			a{
+				text-decoration: none;
+				/*color:#b9b9b9 !important;*/
+			}
+			img{
+				border:none;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#e8e8e8 !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#e8e8e8 !important;
+			}
+			.mui-bar{
+				line-height:0.88rem;
+				height:0.88rem;
+				box-shadow:none;
+			}
+			.mui-title{
+				line-height:0.88rem;
+				height:0.88rem;
+				font-family:"苹方";
+				font-size:0.36rem;
+				font-weight:bold;
+				color:#fafafa;
+				
+			}
+			/*顶部导航*/
+	    	header{
+	    		background:#0f2646 !important
+	    	}
+	    	header.mui-bar{
+	    		padding:0 0.24rem;
+	    	}
+	    	
+	    	.mui-bar .mui-icon{
+				color:#fafafa;
+				padding:0.2rem;
+				font-size:0.48rem;
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top:0.88rem;
+			}
+			/*中间盒子*/
+			
+			.location-center>p{
+				margin-top:0.32rem;
+				padding:0 0.24rem;
+				color:#646464 !important;
+				font-size:0.28rem;
+				line-height:0.28rem;
+				
+			}
+			#location{
+				vertical-align: middle;
+				overflow: hidden;
+			}
+			.geolocation{
+				padding:0 0.24rem;
+				height:0.88rem;
+				line-height:0.88rem;
+				background:#fff;
+				margin-top:0.16rem;
+				overflow: hidden;
+				font-size:0;
+			}
+			.geolocation span{
+				vertical-align: middle;
+				display:inline-block;
+				margin-right:0.16rem;
+			}
+			.geolocation em{
+				vertical-align:middle;
+				display:inline-block;
+				height:0.88rem;
+				line-height:0.88rem;
+				font-size:0.3rem;
+				color:#2b2b2b;
+			}
+			.address{
+				font-size:0.3rem;
+				color:#2b2b2b;
+			}
+			#location em:first-of-type{
+				margin-right:0.32rem;
+			}
+			#location em:last-child{
+				margin-left:0.1rem;
+			}
+			.location.iconfont{
+				font-size:0.44rem;
+				color:#0f2646;
+			}
+			.loading.iconfont{
+				font-size:0.44rem;
+				color:#0f2646;
+			}
+			.selected{
+				margin-top:0.16rem;
+				padding:0 0.24rem;
+				height:0.88rem;
+				line-height:0.88rem;
+				background:#fff;
+			}
+			.selected-location{
+				font-size:0.3rem;
+				color:#646464;
+			}
+			.location-list{
+				margin-top:0.32rem;
+				background:#fff;
+			}
+			.location-list ul li{
+				margin:0 0.24rem;
+				border-bottom:1px solid #d6d7dc;
+				height:0.88rem;
+				line-height:0.88rem;
+				font-size:0.3rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部-->
+		<header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href=""></a>
+            <h1 class="mui-title">选择地区</h1>
+    	</header>
+    	<div class="mui-content">
+			<div class="location-center">
+				<p>当前位置</p>
+				<div class="geolocation">
+					<div id="location" style="display:block">
+						<span class="location iconfont">&#xe689;</span>
+						<em class="address">中国</em><em class="address">湖北</em><em class="address">武汉</em>
+					</div>
+					<div id="loading-location" style="display:none">
+						<span class="loading iconfont">&#xe670;</span>
+						<em>正在定位</em>
+					</div>
+				</div>
+				<p>全部地区</p>
+				<div class="selected">
+					<em class="address">中国</em>
+					<span class="selected-location mui-pull-right">
+						已选地区
+					</span>
+				</div>
+				
+				<div class="location-list">
+					<ul>
+						<li>安道尔</li>
+						<li>安道尔</li>
+						<li>安道尔</li>
+						<li>安道尔</li>
+						<li>安道尔</li>
+						<li>安道尔</li>
+						<li>安道尔</li>
+						<li>安道尔</li>
+						<li>安道尔</li>
+						<li>安道尔</li>
+						<li>安道尔</li>
+						<li>安道尔</li>
+					</ul>
+				</div>
+			</div>
+    	</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

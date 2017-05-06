@@ -1,0 +1,637 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="fonts/iconfont.css" />
+		<script src="js/font.js"></script>
+		<style>
+		.mui-content{
+			padding-bottom: 20px;
+		}
+		em{
+				font-family:arial;
+				font-style:normal;
+		}
+		.num{
+				font-family:arial;
+				font-style:normal;
+			}
+		ul{
+			padding:0 !important;
+			margin:0;
+		}
+		body{
+				background:#fff !important;
+				font-family: "微软雅黑";
+		}
+			.mui-content{
+				background:#fff !important
+			}
+    		b{
+    			font-weight:normal;
+    		}
+    		ul li{
+    			list-style:none;
+    		}
+		/*顶部选择信息*/
+		.screenInfor{
+			padding:0 0.24rem;
+			height:0.88rem;
+			background:#fafafa;
+			width:100%;
+			font-size:0;
+			border-bottom:1px solid #d6d7dc;
+		}
+		.screenInfor>span{
+			display:inline-block;
+			line-height:0.86rem;
+			overflow:hidden;
+			vertical-align:top;
+		}
+		.screenInfor>p{
+			
+			display:inline-block;
+			line-height:0.86rem;
+			overflow:hidden;
+			margin:0;
+			margin-left:0.08rem;
+		}
+		.screenInfor>p span{
+			vertical-align: middle;
+			height:0.44rem;
+			width:0.58rem;
+			color:#323232;
+			font-size:0.22rem;
+			padding:0.08rem 0.05rem;
+		}
+		.screenInfor>p span+span{
+			margin-left:0.12rem;
+		}
+		.selected{
+			font-size:0.24rem;
+			border-radius:0.1rem;
+			background:#0f2646;
+			color:#fafafa !important;
+		}
+		/*箭头*/
+		.price img{
+    		vertical-align: middle;
+    		width:0.18rem;	
+    	}
+		.box{
+			width:1.6rem;
+			height:0.44rem;
+			overflow:hidden;
+			border:1px solid #d6d7dc;
+		
+		}
+		.screenInfor .mui-table-view-cell{
+			padding:0;
+		}
+		.screenInfor .mui-table-view-cell a{
+			padding:0;
+			margin:0;
+			height:0.44rem;
+			line-height: 0.44rem;
+		}
+		.screenInfor .mui-table-view-cell.mui-active{
+			background:#fafafa !important;
+		}
+		.screenInfor .selectbox a{
+			width:1.6rem;
+			padding-left:0.1rem;
+			font-size:0.22rem;
+			line-height:0.42rem;
+			margin-right:-0.24rem;
+			margin-top:-0.02rem;
+			color:#323232;
+		}
+		.mui-navigate-right:after, .mui-push-right:after{
+			right:0.08rem;
+		}
+		.screenInfor .mui-table-view-cell>a.mui-active{
+			background:#fafafa !important;
+		}
+		.mui-table-view-cell.mui-collapse.mui-active{
+			margin-top:0 !important;
+		}
+		.selectbox{
+			margin-left:0.16rem;
+		}
+		.box-item{
+			height:0.86rem;
+			display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	        display:-ms-flexbox;  /* TWEENER - IE 10 */
+            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+            display:-webkit-flex;  /* NEW - Chrome */
+            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+			flex-flow:column nowrap;
+			justify-content:center;	
+		}
+		.sort{
+			color:#323232;
+			font-size:0.28rem;
+			margin-left:0.32rem;
+		}
+		.category{
+			color:#323232;
+			font-size:0.28rem;
+		}
+		.search{
+			width:0.48rem;
+    		height:0.86rem;
+    		line-height:0.86rem;
+			position:absolute;
+			top:0;
+			right:0.24rem;
+			display:block;	
+		}
+		
+    	.collapse-body{
+    		width:100%;
+    		z-index:3;
+    		position:absolute;
+    		background:#fafafa;
+    		left:0;
+    		top:0.88rem;
+    	}
+    	.collapse-body li{
+    		padding-left:0.24rem;
+    		padding-right:0.24rem;
+    		font-size:0.24rem;
+    		line-height:0.64rem;
+    		border-bottom:1px solid #d6d7dc;
+    		color:#323232;
+    	}
+    	
+    	
+    	/*下拉选择框选中icon*/
+    	.mui-pull-right.iconfont{
+    		color:#4dbf0d !important;
+    	}
+    	/*搜索框icon*/
+    	.search.iconfont{
+    		color:#0f2646 !important;
+    		font-size:0.44rem  !important;
+    	}
+    	
+    	/*产品中心内容*/
+    	.product-center-item{
+		    overflow: hidden;
+		    padding:0 0.24rem;
+		 }
+		 .product-center-item ul li:nth-of-type(2n){
+		 	margin-left:0.32rem !important; 
+		 }
+		 .mui-table-view:after,.mui-table-view:before{
+		  	height:0;
+		  }
+		 .product-center-item .mui-table-view.mui-grid-view .mui-table-view-cell{
+		 	padding:0;
+		 	margin:0.32rem 0 0;
+		 	overflow:hidden;
+		 	width:3.35rem !important;
+		 }
+		
+		 .product-center-item .mui-table-view-cell>a:not(.mui-btn){
+		 	padding:0 !important;
+		 	margin:0 !important;
+		 	overflow:hidden;
+		 }
+		 .product-center-item .mui-table-view .mui-media-object{
+		 	max-width:3.35rem !important;
+		 }
+		 .product-center-item img{
+		 	border:1px solid  #d6d7dc;
+		 	width:100%;
+		 	height:2.07rem !important; 	
+		 }
+		 .sale-info{
+		 	vertical-align:bottom;
+		 	font-size:0;
+		 	height:0.36rem;
+		 	line-height:0.36rem;
+		 	margin-top:0.16rem;
+		 }
+		 .sale-info span{
+		 	display:inline-block;
+		 }
+		 .product-name{
+		 	color:#2b2b2b;
+		 	font-size:0.28rem;
+		 	text-align:center;
+		 	line-height:0.36rem;
+		 	
+		 }
+		 .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
+		 	margin-top:0.16rem;
+		 	height:0.36rem;
+		 }
+		 .sale-info div{
+		 	display:inline-block;
+		 }
+		  .sale-price{
+		  	float:left;
+		  	font-size:0;
+		  	vertical-align: bottom;
+		  }
+		 .sale-price span:first-child{
+		 	color:#f60f0f;
+		 	font-size:0.24rem;
+		 	vertical-align:bottom;
+		 	height:0.36rem;
+		 	line-height:0.36rem;
+		 }
+		 .sale-price span:last-child{
+		 	color:#f60f0f;
+		 	font-size:0.34rem;
+		 	vertical-align:bottom;
+		 	height:0.36rem;
+		 	line-height:0.36rem;
+		 }
+		 .sale-data{
+		 	padding-left:5px;
+		 	font-size:0;
+		 	float:left;
+		 	
+		 }
+		 .sale-data span{
+		 	color:#909090;
+		 	font-size:0.2rem;
+		 	vertical-align:bottom;
+		 	
+		 	height:0.36rem;
+		 	line-height:0.36rem;
+		 }
+		 .sale-address{
+		 	float:right;
+		 	padding-right:0.12rem;
+		 }
+		 .sale-address span{
+		 	color:#909090;
+		 	font-size:0.2rem;
+		 	vertical-align:bottom;	
+		 	line-height:inherit;
+		 }
+		 .selected{
+		 	padding:4px;
+		 	background:#0f2646;
+		 	border-radius:4px;
+		 }
+		 
+		 /*蒙层*/
+    	.product-center-layer{
+    		width:100%;
+    		height:100%;
+    		position:absolute;
+    		background:#fff;
+    		opacity:0.6;
+    		z-index:2;
+    	}
+    	
+		</style>
+	</head>
+
+	<body>
+		<!--主体部分-->
+    	<div class="mui-content">
+    		<!--头部部分功能-->
+    	    <div class="screenInfor" id="screenInfor">
+				<span class="category">行业分类</span>
+				<span class="selectbox">
+					<div class="box-item">
+						<div class="mui-table-view-cell box mui-collapse">
+			    		<a id="select" class="mui-navigate-right" href="javascript:;">
+			    		    全部行业
+			    		</a>
+	            	</div>	
+					</div>
+					
+				</span>
+				<span class="sort">排序</span>
+				<p class="conditions"><span class="selected">默认</span><span>销量</span><span id="price" class="price">价格
+					<img src="img/arrow.png" alt="" /></span></p>
+				<a id="search" class="iconfont search mui-pull-right" href="javascript:;">&#xe628;</a>
+					<ul id="collapse-body" class="mui-collapse-content collapse-body" style="display:none;">
+				    	  	<li>全部行业<b style="display:block" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				    	  	<li>食品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				   		  	<li>药品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				   		  	<li>护肤品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				   		  	<li>奢侈品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				   		  	<li>服装<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+			    		  	<li>建材<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+			    		  	<li>生活用品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+			    		  	<li>金融理财产品<b style="display:none" class="mui-pull-right iconfont">&#xe66a;</b></li>
+				    </ul>
+			</div>
+		    <!--产品展示-->
+		    <div class="product-center-item">
+		    	<div id="layer" class="product-center-layer" style="display:none"></div>
+			    <ul id="layerUl" class="mui-table-view mui-grid-view">
+			        <!--<li class="mui-table-view-cell mui-media ">
+			            <a href="#">
+			                <img class="mui-media-object" src="img/product1.jpg">
+			                <div class="mui-media-body">
+			                	<p class="product-name">石门山涧黄淮两瓶装蜂蜜</p>
+			                </div>
+			                <div class="sale-info">
+			                	<div class="sale-price">
+			                		<span>￥</span>
+			                		<span class="num">72.90</span>
+			                	</div>
+			                	<div class="sale-data">
+			                		<span>月销:</span>
+			                		<span><em>1990</em>件</span>
+			                	</div>
+			                	<div class="sale-address">
+			                		<span>重庆</span>
+			                	</div>
+			                </div>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell mui-media">
+			            <a href="#">
+			                <img class="mui-media-object" src="img/product2.jpg">
+			                <div class="mui-media-body"><p class="product-name">石门山涧黄淮两瓶装蜂蜜</p></div>
+			            	<div class="sale-info">
+			                	<div class="sale-price">
+			                		<span>￥</span>
+			                		<span class="num">72.90</span>
+			                	</div>
+			                	<div class="sale-data">
+			                		<span>月销:</span>
+			                		<span><em>1990</em>件</span>
+			                	</div>
+			                	<div class="sale-address">
+			                		<span>重庆</span>
+			                	</div>
+			               </div>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+			            <a href="#"><img class="mui-media-object" src="img/product2.jpg">
+			                <div class="mui-media-body"><p class="product-name">石门山涧黄淮两瓶装蜂蜜</p></div>
+			            	<div class="sale-info">
+			                	<div class="sale-price">
+			                		<span>￥</span>
+			                		<span class="num">72.90</span>
+			                	</div>
+			                	<div class="sale-data">
+			                		<span>月销:</span>
+			                		<span><em>1990</em>件</span>
+			                	</div>
+			                	<div class="sale-address">
+			                		<span>重庆</span>
+			                	</div>
+			              </div>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+			            <a href="#">
+			                <img class="mui-media-object" src="img/product1.jpg">
+			                <div class="mui-media-body"><p class="product-name">石门山涧黄淮两瓶装蜂蜜</p></div>
+			                <div class="sale-info">
+			                	<div class="sale-price">
+			                		<span>￥</span>
+			                		<span class="num">72.90</span>
+			                	</div>
+			                	<div class="sale-data">
+			                		<span>月销:</span>
+			                		<span><em>1990</em>件</span>
+			                	</div>
+			                	<div class="sale-address">
+			                		<span>重庆</span>
+			                	</div>
+			                </div>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+			            <a href="#">
+			                <img class="mui-media-object" src="img/product1.jpg">
+			                <div class="mui-media-body"><p class="product-name">石门山涧黄淮两瓶装蜂蜜</p></div>
+			                <div class="sale-info">
+			                	<div class="sale-price">
+			                		<span>￥</span>
+			                		<span class="num">72.90</span>
+			                	</div>
+			                	<div class="sale-data">
+			                		<span>月销:</span>
+			                		<span><em>1990</em>件</span>
+			                	</div>
+			                	<div class="sale-address">
+			                		<span>重庆</span>
+			                	</div>
+			                </div>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+			            <a href="#">
+			                <img class="mui-media-object" src="img/product2.jpg">
+			                <div class="mui-media-body"><p class="product-name">石门山涧黄淮两瓶装蜂蜜</p></div>
+			            	<div class="sale-info">
+			                	<div class="sale-price">
+			                		<span>￥</span>
+			                		<span class="num">72.90</span>
+			                	</div>
+			                	<div class="sale-data">
+			                		<span>月销:</span>
+			                		<span><em>1990</em>件</span>
+			                	</div>
+			                	<div class="sale-address">
+			                		<span>重庆</span>
+			                	</div>
+			                </div>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+			            <a href="#"><img class="mui-media-object" src="img/product2.jpg">
+			                <div class="mui-media-body"><p class="product-name">石门山涧黄淮两瓶装蜂蜜</p></div>
+			            	<div class="sale-info">
+			                	<div class="sale-price">
+			                		<span>￥</span>
+			                		<span class="num">72.90</span>
+			                	</div>
+			                	<div class="sale-data">
+			                		<span>月销:</span>
+			                		<span><em>1990</em>件</span>
+			                	</div>
+			                	<div class="sale-address">
+			                		<span>重庆</span>
+			                	</div>
+			                </div>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+			            <a href="#">
+			                <img class="mui-media-object" src="img/product1.jpg">
+			                <div class="mui-media-body"><p class="product-name">石门山涧黄淮两瓶装蜂蜜</p></div>
+			            	<div class="sale-info">
+			                	<div class="sale-price">
+			                		<span>￥</span>
+			                		<span class="num">72.90</span>
+			                	</div>
+			                	<div class="sale-data">
+			                		<span>月销:</span>
+			                		<span><em>1990</em>件</span>
+			                	</div>
+			                	<div class="sale-address">
+			                		<span>重庆</span>
+			                	</div>
+			                </div>
+			            </a>
+			        </li>-->
+			    </ul>  
+		  	</div>
+    	</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			 	
+		  	
+		   		EventHanlder();
+		   	function EventHanlder(){
+		   		var select = document.getElementById('select');//选择框的获取
+				var layer  = document.getElementById('layer');//蒙层的获取
+				var selectContent = document.getElementById('collapse-body');//选择框下拉部分的获取
+				var searchButton = document.getElementById('search');
+//				searchButton.addEventListener('tap',function(){
+//					mui.openWindow({
+//						url:'search.html',
+//						id:'search'
+//					})
+//				})
+				
+				
+				//唤出行业切换控制面板
+		   		select.addEventListener('tap',function(){
+					if(selectContent.style.display == 'none'){
+						selectContent.style.display = 'block';
+						layer.style.display = 'block';
+					}else{
+						selectContent.style.display = 'none';
+						layer.style.display = 'none';
+					}
+				});	
+				
+				//行业选择
+				mui("#collapse-body").on('tap','li',function(){
+					mui("#collapse-body li b").each(function(){
+						this.style.display = 'none';
+					})
+					var text = this.innerText;
+					select.innerText = text;//选择框内容的改变
+					select.parentNode.classList.remove('mui-active');
+					this.children[0].style.display = 'block';
+					selectContent.style.display = 'none';//行业控制面板的隐藏
+					layer.style.display = 'none';//蒙层隐藏
+					
+				})
+				
+				
+				
+//				//商家页面点击跳转
+//				var details = mui('.aliance-item');
+//				mui.each(details,function(i,item){
+//					item.addEventListener('tap',function(){
+//						mui.openWindow({
+//							id:'company',
+//							url:'company.html'
+//						})
+//					})
+//				})	
+				
+				//排序条件切换
+				var screenInfor = document.getElementById('screenInfor').getElementsByTagName('p')[0];
+				var conditions = screenInfor.getElementsByTagName('span');
+				var price = document.getElementById('price');
+				mui.each(conditions,function(i,item){
+					item.addEventListener('tap',function(){
+						mui.each(conditions,function(i,item){
+						item.classList.remove('selected');
+						})
+					  	this.classList.add('selected');
+					  	if(price.classList.contains('selected'))
+						{
+							price.children[0].setAttribute('src','img/arrow-active.png');
+						}else{
+							price.children[0].setAttribute('src','img/arrow.png');
+						}
+					})
+					
+					
+				});
+		   	}
+		   	
+		   //点击搜索图标
+		   document.getElementById("search").addEventListener("tap",function(){
+		   			mui.openWindow({
+							id:'search',
+							url:'search.html'
+						})
+		   });
+		   	
+		   //点击li列表
+		  mui(".mui-table-view").on("tap","li",function(){
+					shopId = this.getAttribute("data-detail");
+					mui.openWindow({
+							id:'shop',
+							url:'./examples/shop.html',
+							extras:{
+								point:shopId
+							}
+						})
+				});
+				
+				
+				mui.plusReady(function(){
+					
+					//页面数据加载
+					mui.ajax('./json/productCenter.json',{
+						data:{},
+						dataType:'json',//服务器返回json格式数据
+						type:'get',//HTTP请求类型
+						timeout:10000,//超时时间设置为10秒；
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							//服务器返回响应，根据响应结果，分析是否登录成功；
+							var result = data.result;
+							var cont = "";
+							for (var i=0;i<result.length;i++) {
+								cont +='<li class="mui-table-view-cell mui-media mui-col-xs-6">\
+							            <a href="#">\
+							                <img class="mui-media-object" src="'+ result[i].pImage +'">\
+							                <div class="mui-media-body"><p class="product-name">'+result[i].productName+'</p></div>\
+							            	<div class="sale-info">\
+							                	<div class="sale-price">\
+							                		<span>￥</span>\
+							                		<span class="num">'+result[i].productPrice+'</span>\
+							                	</div>\
+							                	<div class="sale-data">s\
+							                		<span>月销:</span>\
+							                		<span><em>'+result[i].pastWhen+'</em></span>\
+							                	</div>\
+							                	<div class="sale-address">\
+							                		<span>'+result[i].Plocation+'</span>\
+							                	</div>\
+							                </div>\
+							            </a>\
+							        </li>';
+							}
+							var layerUl = document.getElementById("layerUl");
+							layerUl.innerHTML = cont ;
+						},
+						error:function(xhr,type,errorThrown){
+							//异常处理；
+							console.log(type);
+						}
+					});
+					
+				})
+		
+		</script>
+	</body>
+
+</html>

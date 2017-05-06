@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont.css" />
+		<script src="../js/font.js"></script>
+		<style>
+			em{
+				font-style:normal;
+				font-family:arial;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li,p{
+				margin:0;
+				padding:0;
+				color:#2b2b2b !important;
+			}
+			a{
+				text-decoration: none;
+				/*color:#b9b9b9 !important;*/
+			}
+			img{
+				border:none;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#f4f4f4 !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#f4f4f4 !important;
+			}
+			.mui-bar{
+				line-height:0.88rem;
+				height:0.88rem;
+				box-shadow:none;
+			}
+			.mui-title{
+				line-height:0.88rem;
+				height:0.88rem;
+				font-family:"苹方";
+				font-size:0.36rem;
+				font-weight:bold;
+				color:#fafafa;
+				
+			}
+			/*顶部导航*/
+	    	header{
+	    		background:#0f2646 !important
+	    	}
+	    	header.mui-bar{
+	    		padding:0 0.24rem;
+	    	}
+	    	
+	    	.mui-bar .mui-icon{
+				color:#fafafa;
+				padding:0.2rem;
+				font-size:0.48rem;
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top:0.88rem;
+			}
+			/*资料中心*/
+			.data-center .user-img{
+				height:1.04rem;
+				line-height:1.04rem;
+				vertical-align: middle;
+				padding:0 !important;
+				
+			}
+			.mui-table-view:first-child{
+				margin-top:0.32rem;
+			}
+			.mui-table-view{
+				margin-top:0.24rem;
+				padding:0;
+			}
+			.mui-table-view:after,.mui-table-view:before{
+				height:0;
+			}
+			.mui-table-view-cell{
+				height:0.88rem;
+				line-height:0.88rem;
+				font-size:0.3rem;
+				color:#909090 !important;
+				padding:0;
+				margin:0 0.24rem;
+			}
+			.mui-table-view-cell:after{
+				left:0;
+			}
+			.mui-table-view-cell>a{
+				padding:0 !important;
+				margin:0 !important
+			}
+			#user-img{
+				display: table-cell; 
+				display:block;
+				vertical-align:middle; 
+				height:1.04rem;
+				line-height:1.04rem;
+			}
+			#user-img img{
+				width:0.88rem;
+				height:0.88rem;
+				margin:0.08rem 0;
+			}
+			.specia{
+				padding:0 0.24rem;
+				margin-top:0.24rem;
+				background:#fff;
+				overflow: hidden;
+			}
+			.specia-edit{
+				font-size:0.3rem;
+				margin-top:0.24rem;
+				color:#909090 !important
+			}
+			.specia-content{
+				margin:0.24rem 0;
+				font-size:0.24rem;
+				color:#323232 !important;
+			}
+			.detail span{
+				color:#323232 !important;
+				font-size:0.3rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部-->
+		<header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href=""></a>
+            <h1 class="mui-title">个人资料</h1>
+    	</header>
+    	<div class="mui-content">
+    		<div class="data-center">
+	    		<ul class="mui-table-view">
+					<li class="mui-table-view-cell user-img">头像<span class="mui-pull-right" id="user-img"><img src="../img/user.png" alt="" /></span></li>
+				</ul>
+				<ul class="mui-table-view detail">
+					<li class="mui-table-view-cell">用户名<span class="mui-pull-right"><em>mouseshit</em></span></li>
+					<li class="mui-table-view-cell">昵称<span class="mui-pull-right">清云</span></li>
+					<li class="mui-table-view-cell">性别<span class="mui-pull-right">女</span></li>
+					<li class="mui-table-view-cell">地区<span class="mui-pull-right">湖北武汉</span></li>
+					<li class="mui-table-view-cell">详细地址<span class="mui-pull-right">洪山区光谷总部国际</span></li>
+				</ul>
+				<div class="specia">
+					<div class="specia-edit">
+						个性签名<span class="edit iconfont"></span>
+					</div>
+					<p class="specia-content">我的云为我编织了一串绕行的雨，我的云他紧紧围绕着我的身体，揣测着我的呼吸....</p>
+				</div>
+			</div>
+    	</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

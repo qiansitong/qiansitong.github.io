@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css"/>
+		<script src="../js/font.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		.iconfont{
+			font-size: 0.35rem;
+			color: #0F2646;
+		}
+		header{
+				background: #649be9 !important;
+			}
+			header h1,a{
+				color: #fff !important;
+			}
+		.aliMain1 li a img{
+			max-width: 0.90rem !important;
+			height: 0.90rem !important;
+			border: 1px solid #e1e1e1;
+			padding: 4px;
+		}
+		.aliMain1 li a span{
+			line-height: 0.9rem;
+			font-size: 0.3rem;
+			color: #0F2646;
+		}
+		.aliMainCon{
+			margin-top: 0.32rem;
+		}
+		.aliMainCon li{
+            position: relative;
+            color: #909090;
+		}
+		.aliMainCon span{
+			position: absolute;
+			left:2.1rem;
+			color: #323232;
+		}
+		.aliMainCon span.aliColor{
+			color:#102746 ;
+		}
+		.aliMainCon b{
+			position: absolute;
+			right: 0.24rem;
+			font-weight: 400;
+		}
+		.aliMain3,.aliMain4,.aliMain5{
+			margin-top: 0.32rem;
+		}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">企业介绍</h1>
+		</header>
+		<div class="mui-content">
+			<div id="aliMain">			
+		    <ul class="mui-table-view aliMain1">
+		        <li class="mui-table-view-cell mui-media">
+		            <a href="javascript:;">
+		                <img class="mui-media-object mui-pull-left" src="../img/index/logo.png">
+		                <div class="mui-media-body">
+		                    <span class="mui-ellipsis">智联科技有限公司</span>
+		                </div>
+		            </a>
+		        </li>
+		    </ul>
+		    <div class="aliMainCon">   	
+		    <ul class="mui-table-view aliMain2">
+		        <li class="mui-table-view-cell">
+					    掌柜名 <span>原农公社专营店</span>
+					 <b><i class="iconfont">&#xe600; </i>1129万</b>
+				</li>
+				<li class="mui-table-view-cell">
+					    所在地<span>湖北省武汉市</span>
+				</li>
+				<li class="mui-table-view-cell">
+					 服务电话<span>027-8208820</span>
+				</li>
+		    </ul>
+		    <ul class="mui-table-view aliMain3">
+		        <li class="mui-table-view-cell">
+					   好评率 <span class="aliColor">95%</span>
+				</li>
+				<li class="mui-table-view-cell">
+					    描述相符<span class="aliColor">4.8高于同行29.15%</span>
+				</li>
+				<li class="mui-table-view-cell">
+					 服务态度<span class="aliColor">4.72低于同行0.52%</span>
+				</li>
+				<li class="mui-table-view-cell">
+					 物流服务<span>4.7低于同行0.22%</span>
+				</li>
+		    </ul>
+		    </div>
+		     <ul class="mui-table-view aliMain4">
+		        <li class="mui-table-view-cell">
+					   工商执照 
+				</li>
+		    </ul>
+		     <ul class="mui-table-view aliMain5">
+		        <li class="mui-table-view-cell">
+					   店铺名称
+				</li>
+		    </ul>
+		    </div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript">
+			mui.init();
+		//获取父级aliance页面数据
+		mui.plusReady(function() {
+			var self = plus.webview.currentWebview();
+			var price=JSON.parse(self.name);
+			console.log(self.name);
+			document.getElementById("aliMain").innerHTML = '<ul class="mui-table-view aliMain1">\
+		        <li class="mui-table-view-cell mui-media">\
+		            <a href="javascript:;">\
+		                <img class="mui-media-object mui-pull-left" src="'+price.unlogo+'">\
+		                <div class="mui-media-body">\
+		                    <span class="mui-ellipsis">'+ price.productId +'</span>\
+		                </div>\
+		            </a>\
+		        </li></ul>\
+<div class="aliMainCon"><ul class="mui-table-view aliMain2">\
+		        <li class="mui-table-view-cell">\
+					    掌柜名 <span>'+price.shopkeeper+'</span>\
+					 <b><i class="iconfont">&#xe600; </i>'+price.productPrice+'万</b>\
+				</li>\
+				<li class="mui-table-view-cell">\
+					    所在地<span>'+price.uaddress+'</span>\
+				</li>\
+				<li class="mui-table-view-cell">\
+					 服务电话<span>'+price.uphone+'</span>\
+				</li>\
+		    </ul>\
+		    <ul class="mui-table-view aliMain3">\
+		        <li class="mui-table-view-cell">\
+					   好评率 <span class="aliColor">'+price.praise+'</span>\
+				</li>\
+				<li class="mui-table-view-cell">\
+					    描述相符<span class="aliColor">'+price.describe+'</span>\
+				</li>\
+				<li class="mui-table-view-cell">\
+					 服务态度<span class="aliColor">'+price.service+'</span>\
+				</li>\
+				<li class="mui-table-view-cell">\
+					 物流服务<span>'+price.logistics+'</span>\
+				</li>\
+		    </ul>\
+</div><ul class="mui-table-view aliMain4">\
+		        <li class="mui-table-view-cell">\
+					   工商执照 \
+				</li>\
+		    </ul>\
+		     <ul class="mui-table-view aliMain5">\
+		        <li class="mui-table-view-cell">\
+					   店铺名称\
+				</li>\
+		    </ul>';
+		    
+		    //等加载完启用跳转事件
+		    onOpen(price);
+		});
+		
+		
+		//打开工商执照,店铺名称,企业详细页面并传值
+		function onOpen(price){
+			//点击logo
+			document.getElementsByClassName("aliMain1")[0].addEventListener("tap",function(){
+				mui.openWindow({
+							id:'alianceArticle',
+							url:'alianceArticle.html',
+							extras:{
+								unimg:price.unimg,
+								untext:price.untext,
+								uptext:price.uptext
+							}
+						})
+			});
+			//点击工商执照
+			document.getElementsByClassName("aliMain4")[0].addEventListener("tap",function(){
+				mui.openWindow({
+							id:'license_spec',
+							url:'license_spec.html',
+							extras:{
+								uplincense:price.license,
+								shopkeeper:price.shopkeeper
+							}
+						})
+			});
+			//点击店铺名称
+			document.getElementsByClassName("aliMain5")[0].addEventListener("tap",function(){
+				mui.openWindow({
+							id:'card',
+							url:'card.html',
+							extras:{
+								uplincense:price.license,
+								shopkeeper:price.shopkeeper
+							}
+						})
+			});
+		}
+	</script>
+</html>

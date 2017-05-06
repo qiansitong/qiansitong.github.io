@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script src="../js/font.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			header{
+				background: #649be9 !important;
+			}
+			header h1,a{
+				color: #fff !important;
+			}
+			.Mtop{
+				margin:0.56rem 0.4rem 0px 0.4rem ;
+			}
+			.Mtop h2{
+				font-size: 0.28rem;
+				text-align: center;
+				margin: 0 0 0.16rem 0;
+			}
+			.Mtop p{
+				font-size: 0.22rem;
+				text-align: center;
+				margin: 0px 0px 0.08rem 0px !important;
+			}
+			.Mtop p span{
+				color: #60a8f5;
+			}
+			img{
+				max-width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">某某某专营店</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="Mtop"></div>   
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript">
+	mui.init();
+	mui.plusReady(function(){
+		var self = plus.webview.currentWebview();
+		document.getElementsByClassName("mui-title")[0].innerText = self.shopkeeper;
+		document.getElementsByClassName("Mtop")[0].innerHTML = '<h2>武汉正大溯源云平台进驻企业执照信息</h2>\
+		    	<p>根据国家工商总局 <span>《网络交易管理办法》</span>要求</p>\
+		    	<p>对网店营业执照信息公示如下</p>\
+		    	<img src="' + self.uplincense + '" alt="营业执照" />';
+	})
+	 
+	</script>
+</html>

@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="shortcut icon" href="http://api.map.baidu.com/favicon.ico">
+    <link href="static/css/track.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/fontawesome/css/font-awesome.min.css" type="text/css">
+    <link href="static/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css">
+    <link href="static/css/pagination.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wWy2A8K94nhntYTYUHS19RXW"></script>
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/js/jquery.pagination.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/js/mousewheel.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/js/baiduTemplate.js"></script>
+    <script type="text/javascript" src="static/js/esl/esl.js"></script>
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <title></title>
+    
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/font.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../fonts/iconfont.css" />
+    <link rel="stylesheet" href="../css/mui.calendar.css">
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <script src="../js/mui.calendar.js">
+      	
+    </script>
+    <style>
+    	b{
+    		font-weight:400 !important;
+       	}
+    	em{
+    		font-style:normal;
+    		font-family:arial;
+    	}
+    	.num{
+    		font-family:arial;
+    	}
+	    *{
+			margin: 0;
+			padding: 0;
+		}
+		ul,li,p{
+			margin:0;
+			padding:0;
+			color:#2b2b2b !important;
+		}
+		a{
+			text-decoration: none;
+			/*color:#b9b9b9 !important;*/
+		}
+		img{
+			border:none;
+		}
+		
+		ul,li{
+			list-style: none;
+		}
+		body{
+			font-family:"微软雅黑" !important;
+			background-color:#FFFFFF !important;
+			color:#2b2b2b !important;
+			line-height:0.42rem;
+		}
+		.mui-content{
+			background-color:#fff !important;
+			
+		}
+		.mui-bar{
+			height:0.88rem;
+			line-height:0.88rem;
+			box-shadow:none;
+		}
+		.mui-title{
+			font-family:"苹方";
+			font-size:0.36rem;
+			font-weight:bold;
+		}
+    	/*顶部导航*/
+    	header{
+    		background:#fff !important
+    	}
+    	header.mui-bar{
+    		padding:0 0.24rem;
+    	}
+    	.mui-bar-nav~.mui-content{
+    		padding-top:0.88rem;
+    	}
+    	.mui-icon.iconfont{
+			color:#323232;
+		}
+    	/*顶部切换样式*/
+    	nav{
+    		height:0.64rem;
+    		line-height:0.64rem;
+    		padding:0 0.24rem;
+    	}
+    	nav a{
+    		
+    		color:#2b2b2b !important;
+    	}
+    	.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar{
+    		background:#0f2646 !important
+    	}
+    	.mui-segmented-control{
+    		border:none;
+   			border-top:1px solid #D6D7DC;
+   			border-bottom:1px solid #D6D7DC;
+   			background:#fafafa;
+   			border-radius:0;
+   		}
+    	.mui-segmented-control .mui-control-item{
+    		line-height:0.64rem;
+    		border-left:none;
+    	}
+    	.mui-segmented-control .mui-control-item.mui-active{
+    		color:#0f2646 !important;
+			border-bottom:0.03rem solid #0f2646;
+			background:#fafafa;
+    	}
+    	
+    		
+    	/*product样式*/
+    	.imgbox{
+    		width:7.02rem;
+    		height:3.76rem;
+    		margin:0.24rem auto 0;
+    		border:1px solid #d6d7dc;
+    	}
+    	.imgbox img{
+    		width:100%;
+    		height:100%;
+    		display:block;
+    	}
+    	.info-center{
+ 			padding:0.32rem 0.24rem;
+ 		}
+ 		.info-item{
+ 			display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+            display:-ms-flexbox;  /* TWEENER - IE 10 */
+            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+            display:-webkit-flex;  /* NEW - Chrome */
+            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+			width:100%;
+			margin: 0 auto;
+			min-height:0.48rem;
+			font-size: 0;
+		}
+
+		.info-item span{
+			flex:1;
+			min-height:24px;
+			line-height:0.48rem;
+			font-size:0.3rem;
+			color:#323232;
+			display: inline-block;
+		}
+		
+		.info-item p{
+			flex:4;
+			line-height:0.48rem;
+			font-size:0.3rem;
+			color:#2b2b2b;
+			display: inline-block;
+		}
+		.info-item .intro-tit{
+			vertical-align:top;
+		}
+		.info-item .intro{
+			font-size:0.24rem;
+			line-height:0.40rem;
+			overflow:hidden;
+		}
+		
+		/*produce页面*/
+		#produce{
+			padding-bottom:0.98rem;
+		}
+		.produce-center{
+			margin:0.32rem 0.24rem;
+		}
+		
+		.produce-img{
+			overflow:hidden;
+		}
+		.produce-img img{
+			width:2.4rem;
+			border:1px solid #d6d7dc;
+		}
+		.produce-img .title{
+			width:100%;
+			background: none;
+			font-size:0.24rem;
+			color:#0F2646 !important;
+			text-align: center;
+		}
+		.produce-detail{
+			margin-left:2.56rem;
+		}
+		.produce-detail p{
+			line-height:0.28rem;
+			margin-bottom:0.1rem;
+			width:100%;
+			display:block;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			overflow:hidden;
+			color:#0F2646 !important;
+			font-size:0.28rem ;
+		} 
+		.produce-detail p>span{
+			color:#0F2646 !important;
+			font-size:0.28rem ;
+		}
+		/*列表的上下边框的隐藏*/
+		.mui-table-view:before{
+			background:#fff !important;	
+		}
+		.mui-table-view:after{
+			background:#fff !important;	
+		}
+		.mui-card{
+			box-shadow: none;
+			margin:0;
+		}
+		.mui-card .button{
+			width:0.73rem;
+			height:0.44rem;
+			line-height:0.44rem;
+			text-align:center;
+			border:1px solid #d6d7dc;
+			font-size:0.22rem !important;
+		}
+		
+		/*生产页面左边的生产线*/
+		.date_content{
+			width:100%;
+			position:absolute;
+			top:0.44rem;
+			left:0;
+			z-index:10;
+			height:5.5rem;
+		}
+		.produce-line{
+			margin-top:0.08rem;
+			margin-bottom:0.08rem;
+			width:0.73rem;
+		}
+    	
+    	.radio{
+    		margin:0 auto;
+    		width:0.15rem;
+    		height:0.15rem;
+    		border-radius:50%;
+    		background:#e1e1e1;
+   		}
+    	.produce-divider{
+    		margin:0 auto;
+    		width:1px;
+    		height:4.8rem;
+    		background-color:#d6d7dc;
+    	}
+    	.produce-content>.mui-table-view-cell{
+    		padding:0;
+    		margin:0.16rem 0;
+    	}
+    	
+    	.mui-card-footer:before{
+    		background:#fff !important;
+    	}
+    	.fun{
+    		width:100%;
+    		min-height:0.44rem;
+    		border-bottom:1px solid #d6d7dc;
+    		position:relative;
+    	}
+    	
+    	/*修改隐藏面板的样式*/
+    	.fun>.mui-table-view-cell{
+    		padding:0;
+    		margin:0;
+    	}
+    	.fun .mui-table-view-cell>a:not(.mui-btn){
+    		margin:0;
+    		z-index:1;
+    	}
+    	.mui-table-view-cell>a:not(.mui-btn).mui-active{
+    		background:#fff;
+    	}
+    	.mui-table-view-cell.mui-collapse .mui-collapse-content{
+    		margin:0;
+    	}
+    	.mui-table-view-cell.mui-active{
+    		background:#fff;
+    	}
+    	.mui-table-view-cell.mui-collapse.mui-active{
+    		margin:0;
+    	}
+    	.mui-card-header{
+    		min-height:0;
+    	}
+    	/*评论区域*/
+    	.mui-card-header.mui-card-media .mui-media-body{
+    		line-height:inherit;
+    	}
+    	.hot-chat{
+    		margin-top:0.32rem;
+    	}
+    	.hot-chat span:first-child{
+    		color:#0f2646;
+    		font-size:0.28rem;
+    		margin-right:0.08rem;
+    	}
+    	.hot-chat .iconfont{
+    		font-size:0.4rem;
+    		color:#909090;	
+    	}
+    	.chat-content>.mui-card{
+    		padding:0;
+    		margin-bottom:0.24rem;
+    		margin-top:0.48rem;
+    	}
+    	.mui-card-header>img:first-child{
+    		width:0.64rem;
+    		height:0.64rem;
+    		border-radius:50%;
+    	}
+    	.chat-content .mui-card-header.mui-card-media .mui-media-body{
+    		height:0.64rem;
+    		margin-left:0.88rem;
+    		display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+            display:-ms-flexbox;  /* TWEENER - IE 10 */
+            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+            display:-webkit-flex;  /* NEW - Chrome */
+            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    		flex-flow:column wrap;
+    		justify-content: center;
+    	}
+    	.chat-response .mui-card-header.mui-card-media .mui-media-body{
+    		height:0.44rem;
+    		margin-left:0.88rem;
+    		display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+            display:-ms-flexbox;  /* TWEENER - IE 10 */
+            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+            display:-webkit-flex;  /* NEW - Chrome */
+            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    		flex-flow:column wrap;
+    		justify-content: center;
+    	}
+    	.chat-content .mui-card-header{
+    		margin-bottom:0.16rem;
+    	}
+    	.user-name{
+    		width:100%;
+    		line-height:0.24rem;
+    		font-size:0.24rem !important;
+    		color:#0F2646 !important;
+    	}
+    	.up-time{
+    		width:100%;
+    		margin-top:0.08rem;
+    		line-height:0.22rem;
+    		font-size:0.22rem;
+    		color:#909090 !important;
+    	}
+    	.inner-chat-collection .iconfont{
+    		color:#909090 !important;
+    		font-size:0.28rem;
+    		vertical-align:middle;
+    	}
+    	.inner-chat-collection span{
+    		font-size:0.2rem;
+    		color:#909090;
+    	}
+    	.inner-chat-collection .coll-num{
+    		margin-right:0.16rem;
+    	}
+    	.del{
+    		margin-right:0.16rem;
+    	}
+    	.mui-card-footer:before, .mui-card-header:after{
+    		height:0 !important
+    	}
+    	.mui-card-header.mui-card-media{
+    		padding:0;
+    	}
+    	.chat-content .mui-card-content{
+    		background:#fafafa;
+    		padding:0.16rem;
+    	}
+    	.chat-content .chat-detail{
+    		font-size:0.24rem;
+    		color:#323232 !important;
+    		letter-spacing: 0.012rem;
+    		
+    	}
+    	.card-content p{
+    		letter-spacing:0.012rem;
+    	}
+    	.chat-item{
+    		z-index:5;
+    		border-top:1px solid #d6d7dc;
+    		position:fixed;
+    		bottom:0;
+    		left:0;
+    		height:0.98rem;
+    		padding:0 0.24rem;
+    		background:#fafafa;
+    		display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+            display:-ms-flexbox;  /* TWEENER - IE 10 */
+            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+            display:-webkit-flex;  /* NEW - Chrome */
+            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    		width:100%;
+    		align-items: center;
+    	}
+    	.chat-item input{
+    		text-indent:0.08rem;
+    		background:#fafafa;
+    		margin:0;
+    		padding:0 0 0.04rem 0;
+    		flex:1;
+    		border-top:0;
+    		border-right:0;
+    		border-left:0;
+    		height:0.44rem;
+    		line-height:0.44rem;
+    		border-bottom-color:#e1e1e1;
+    		border-radius:0;
+    	}
+    	.chat-item span{
+    		display:inline-block;
+    		margin-left:0.08rem;
+    		border:1px solid #d6d7dc;
+    		text-align:center;
+    		width:0.72rem;
+    		line-height:0.44rem;
+    		height:0.44rem;
+    		color:#909090;
+    		font-size:0.22rem;
+    	}
+    	/*评论回复区域*/
+    	.inner.mui-card-header.mui-card-media .mui-media-body{
+    		margin-left:0.52rem;
+    	}
+    	.inner.mui-card-header>img:first-child{
+    		width:0.44rem;
+    		height:0.44rem;
+    		border-radius:50%;
+    	}
+    	.response{
+    		margin-top:0.24rem;
+    		color:#909090;
+    		font-size:0.2rem;
+    	}
+    	.chat-response{
+    		margin-top:0.24rem;
+    	}
+    	.chat-response .user-namei{
+    		width:100%;
+    		font-size:0.2rem;
+    		line-height:0.44rem;
+    		color:#909090;
+    	}
+    	.response-time span:last-child{
+    		margin-left:0.16rem;
+    	}
+    	.chat-divider{
+    		height:1px;
+    		background:#d6d7dc;
+    		width:100%;
+    	}
+    	
+    	/*修改隐藏面板样式结束*/
+    	.outer-produce-content{
+    		padding-left:0.355rem;
+    		position:relative;
+    	}
+    	.produce-content{
+    		margin:0.08rem 0;
+    		overflow: hidden;
+    		padding-left:0.355rem;
+    		border-left:1px dashed #d6d7dc;
+    		padding-bottom:0.24rem;
+    	}
+    	.produce-content .radio:first-child{
+    		width:0.15rem;
+    		height:0.15rem;
+    		border-radius:100%;
+    		background:#E1E1E1;
+    		position:absolute;
+    		left:0.285rem;
+    		top:0;	
+    	}
+    	.produce-content .radio:last-child{
+    		width:0.15rem;
+    		height:0.15rem;
+    		border-radius:100%;
+    		background:#E1E1E1;
+    		position:absolute;
+    		left:0.285rem;
+    		bottom:0;
+    	}
+    	.info-footer{
+    		position: absolute;
+    		top:0;
+    		left:0;
+    		width:100%;
+    		z-index:2;
+    	}
+		.info-footer .iconfont{
+			color:#909090 !important;
+			font-size:0.32rem;		
+		}
+		.info-footer span{
+			color:#909090 !important;
+			font-size:0.22rem;
+			
+		}
+		.info-footer a:nth-of-type(2){
+			margin-left:0.24rem;
+		}
+		.down.iconfont{
+			color:#646464;
+			font-size:0.44rem;
+			margin-bottom:0.08rem;
+			z-index:4 !important;
+		}
+		.mui-table-view-cell.mui-collapse .mui-collapse-content{
+			width:100%;
+			padding:0;	
+		}
+		/*商家页面*/
+		#company .img-box{
+			
+		}
+		#company .img-box img{
+			height:3.76rem;
+			display:block;
+		}
+		.information-sj{
+			padding:0.32rem 0.24rem 0;
+		}
+		.mui-table-view.mui-grid-view .mui-table-view-cell{
+			padding:0;
+			margin:0;
+		}
+		.mui-table-view.mui-grid-view .mui-table-view-cell>a:not(.mui-btn){
+			margin:0;
+		}
+		.mui-table-view.mui-grid-view{
+			padding:0;
+		}
+		.playButton{
+			width:1.44rem;
+			height:1.44rem;
+			position:absolute;
+			top:1.16rem;
+			left:2.79rem;
+			z-index:2;
+		}
+		.playButton img{
+			width:100%;
+		}
+		.outerBox{
+			width:7.02rem;
+			margin:0.24rem auto 0;
+			position:relative;
+		}
+		/*=======
+	 	图片信息
+		========= */
+		.img-info{
+			padding:0 0.24rem 0.24rem;
+		}
+		.img-info .mui-table-view .mui-table-view-cell{
+			height:1.94rem;
+			width:2.2rem;
+		}
+		.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-object{
+			height:100%;
+		}
+		.img-info-tit{
+			margin-bottom:0.24rem;
+			line-height:0.48rem;
+			font-size:0.3rem;
+		}
+		.img-info .mui-slider ul li a{
+			height:1.94rem;
+			width:2.2rem;
+		}
+		.center-img{
+			margin-left:0.21rem !important;
+			margin-right:0.21rem !important;
+		}
+		/*.img-info .mui-slider ul li img{
+			height:100% !important;
+		} */
+		.company.mui-media-object{
+			border:1px solid #d6d7dc;
+		}
+		/*物流页面*/
+		#cont-map{
+			width: 100%;
+			background: #fafafa;
+		}
+		#cont #cont-map img{
+			max-width: 100%;
+			border: 1px solid #f8b854; 
+			
+		}
+		#cont-map{
+			width: 100%;
+			height: 4.02rem;
+			overflow: hidden;
+			z-index: 99999;
+		}
+		#cont-map .title{
+			display: none;
+		}
+		#cont-map .zoom-out{
+			position: absolute;
+			top: 2.2rem;
+		}
+		#cont-map .zoom-in{
+			position: absolute;
+			top: 3rem;
+		}
+		.cont-mapTit{
+			position: absolute;
+			top:25px ;
+		}
+		
+		
+		.map{
+			width:100%;
+			height:4.02rem
+			
+		}
+		.map img{
+			width:100%;
+			height:100%;
+		}
+		.trans-information{
+			padding:0 0.24rem 0.1rem ;
+		}
+		.trans-company{
+			height:0.64rem;
+			line-height:0.64rem;
+			font-size:0.3rem;
+			color:#2b2b2b;
+		   	padding:0 0.24rem;
+		   	border-bottom:1px solid #d6d7dc;
+		} 
+		.iconfont.vedio{
+			font-size:0.52rem;
+			vertical-align:middle;
+			color:#0f2646;
+			margin-right:0.08rem;
+		}
+		.trans-content{
+			margin-top:0.48rem;
+			padding-left:0.24rem;
+			
+		}
+		.trans-content p{
+			color:#646464 !important;
+			font-size:0.28rem;
+			line-height:0.28rem;
+			margin-bottom:0 !important;
+		}
+		
+		.trans-content>ul>li{
+			position:relative;
+			padding-left:0.4rem;
+			border-left:1px dashed #d6d7dc;
+			padding-bottom:0.24rem;
+		}
+		
+		.trans-information .radio{
+			width:0.16rem;
+			height:0.16rem;
+			border-radius:100%;
+			background:#b4b4b4;
+			position:absolute;
+			top:0;
+			left:0;
+			margin-left:-0.085rem;
+		}
+	    /*物流页面向下按钮*/
+	    .iconfont.down-arrow{
+	    	text-align:center;
+	    	cursor:pointer;
+	    	color:#0f2646 !important;
+	    	line-height:0.57rem;
+	    	height:0.57rem;
+	    	margin-top:0.16rem !important;
+	    }
+	    .iconfont.down-arrow img{
+	    	height:100%;
+	    }
+	    /*物流页面向上箭头*/
+	    .up-arrow{
+	    	text-align:center;
+	    	cursor:pointer;
+	    	color:#0f2646 !important;
+	    	line-height:0.57rem;
+	    	height:0.57rem;
+	    	margin-top:0.16rem !important;
+	    }
+	    .iconfont.up-arrow img{
+	    	height:100%;
+	    }
+	    /*物流页面li的样式改写*/
+	   .collapse.mui-table-view-cell{
+	   		padding:0;
+	   	}
+	    .trans-content .mui-table-view-cell.mui-active{
+	    	background:#fff !important;
+	    }
+	    .trans-content .mui-table-view-cell>a.mui-active{
+	    	background:#fff !important;
+	    }
+	    .trans-content .mui-table-view-cell:after{
+	    	height:0 !important
+	   	}
+	   	.mui-table-view-cell.mui-collapse .mui-table-view{
+	   		margin-left:0;
+	   		margin-bottom:0;
+	   		margin-top:0.24rem;
+	   	}
+	   	.mui-table-view-cell.mui-collapse .mui-table-view>p{
+	   		font-size:0.28rem;
+	   		color:#646464 !important;	   	
+	   	}
+	   	.trans-time span:last-child{
+	   		margin-left:0.16rem;
+	   	}
+	   	.trans-state{
+	   		margin-top:0.16rem;
+	   	}
+	   	.trans-company-logo{
+	   		width:0.48rem;
+	   		line-height:0.64rem;
+	   		display:inline-block;
+	   		margin:0 0.08rem;
+	   	}
+	   	.trans-company-logo img{
+	   		width:100%;
+	   		height:0.4rem;
+	   		vertical-align:middle;
+	   	}
+	   	.logistic-detail{
+	   		position:relative;
+	   		width:100%;
+	   	}
+	   	.logistic-play{
+	   		position:absolute;
+	   		bottom:0;
+	   		right:0;
+	   		font-size:0.28rem;
+	   		color:#646464 !important;
+	   	}
+	   	.logistic-play .iconfont{
+	   		font-size:0.44rem;
+	   		color:#0f2646;
+	   		margin-left:0.16rem;
+	   		vertical-align:middle;
+	   		z-index:1;
+	   	}
+	   	.logistic-detail p{
+	   		margin-bottom:0.14rem !important;
+	   	}
+	   	.logistic-detail p:last-child{
+	   		margin-bottom:0;
+	   	}
+	    /*参考价页面*/
+	   	#price .mui-table-view-cell:last-child:after{
+	   		height:1px !important;
+	   	}
+	    .price{
+	    	
+	    	font-size:0.3rem;
+	    }		
+	    .price em{
+	    	color:#f60f0f !important;
+	    }
+	    .price-detail{
+	 		overflow:hidden;
+	 		padding-left:0.16rem;
+	 		padding-top:0.08rem;
+	 	}
+	 	.price-detail p{
+	 		font-size:0.24rem;
+		 	line-height:0.36rem;
+		 	overflow:hidden;
+		 	text-overflow:ellipsis;
+		 	white-space:nowrap;
+		 }
+		 .product-item{
+		 	padding:0.24rem 0;
+		 	margin:0 0.24rem;
+		 }
+		 .product-item img{
+		 	width:2.7rem;
+		 	height:2.12rem;
+		 	display:block;
+		 	border:1px solid #d6d7dc;
+		 }
+		 .price-infor .mui-table-view-cell:after{
+	    	left:0;
+	     }
+	     .price-infor{
+	     	padding-bottom:0.1rem;
+	     }
+	     /*质检页面*/
+	    
+	     .mui-media-body.iconfont{
+	     	font-size:0.44rem;
+	     	color:#ec4b1f;
+	     }
+	     .vertify-center{
+	      	height:100%;
+	      	overflow:hidden;
+	      }
+	    .vertify-center li{
+	    	margin-top:0.32rem;
+			background:#0f2646;
+			font-size:0;
+			padding:0 0.24rem;
+			height:0.88rem;
+		}
+		.vertify-center li span{
+			line-height:0.88rem;
+			display:inline-block;
+			font-size:0.44rem;
+			color:#ec4b1f;
+			height:0.88rem;
+			line-height:0.88rem;
+		}
+		.vertify-center li p{
+			padding-left:0.08rem;
+			line-height:0.88rem;
+			font-size:0.3rem;
+			vertical-align:top ;
+			color:#fafafa !important;
+			display:inline-block;
+		}
+		.vertify-center a{
+			display:block;
+		}
+		
+    </style>
+</head>
+<body>
+	<!--头部-->
+	<header class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-pull-left iconfont" href="">&#xe66e;</a>
+            <h1 id="title" class="mui-title mui-center">正大溯源云平台</h1>
+            <a  class="mui-pull-right mui-icon iconfont" href="" onclick="clicked('barcode_scan.html',true,true);">&#xe67b;</a>
+    </header>
+	<!--主体部分-->
+	<div class="mui-content">
+	    <nav  id="segmentedControl"  class="mui-segmented-control ">
+			<a class="mui-control-item mui-active" href="#product">
+				产品
+			</a>
+			<a class="mui-control-item" href="#produce">
+				生产 
+			</a>
+			<a class="mui-control-item" href="#company">
+				商家
+			</a>	
+			<a class="mui-control-item" href="#vertify">
+				质检
+			</a>
+			<a class="mui-control-item" href="#logistic">
+				物流
+			</a>
+			<a class="mui-control-item" href="#price">
+				参考价
+			</a>
+		</nav>
+		
+		<div id="product" class="mui-control-content mui-active">
+			<div class="imgbox">
+				<img src="../img/product.jpg"/>	
+			</div>
+			<div class="info-center">
+				<div class="info-item">
+					<span>产品名称</span>
+					<p></p>
+				</div>
+				<div class="info-item">
+					<span >溯源编号</span>
+					<p class="num"></p>
+				</div>
+				<div class="info-item">
+					<span>规格</span>
+					<p></p>
+				</div>
+				<div class="info-item">
+					<span class="intro-tit">产品描述</span>
+					<p class="intro"></p>    			
+				</div>	    			    		
+				<div class="info-item">	    		
+					<span class="intro-tit">产品功效</span>    			
+					<p class="intro"></p>    			
+				</div>
+				<div class="info-item">
+					<span>生产方式</span>
+					<p></p>
+				</div>
+				<div class="info-item">
+					<span>生产日期</span>
+					<p class="num"></p>
+				</div>
+				<div class="info-item">
+					<span>保质期</span>
+					<p></p>
+				</div>
+				<div class="info-item">
+					<span>储存方法</span>
+					<p></p>
+				</div>
+			</div>
+			
+		</div>
+	    <div id="produce" class="mui-control-content">
+	    	<div class="produce-center">
+				<!--生产列表-->
+				<ul class="mui-table-view" id="produce-content">
+					<!--<div class="mui-card mui-clearfix">
+			<!--点击显示日历-->
+						<!--<div id="button" class="button">采蜜</div>
+						<div class="date_content" style="display:none"></div>		-->
+				<!--右边显示图及相关信息-->
+						<!--<div class="outer-produce-content">
+							<div class="produce-content">
+							<div class="radio"></div>
+							
+							<li class="mui-table-view-cell mui-clearfix produce-item">
+							    <div class="mui-pull-left produce-img">-->
+							    	<!--采蜜视频-->
+								    <!--<img src="../img/produce1.jpg"/>
+								    <p class="title num">(4/11-5/11)</p>
+								</div>-->
+								<!--生产详细信息-->
+							    <!--<div class="produce-detail">
+							        <p>日期：<span class="num">2016-06-12</span></p>
+							    	<p>时点：<span>光谷步行街D区<em>555</em>号</span></p>
+							    	<p>天气：<span>晴<em>26℃</em></span></p>
+							    	<p>蜂种：<span>中华蜂</span></p>
+							    	<p>采集蜂数量：<span><em>1500</em>只</span></p>
+							    	<p>采集地：<span>重庆厘山头村</span></p>
+							    	<p>蜜源：<span>洋槐</span></p>
+							    	<p>负责人：<span>蒋欣欣</span></p>
+							    	<p>联系电话：<span class="num">15866442547</span></p>
+							    </div>
+							</li>-->
+							<!--底部评论收藏区域-->
+							<!--<div class="fun mui-clearfix">
+								<div class="info-footer">
+									<div class="info-footer-content mui-pull-right">
+										<a class="iconfont" href="#">&#xe67a;</a>
+										<span class="coll-num">2345</span>
+										<a class="iconfont" href="#">&#xe63e;</a>
+										<span class="chart-num">2105</span>
+									</div>
+							    </div>
+								<div class="mui-table-view-cell mui-collapse">
+									<a class="down iconfont mui-pull-left" href="#">&#xe686;</a>-->
+									
+							    	<!--评论-->
+								    <!--<div class="mui-collapse-content chat-content">-->
+								    	<!--顶部标题-->
+										<!--<div class="hot-chat">
+											<span>热门评论</span><span class="iconfont">&#xe63e;</span> 
+										</div>-->
+										<!--评论1-->
+										<!--<div class="chat-content">-->
+										<!--<div class="mui-card">-->
+											<!--页眉，放置标题-->
+											<!--<div class="mui-card-header mui-card-media">
+												<img src="../img/chat-user.jpg" />
+												<div class="mui-media-body mui-clearfix">
+													<p class="user-name">清云</p>
+													<div class="up-time">
+														<em>5</em>小时前
+														<div class="inner-chat-collection mui-pull-right">
+															<a class="iconfont" href="javascript:;">&#xe67a;</a>
+															<span class="coll-num num">102</span>
+															<span>删除</span>
+															<span>回复</span>
+															<span class="chart-num num">6</span>
+													    </div>
+													</div>
+												</div>
+											</div>-->
+										
+											<!--内容区-->
+											<!--<div class="mui-card-content">
+												<p class="chat-detail">如何让我遇见你,在我最美丽的时刻,为这我已在佛前求了五百年，求它让我们结一段尘缘</p>
+												<p class="response">回复</p>-->
+												<!--评论回复-->
+												<!--<div class="chat-response">
+													<div class="mui-card-header inner mui-card-media">
+														<img src="../img/chat-user.jpg" />
+														<div class="mui-media-body mui-clearfix">
+															<div class="user-namei">
+																小澜妮
+																<div class="response-time mui-pull-right">
+																	<span class="date num">2016/10/07</span>
+																	<span class="time num">15:03</span>
+														   		</div>	
+															</div>	
+														</div>
+													</div>
+													<div class="card-content">
+														<p>哈哈，我也是席慕蓉粉。。。。。</p>
+													</div>
+												</div>
+												<div class="chat-response">
+													<div class="mui-card-header inner mui-card-media">
+														<img src="../img/chat-user.jpg" />
+														<div class="mui-media-body mui-clearfix">
+															<div class="user-namei">
+																清云
+																<div class="response-time mui-pull-right">
+																	<span class="date num">2016/10/07</span>
+																	<span class="time num">15:03</span>
+														   		</div>	
+															</div>	
+														</div>
+													</div>
+													<div class="card-content">
+														<p>你还喜欢她哪些文章？</p>
+													</div>
+						
+												</div>
+											</div>
+										</div>
+										<div class="chat-divider"></div>-->
+										<!--评论2-->
+										<!--<div class="mui-card">-->
+											<!--页眉，放置标题-->
+											<!--<div class="mui-card-header mui-card-media">
+												<img src="../img/chat-user.jpg" />
+												<div class="mui-media-body mui-clearfix">
+													<p class="user-name">清云</p>
+													<div class="up-time">
+														5小时前
+														<div class="inner-chat-collection mui-pull-right">
+															<a class="iconfont" href="javascript:;">&#xe67a;</a>
+															<span class="coll-num num">102</span>
+															<span>删除</span>
+															<span>回复</span>
+															<span class="chart-num num">6</span>
+													    </div>
+													</div>
+												</div>
+											</div>
+										-->
+											<!--内容区-->
+											<!--<div class="mui-card-content">
+												<p class="chat-detail">如何让我遇见你，在我最美丽的时刻，为这，我已在佛前求了五百年，求它让我们结一段尘缘</p>
+												<p class="response">回复</p>-->
+												<!--评论回复-->
+												<!--<div class="response-content">-->
+												<!--<div class="chat-response">
+													<div class="mui-card-header inner mui-card-media">
+														<img src="../img/chat-user.jpg" />
+														<div class="mui-media-body mui-clearfix">
+															<div class="user-namei">
+																小澜妮
+																<div class="response-time mui-pull-right">
+																	<span class="date num">2016/10/07</span>
+																	<span class="time num">15:03</span>
+														   		</div>	
+															</div>	
+														</div>
+													</div>
+													<div class="card-content">
+														<p>哈哈，我也是席慕蓉粉。。。。。</p>
+													</div>
+												</div>
+												<div class="chat-response">
+													<div class="mui-card-header inner mui-card-media">
+														<img src="../img/chat-user.jpg" />
+														<div class="mui-media-body mui-clearfix">
+															<div class="user-namei">
+																清云
+																<div class="response-time mui-pull-right">
+																	<span class="date num">2016/10/07</span>
+																	<span class="time num">15:03</span>
+														   		</div>	
+															</div>	
+														</div>
+													</div>
+													<div class="card-content">
+														<p>你还喜欢她哪些文章？</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									</div>
+									</div>
+								</div>
+							</div>
+							<div class="radio"></div>
+						</div> -->
+						<!--</div>
+					</div>-->
+					
+			
+				</ul>
+			</div>
+			<div id="chat_box"  style="display:none">
+				<div class="chat-item">
+					<input type="text" autofocus="autofocus" />
+					<span>发送</span>
+				</div>
+			</div>
+			
+	    </div>	
+	  	<div id="company" class="mui-control-content">
+	  		<!-- 轮播介绍 -->
+	  		<div class="outerBox">
+	  			<div class="playButton" id="playButton">
+	  				<img src="../img/play.png" alt="" />
+	  			</div>
+				<section class="img-box">
+					<!--<div id="slider1" class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+							<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../img/enterprise3.png" /></a></div>
+							<div class="mui-slider-item"><a href="#"><img src="../img/enterprise1.jpg" /></a></div>
+							<div class="mui-slider-item"><a href="#"><img src="../img/enterprise2.jpg" /></a></div>
+							<div class="mui-slider-item"><a href="#"><img src="../img/enterprise3.png" /></a></div>
+							<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../img/enterprise1.jpg" /></a></div>
+						</div>
+					</div>-->
+				</section>
+			</div>
+			<article class="information-sj">
+				    <div class="info-item">
+				    	<span>商家名称</span>
+				    	<p></p>
+				    </div>
+				    <div class="info-item">
+				    	<span class="intro-tit">商家简介</span>
+				    	<p class="intro"></p>
+				    </div>
+				    <div class="info-item">
+				    	<span>所属行业</span>
+				    	<p></p>
+				    </div>
+				    <div class="info-item">
+				    	<span>保单号</span>
+				    	<p class="num"></p>
+				    </div>
+				    <div class="info-item">
+				    	<span>所在地</span>
+				    	<p></p>
+				    </div>
+				    <div class="info-item">
+				    	<span>联系方式</span>
+				    	<p class="num"></p>
+				    </div>
+			</article>	
+			<!--图片信息-->
+			<section class="img-info">
+				<p class="img-info-tit">图片信息</p>
+				<!--<div id="slider2" class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<ul class="mui-table-view mui-grid-view">
+							    <li class="mui-table-view-cell mui-media"><a href="#"><img class="company mui-media-object" src="../img/sj1.jpg"></a></li> 
+							    <li class="center-img mui-table-view-cell mui-media"><a href="#"><img class="company mui-media-object" src="../img/sj2.jpg"></a></li> 
+							    <li class="mui-table-view-cell mui-media "><a href="#"><img class="company mui-media-object" src="../img/sj3.jpg"></a></li>        
+							</ul>
+						</div>
+					    <div class="mui-slider-item">
+							<ul class="mui-table-view mui-grid-view">
+							    <li class="mui-table-view-cell mui-media "><a href="#"><img class="company mui-media-object" src="../img/sj1.jpg"></a></li>    
+							    <li class="center-img mui-table-view-cell mui-media "><a href="#"><img class="company mui-media-object" src="../img/sj2.jpg"></a></li> 
+							    <li class="mui-table-view-cell mui-media "><a href="#"><img class="company mui-media-object" src="../img/sj3.jpg"></a></li> 
+							</ul>
+						</div>
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<ul class="mui-table-view mui-grid-view">
+							    <li class="mui-table-view-cell mui-media"><a href="#"><img class="company mui-media-object" src="../img/sj1.jpg"></a></li> 
+							    <li class="center-img mui-table-view-cell mui-media"><a href="#"><img class="company mui-media-object" src="../img/sj2.jpg"></a></li> 
+							    <li class="mui-table-view-cell mui-media"><a href="#"><img class="company mui-media-object" src="../img/sj3.jpg"></a></li> 
+							</ul>
+						</div>
+					</div>
+				</div>	-->
+			</section>
+	  	</div>
+		<div id="vertify" class="mui-control-content">		
+		<!--防伪信息展示-->
+			<div class="vertify-center">
+			    <ul >
+			    	<li >
+			    		<a href="javascript:;">
+				    		<span class="mui-pull-left iconfont">&#xe68c;</span>
+				    		<p>政府认证</p>
+				    		<span class="mui-pull-right iconfont">&#xe66a;</span>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="javascript:;">
+				    		<span class="iconfont">&#xe68d;</span>
+				    		<p>保险</p>
+				    		<span class="mui-pull-right iconfont">&#xe66a;</span>
+			    		</a>
+			    	</li>
+			    	<li>
+			    		<a href="javascript:;">
+				    		<span class="iconfont">&#xe69c;</span>
+				    		<p>第三方认证</p>
+				    		<span class="mui-pull-right iconfont">&#xe66a;</span>
+			    		</a>
+			    	</li>
+			    </ul>
+			    
+			</div>
+		</div>
+		<!--物流-->
+		<div id="logistic" class="mui-control-content">				
+		<!--map-->
+			<div class="map">
+				<div id="cont-map">
+				<div id="mapContainer"></div>
+    <div class="title">
+        <p>
+            <span class="name"></span>
+            <span class="ctrl">
+                    <i class="fa fa-chevron-down"></i>
+                </span>
+        </p>
+    </div>
+
+    <div class="mask">
+        <img src="static/images/loading-1.gif" height="82" width="82">
+    </div>
+    <div class="timeline-ctrl">
+        <canvas id="timeline" width="1px" height="5px"></canvas>
+        <!-- <canvas id="cursor" width="1305px" height="60px"></canvas> -->
+        <canvas id="timeCtr" width="16px" height="5px"></canvas>
+    </div>
+    <div id="time_span"></div>
+    
+    <div class="jiupian">
+
+        <img src="static/images/22.png" height="52" width="52" alt="纠偏">
+        <span class="title">纠偏</span>
+    </div>
+    <div class="chart-wrap">
+        <div id="chart"></div>
+
+    </div>
+    <div class="map-ctrl zoom-out" title="地图放大">
+        <span><i class="fa fa-plus-circle"></i></span>
+    </div>
+    <div class="map-ctrl zoom-in" title="地图缩小">
+        <span><i class="fa fa-minus-circle"></i></span>
+    </div>
+    <script type="text/javascript" src="static/js/track/demo.js"></script>
+    <script type="text/javascript" src="static/js/demoTrack.js"></script>
+    
+    <script type="text/javascript">
+    var map = new BMap.Map("mapContainer", {
+        // 关闭底图可点功能
+        enableMapClick: false
+    });
+    function mapInit() {
+        var point = new BMap.Point(114.30, 30.57);
+        map.centerAndZoom(point, 12);
+    }
+    mapInit();
+    // 设置地图样式
+    map.setMapStyle({
+
+    });
+    // 设置个性化地图 最大缩放级别 18
+    map.setMaxZoom(18);
+    </script>
+			</div>
+			</div>
+				    		    		
+			<div class="trans-information">
+				<!--<p class="trans-company mui-clearfix">
+					<span class="mui-pull-left">物流承运公司:<span class="trans-company-logo"><img src="../img/shunfeng.png" alt="" /></span>顺丰物流</span>
+					<span class="mui-pull-right"><b class="iconfont vedio">&#xe60e;</b>&nbsp;&nbsp;视频</span>
+				</p>
+				<div class="trans-content">
+					<ul>
+					    <li>
+					    	<div class="radio"></div>
+					    	<div class="collapse mui-table-view-cell mui-collapse">
+					    		<p class="trans-time"><span>2015-03-16</span><span>14:08:12</span></p>
+					    		<p class="trans-state">您的快件已签收</p>
+					    		<a class="iconfont down-arrow" style="display:block" href="#">&#xe619;</a>
+					    		<div class="logistic-detail  mui-table-view mui-table-view-chevron">
+									<p>物流车牌：WJ18-12345</p>
+									<p>货车司机：罗贯中</p>
+									<p>司机工号：<em>0888208820</em></p>
+									<p>发货人：吴承恩</p>
+									<p>卸货人：施耐庵</p>
+								</div>
+								<a class="iconfont up-arrow" style="display:none" href="#">&#xe619;</a>
+					    	</div>
+					    </li>
+					    
+					    <li>
+					    	<div class="radio"></div>
+					    	<div class="collapse mui-table-view-cell mui-collapse">
+					    		<p class="trans-time"><span>2015-03-16</span><span>07:08:12</span></p>
+					    		<p class="trans-state">您所订购的商品已到达【武汉航空中转部】，中转中</p>
+					    		<a class="iconfont down-arrow" style="display:block" href="#">&#xe619;</a>
+					    		<div class="logistic-detail mui-table-view mui-table-view-chevron">
+									<p>物流车牌：<em>WJ18-12345</em></p>
+									<p>货车司机：罗贯中</p>
+									<p>司机工号：<em>0888208820</em></p>
+									<p>发货人：吴承恩</p>
+									<p>卸货人：施耐庵</p>
+								</div>
+								<a class="iconfont up-arrow" style="display:none" href="#">&#xe619;</a>
+					    	</div>
+					    </li>
+					    <li>
+					    	<div class="radio"></div>
+					    	<div class="collapse mui-table-view-cell mui-collapse">
+					    		<p class="trans-time"><span>2015-03-15</span><span>19:08:12</span></p>
+					    		<p class="trans-state">您所订购的商品已从【武汉白沙洲分拣站】发货</p>
+					    		<a class="iconfont down-arrow" style="display:block" href="#">&#xe619;</a>
+					    		<div class="logistic-detail mui-table-view mui-table-view-chevron">
+									<p>物流车牌：<em>WJ18-12345</em></p>
+									<p>货车司机：罗贯中</p>
+									<p>司机工号：<em>0888208820</em></p>
+									<p>发货人：吴承恩</p>
+									<p>卸货人：施耐庵</p>
+								</div>
+								<a class="iconfont up-arrow" style="display:none" href="#">&#xe619;</a>
+					    	</div>
+					    </li>
+					    <li>
+					    	<div class="radio"></div>
+					    	<div class="collapse mui-table-view-cell mui-collapse">
+					    		<p class="trans-time"><span>2015-03-16</span><span>19:08:12</span></p>
+					    		<p class="trans-state">顺丰速递&nbsp;&nbsp;湖北省武汉市白沙洲收件员已揽件</p>
+					    		<a class="iconfont down-arrow" style="display:block" href="#">&#xe619;</a>
+					    		<div class="logistic-detail mui-table-view mui-table-view-chevron">
+									<p>物流车牌：<em>WJ18-12345</em></p>
+									<p>货车司机：罗贯中</p>
+									<p>司机工号：<em>0888208820</em></p>
+									<p>发货人：吴承恩</p>
+									<p>卸货人：施耐庵</p>
+								</div>
+								<a class="iconfont up-arrow" style="display:none" href="#">&#xe619;</a>
+					    	</div>
+					    </li>
+					    <li>
+					    	<div class="radio"></div>
+					    	<div class="collapse mui-table-view-cell mui-collapse">
+					    		<p class="trans-time"><span>2015-03-16</span><span>14:08:12</span></p>
+					    		<p class="trans-state">包裹正在等待收揽</p>
+					    		<a class="iconfont down-arrow" style="display:block" href="#">&#xe619;</a>
+					    		<div class="logistic-detail mui-table-view mui-table-view-chevron">
+									<p>物流车牌：<em>WJ18-12345</em></p>
+									<p>货车司机：罗贯中</p>
+									<p>司机工号：0888208820</p>
+									<p>发货人：吴承恩</p>
+									<p>卸货人：施耐庵</p>
+								</div>
+								<a class="iconfont up-arrow" style="display:none" href="#">&#xe619;</a>
+					    	</div>
+					    </li>
+					    					
+					</ul>
+				</div>-->
+			</div>	    		
+		</div>
+		<div id="price" class="mui-control-content">
+			<!--报价详细信息-->
+			<div class="price-infor">
+				<ul class="mui-table-view">
+					<!--<li class="mui-table-view-cell mui-media product-item">
+						<img class="mui-pull-left" src="../img/product.jpg"/>
+						<div class="price-detail">
+						   	<p>商家：<span>大冶葵蜜食品科技有限公司</span></p>
+						    <p>商品：<span>大冶葵蜜</span></p>
+						   	<p>规格：<span>350ml/瓶</span></p>
+						    <p>电话：<span>13325464578</span></p>
+						    <p>价格：<span class="price"><em>220.00</em>元/瓶</span></p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-media product-item">
+						<img class="mui-pull-left" src="../img/product.jpg"/>
+						<div class="price-detail">
+						   	<p>商家：<span>大冶葵蜜食品科技有限公司</span></p>
+						    <p>商品：<span>大冶葵蜜</span></p>
+						   	<p>规格：<span>350ml/瓶</span></p>
+						    <p>电话：<span>13325464578</span></p>
+						    <p>价格：<span class="price"><em>220.00</em>元/瓶</span></p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-media product-item">
+						<img class="mui-pull-left" src="../img/product.jpg"/>
+						<div class="price-detail">
+						   	<p>商家：<span>大冶葵蜜食品科技有限公司</span></p>
+						    <p>商品：<span>大冶葵蜜</span></p>
+						   	<p>规格：<span>350ml/瓶</span></p>
+						    <p>电话：<span>13325464578</span></p>
+						    <p>价格：<span class="price"><em>220.00</em>元/瓶</span></p>						
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-media product-item">
+						<img class="mui-pull-left" src="../img/product.jpg"/>
+						<div class="price-detail">
+						   	<p>商家：<span>大冶葵蜜食品科技有限公司</span></p>
+						    <p>商品：<span>大冶葵蜜</span></p>
+						   	<p>规格：<span>350ml/瓶</span></p>
+						    <p>电话：<span>13325464578</span></p>
+						    <p>价格：<span class="price"><em>220.00</em>元/瓶</span></p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-media product-item">
+						<img class="mui-pull-left" src="../img/product.jpg"/>
+						<div class="price-detail">
+						   	<p>商家：<span>大冶葵蜜食品科技有限公司</span></p>
+						    <p>商品：<span>大冶葵蜜</span></p>
+						   	<p>规格：<span>350ml/瓶</span></p>
+						    <p>电话：<span>13325464578</span></p>
+						    <p>价格：<span class="price"><em>220.00</em>元/瓶</span></p>
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-media product-item">
+						<img class="mui-pull-left" src="../img/product.jpg"/>
+						<div class="price-detail">
+						   <p>商家：<span>大冶葵蜜食品科技有限公司</span></p>
+						    <p>商品：<span>大冶葵蜜</span></p>
+						   	<p>规格：<span>350ml/瓶</span></p>
+						    <p>电话：<span>13325464578</span></p>
+						   	<p>价格：<span class="price"><em>220.00</em>元/瓶</span></p>
+						</div>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+	
+//		mui.plusReady(function(){
+	
+	    
+			mui.ajax('../json/code.json',{
+				data:{},
+				dataType:'json',
+				type:'get',
+				success:function(data){
+					var product = data.product[0];
+					var produce = data.produce;
+					var company = data.company[0];
+					var price = data.price;
+					var logistic=data.logistic[0];
+					var vertify = data.vertify;
+					//质检页面
+					mui('.vertify-center ul li').each(function(i,item){
+						item.addEventListener('tap',function(){
+							detail = JSON.stringify(vertify[i]);
+							console.log(detail);
+							mui.openWindow({
+							url:'vertify.html',
+							extras:{
+								name:detail
+							}
+		
+						})
+						})
+						
+					})
+					
+					//产品页面
+					var products = document.getElementsByClassName('info-center')[0].getElementsByClassName('info-item');
+					products[0].children[1].innerHTML = product.productName;
+					products[1].children[1].innerHTML = product.sourceId;
+					products[2].children[1].innerHTML = product.standard;
+					products[3].children[1].innerHTML = product.productDetail;
+					products[4].children[1].innerHTML = product.productEffect;
+					products[5].children[1].innerHTML = product.produceMethod;
+					products[6].children[1].innerHTML = product.produceDate;
+					products[7].children[1].innerHTML = product.shelfLife;
+					products[8].children[1].innerHTML = product.storageMeans;
+					
+					
+					
+					//商家页面
+					var companys = document.getElementsByClassName('information-sj')[0].getElementsByClassName('info-item');
+					companys[0].children[1].innerHTML = company.companyName;
+					companys[1].children[1].innerHTML = company.companyIntro;
+					companys[2].children[1].innerHTML = company.industry;
+					companys[3].children[1].innerHTML = company.num;
+					companys[4].children[1].innerHTML = company.address;
+					companys[5].children[1].innerHTML = company.phone;
+					var content1 = " ";
+					content1+= '<div id="slider1" class="mui-slider">\
+					<div class="mui-slider-group mui-slider-loop">\
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="'+company.imgbox1.img3+'" /></a></div>\
+								<div class="mui-slider-item"><a href="#"><img src="'+company.imgbox1.img1+'" /></a></div>\
+								<div class="mui-slider-item"><a href="#"><img src="'+company.imgbox1.img2+'" /></a></div>\
+								<div class="mui-slider-item"><a href="#"><img src="'+company.imgbox1.img3+'" /></a></div>\
+								<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="'+company.imgbox1.img1+'" /></a></div>\
+								</div>\
+					</div>';
+					document.getElementsByClassName('img-box')[0].innerHTML  = content1;
+					//重新初始化轮播插件
+					mui('#slider1').slider({
+						interval:0
+					})
+					var content2 = " ";
+					content2 += '<p class="img-info-tit">图片信息</p><div id="slider2" class="mui-slider">\
+					<div class="mui-slider-group mui-slider-loop">\
+					<div class="mui-slider-item mui-slider-item-duplicate">\
+						<ul class="mui-table-view mui-grid-view">\
+					 		<li class="mui-table-view-cell mui-media"><a href="#"><img class="company mui-media-object" src="'+company.imgbox2.img1+'"></a></li>\
+							<li class="center-img mui-table-view-cell mui-media"><a href="#"><img class="company mui-media-object" src="'+company.imgbox2.img2+'"></a></li>\
+							<li class="mui-table-view-cell mui-media "><a href="#"><img class="company mui-media-object" src="'+company.imgbox2.img3+'"></a></li></ul></div>\
+							<div class="mui-slider-item">\
+						<ul class="mui-table-view mui-grid-view">\
+							<li class="mui-table-view-cell mui-media"><a href="#"><img class="company mui-media-object" src="'+company.imgbox2.img4+'"></a></li>\
+							<li class="center-img mui-table-view-cell mui-media"><a href="#"><img class="company mui-media-object" src="'+company.imgbox2.img5+'"></a></li>\
+							<li class="mui-table-view-cell mui-media "><a href="#"><img class="company mui-media-object" src="'+company.imgbox2.img6+'"></a></li></ul></div>\
+							<div class="mui-slider-item mui-slider-item-duplicate">\
+						<ul class="mui-table-view mui-grid-view">\
+							<li class="mui-table-view-cell mui-media"><a href="#"><img class="company mui-media-object" src="'+company.imgbox2.img1+'"></a></li>\
+							<li class="center-img mui-table-view-cell mui-media"><a href="#"><img class="company mui-media-object" src="'+company.imgbox2.img2+'"></a></li>\
+							<li class="mui-table-view-cell mui-media "><a href="#"><img class="company mui-media-object" src="'+company.imgbox2.img3+'"></a></li></ul></div>\
+							';
+							
+						document.getElementsByClassName('img-info')[0].innerHTML  = content2;   
+					  	
+					  	mui('#slider2').slider({
+							interval:0
+						})	
+						
+						
+						  playButton();
+						//参考价页面
+						var content6 = " ";
+						for(var i=0;i<price.length;i++){
+							content6+= '<li class="mui-table-view-cell mui-media product-item">\
+							<img class="mui-pull-left" src="'+price[i].productImgUrl+'"/>\
+							<div class="price-detail"><p>商家：<span>'+price[i].company+'</span></p>\
+							<p>商品：<span>'+price[i].product+'</span></p>\
+							<p>规格：<span>'+price[i].standard+'</span></p>\
+							<p>电话：<span>'+price[i].phone+'</span></p>\
+							<p>价格：<span class="price"><em>'+price[i].price+'</em>元/瓶</span></p></div></li>';		   
+						}
+						document.getElementById('price').getElementsByClassName("mui-table-view")[0].innerHTML = content6;
+						
+						
+						//生产页面
+						var content3 = " ";
+						for(var i=0;i<produce.length;i++){
+							var chat = produce[i].chat;
+							content3+= '<div class="mui-card mui-clearfix">\
+						     <div id="button" class="button">'+produce[i].produceName+'</div>\
+								<div class="date_content" style="display:none"><div class="myCalendar"></div></div>\
+								<div class="outer-produce-content">\
+										<div class="produce-content">\
+							              <div class="radio"></div>\
+							<li class="mui-table-view-cell mui-clearfix produce-item">\
+							    <div class="mui-pull-left produce-img">\
+								    <img src="'+produce[i].produceImg+'"/>\
+								    <p class="title num">'+produce[i].produceTime+'</p>\
+								</div>\
+							    <div class="produce-detail">\
+							        <p>日期：<span class="num">'+produce[i].Date+'</span></p>\
+							    	<p>时点：<span class="num">'+produce[i].time+'</span></p>\
+							    	<p>天气：<span>'+produce[i].weather+'</span></p>\
+							    	<p>蜂种：<span>'+produce[i].category+'</span></p>\
+							    	<p>采集蜂数量：<span><em>'+produce[i].num+'</em>只</span></p>\
+							    	<p>采集地：<span>'+produce[i].address+'</span></p>\
+							    	<p>蜜源：<span>'+produce[i].source+'</span></p>\
+							    	<p>负责人：<span>'+produce[i].leader+'</span></p>\
+							    	<p>联系电话：<span class="num">'+produce[i].phone+'</span></p>\
+							    </div>\
+							</li>\
+							<div class="fun mui-clearfix">\
+								<div class="info-footer">\
+									<div class="info-footer-content mui-pull-right">\
+										<a class="iconfont coll" href="javascript:;">&#xe67a;</a>\
+										<span class="coll-num">2345</span>\
+										<a class="iconfont chat"  href="javascript:;">&#xe63e;</a>\
+										<span class="chart-num">2105</span>\
+									</div>\
+							    </div>\
+								<div class="mui-table-view-cell mui-collapse">\
+									<a class="down iconfont mui-pull-left" href="#">&#xe686;</a>\
+								    <div class="mui-collapse-content">\
+										<div class="hot-chat"><span>热门评论</span><span class="iconfont">&#xe63e;</span><div class="chat-content"></div></div>\
+									</div>\
+								</div>\
+								</div><div class="radio"></div></div></div></div>';	
+								
+								
+								
+								
+									
+						}
+											
+						
+						document.getElementById('produce-content').innerHTML = content3;
+					    	 mui("#produce-content").on("tap",".produce-img",function(){
+					     	mui.openWindow({
+										id:"video",
+										url:"../examples/videoS.html",//此处更换介绍商家信息的页面
+										styles: {
+									top: '0px',
+									bottom: '0px',
+									HardwareAccelerated:true
+								}
+									})
+					     })	
+						
+						
+						//评论页面内容
+					var content4 = "";
+					for(var i=0;i<produce.length;i++){
+						var chat = produce[i].chat;
+						for(var j=0;j<chat.length;j++){
+									content4 +='<div class="mui-card">\
+									<div class="mui-card-header mui-card-media">\
+									<img src="'+chat[j].userImg+'" /><div class="mui-media-body mui-clearfix"><p class="user-name">'+chat[j].chatUser+'</p>\
+									<div class="up-time">'+chat[j].chatTime+'\
+									<div class="inner-chat-collection mui-pull-right"><span class="iconfont" href="javascript:;">&#xe67a;</span>\
+									<span class="coll-num num">'+chat[j].collection+'</span><span class="del">删除</span><span>回复</span><span class="chart-num num">'+chat[j].response+'</span></div></div></div></div>\
+									<div class="mui-card-content"><p class="chat-detail">'+chat[j].chatContent+'</p><p class="response">回复</p>\
+									<div class="response-content"></div></div></div>';
+										
+								}
+						document.getElementsByClassName('chat-content')[i].innerHTML = content4;
+						content4 ="";
+	               	}
+					//评论回复内容
+					var content5 = "";
+					for(var i=0;i<produce.length;i++){
+						var chat = produce[i].chat;
+						for(var j=0;j<chat.length;j++){
+									var response = chat[j].responseUser;
+									for(var k=0;k<response.length;k++){
+										content5 +='<div class="chat-response"><div class="mui-card-header inner mui-card-media">\
+										<img src="'+response[k].userimg+'" /><div class="mui-media-body mui-clearfix">\
+										<div class="user-namei">'+response[k].username+'<div class="response-time mui-pull-right">\
+										<span class="date num">'+response[k].responseDate+'</span><span class="time num">'+response[k].responseTime+'</span>\
+										</div></div></div></div><div class="card-content"><p>'+response[k].responseContent+'</p></div></div>';
+									}
+									document.getElementsByClassName('chat-content')[i].getElementsByClassName('response-content')[j].innerHTML= content5;	
+									content5="";
+								}
+						
+						
+	               }
+						clickInput();
+						clickDate();
+						mui(".myCalendar").calendar(
+							{
+								year:2016,
+								month:11,
+								today:14				
+							}, //日历参数，设置年月日,默认为今天
+							function(year, month) {  //日历切换时的回调方法，可以加载当前月的事件
+								//alert(year);
+							}
+						);	
+						//物流页面
+						var content5 =" ";
+						var lines = logistic.statu;
+						
+						var content7='<p class="trans-company mui-clearfix">\
+						<span class="mui-pull-left">物流承运公司:<span class="trans-company-logo"><img src="'+logistic.companyLogo+'" alt="" /></span>'+logistic.company+'</span>\
+						<span class="mui-pull-right all_play"><b class="iconfont vedio">&#xe60e;</b>视频</span></p><div class="trans-content"><ul></ul></div>';
+					
+						document.getElementsByClassName('trans-information')[0].innerHTML = content7;
+						
+						for(var i=0;i<lines.length;i++){
+							content5 += '<li><div class="radio"></div><div class="collapse mui-table-view-cell mui-collapse">\
+							<p class="trans-time"><span>'+lines[i].date+'</span><span>'+lines[i].time+'</span></p>\
+							<p class="trans-state">'+lines[i].state+'</p><a class="iconfont down-arrow" style="display:block" href="#"><img src="../img/down-arrow.png"/></a>\
+							<div class="logistic-detail  mui-table-view mui-table-view-chevron"><div class="logistic-play">视频播放<span class="iconfont">&#xe60d;</span></div>\
+							<p>物流车牌：'+lines[i].logisticDetail.logisticPlate+'</p><p>货车司机：'+lines[i].logisticDetail.driver+'</p><p>司机工号：<em>'+lines[i].logisticDetail.driverId+'</em></p>\
+							<p>发货人：'+lines[i].logisticDetail.shipper+'</p><p>卸货人：'+lines[i].logisticDetail.loader+'</p></div><a class="iconfont up-arrow" style="display:none" href="#"><img src="../img/up-arrow.png"/></a></div></li>';
+						}
+						
+						document.getElementsByClassName('trans-content')[0].getElementsByTagName('ul')[0].innerHTML = content5;
+						logisticPlay();
+						//物流页面js事件
+						mui('body .trans-content').on('tap','.mui-table-view-cell',function(){
+							var down = this.querySelector('.iconfont.down-arrow');
+							var up = this.querySelector('.up-arrow');
+								if(down.style.display == 'block' && up.style.display == 'none'){
+									down.style.display = 'none';
+									up.style.display = 'block';	
+								}else{
+									down.style.display = 'block';
+									up.style.display = 'none';	
+								}
+						})
+						
+					
+				}
+			})
+			
+			//生产页面日历的触发
+			function clickDate(){
+				var cons = mui('.date_content');
+					mui('.button').each(function(i, btn){
+						btn.addEventListener('tap', function(){
+							if(cons[i].style.display == "none"){
+								cons[i].style.display = "block";
+							}else{
+								cons[i].style.display = "none";
+							}	
+					}, false);
+							
+				})
+			}
+			//生产页面评论输出框的触发及评论的收藏
+			function clickInput(){
+				mui('.info-footer-content').on('tap','.chat',function(){
+				 	mui('#chat_box')[0].style.display = "block";
+				 });
+				mui('.info-footer-content').on('tap','.coll',function(){
+				 	this.parentNode.getElementsByClassName('coll-num')[0].innerHTML= parseInt(this.parentNode.getElementsByClassName('coll-num')[0].innerText)+1;
+				 });
+							
+			}
+			
+			//商家页面视频点击播放
+			function playButton(){
+				mui('#playButton')[0].addEventListener('tap',function(){
+					mui.openWindow({
+						id:"video",
+						url:"../examples/video.html",//此处更换介绍商家信息的页面
+						styles: {
+					top: '0px',
+					bottom: '0px',
+					HardwareAccelerated:true
+				}
+					})
+				})
+				
+			
+				
+			}
+			
+			function logisticPlay(){
+				//物流页面视频列表展示
+				mui('.all_play')[0].addEventListener('tap',function(){
+					mui.openWindow({
+						id:"",
+						url:"../examples/videoList.html"      //此处更换所有视频列表页
+					})
+				})
+				//物流页面每一流程视频点击播放
+				mui('body').on('tap','.logistic-play',function(){
+					mui.openWindow({
+						id:"videoW.html",
+						url:"../examples/videoW.html"       //此处更换物流每一个过程的视频
+					})
+				})
+			}
+			//mui.plusReady结束
+			
+			
+			
+//		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="fonts/iconfont.css"/>
+		<style type="text/css">
+			body{
+				background-color: white;
+			}
+			.flex-container {
+				/*display: -webkit-flex;
+				display: flex;
+				-webkit-flex-flow: row wrap;
+				justify-content: center;*/
+				text-align: center;
+			}
+			
+			.flex-left>a{
+				/*display: none;*/
+				position: relative;
+				width: 25%;
+				float: left;
+				/*flex: 1;*/	
+				/*border: 1px red solid;*/
+				padding:10px 0;
+				background: #FAFAFA;
+			}
+			.flex-right{
+				margin-top: 10px;
+			}
+			
+			.flex-right>a{
+				/*display: none;*/
+				position: relative;
+				width: 25%;
+				
+				float: left;
+				/*flex: 1;*/	
+				/*border: 1px red solid;*/
+				padding:10px 0;
+				background: #FAFAFA;
+			}
+			.flex-container span{
+				
+				/*border: 1px #ccc solid;*/
+				border-radius: 100%;
+				padding: 5px;
+			}
+			
+			.flex-container img{
+				width: 35%;
+			}
+			header{
+				background:#0F2646 !important;
+				color: #fff;
+				height: 0.88rem;
+				line-height: 0.88rem;
+			}
+			header h1{
+				color: #fff !important;
+			}
+			.mui-content{
+				background: #FAFAFA;
+				padding: 60px 0px 0px 0px !important;
+			}
+		</style>
+		
+	</head>
+
+	<body>		
+		<header class="mui-bar mui-bar-nav">
+		    <h1 class="mui-title">分享到</h1>
+		</header>
+		<div class="mui-content mui-scroll-wrapper shareRoom" style="position: absolute; bottom: 0; width: 100%; padding: 12px 0 51px 0;">
+			<div class="mui-scroll">
+				<div class="flex-container">
+					<div class="flex-left">
+						<a id="WXSceneSession" class="weixin">
+								<img src="../img/icon/weima (2).png"/>
+								<h6>复制链接</h6>
+						</a>
+						<a id="WXSceneTimeline" class="weixin">
+							<img src="../img/icon/weima (1).png"/>
+							<h6>二维码</h6>
+						</a>
+					</div>
+					<div style="clear: both;"></div>						
+					<div class="flex-right">
+						<a id="WXSceneTimeline" class="weixin">
+							<img src="../img/icon/weixin.png"/>
+							<h6>微信</h6>
+						</a>
+						<a id="WXSceneTimeline" class="weixin">
+							<img src="../img/icon/QQ.png"/>
+							<h6>QQ</h6>
+						</a>
+						<a id="WXSceneTimeline" class="weixin">
+							<img src="../img/icon/weibo.png"/>
+							<h6>微博</h6>
+						</a>
+						<a id="WXSceneTimeline" class="weixin">
+							<img src="../img/icon/weima (3).png"/>
+							<h6>手机联系人</h6>
+						</a>
+					</div>
+		        </div>
+			</div>
+		</div>
+		
+		<nav class="mui-bar mui-bar-tab app-nav mui-action-back" style="box-shadow: 0 0  !important; background: white;">
+			<div style="text-align: center;height: 51px; background: #FAFAFA;">
+				<a type="button" class="mui-btn mui-btn-block" style="height: 100%;border: none;">取&nbsp;&nbsp;消</a>
+			</div>
+		</nav>
+		
+	</body>
+<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.ready(function(){
+				mui('.mui-scroll-wrapper').scroll({
+					deceleration:(mui.os.ios?0.003:0.0006),
+				});
+			});
+		</script>
+</html>

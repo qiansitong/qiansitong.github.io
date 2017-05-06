@@ -1,0 +1,385 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css"/>
+		<script src="../js/font.js"></script>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li,p{
+				margin:0;
+				padding:0;
+				color:#2b2b2b !important;
+			}
+			a{
+				text-decoration: none;
+				/*color:#b9b9b9 !important;*/
+			}
+			img{
+				border:none;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#f4f4f4 !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#f4f4f4 !important;
+				
+			}
+			.mui-bar{
+				height:0.88rem;
+				line-height:0.88rem;
+				box-shadow:none;
+			}
+			.mui-title{
+				font-family:"苹方";
+				font-size:0.36rem;
+				font-weight:bold;
+				color:#0f2646;
+			}
+			/*顶部导航*/
+	    	header{
+	    		background:#f4f4f4 !important
+	    	}
+	    	header.mui-bar{
+	    		padding:0 0.24rem;
+	    	}
+	    	.mui-bar-nav~.mui-content{
+	    		padding-top:0.88rem;
+	    	}
+	    	.mui-icon{
+				color:#0f2646;
+			}
+			
+			.user-img p{
+    			text-align:center;
+    			font-size:0.22rem;
+    			line-height:0.22rem;
+    			color:#909090 !important;
+    			margin-top:0.16rem;
+    		}
+    		.idCode{
+    			position:relative;
+    			
+    		}
+    		
+    		.idCode a{
+    			text-align: center;
+    			width:1.32rem;
+    			height:0.44rem;
+    			line-height:0.44rem;
+    			position:absolute;
+    			top:0.22rem;
+    			right:0.24rem;
+    			color:#fafafa !important;
+    			font-size:0.2rem;
+    			background:#ec4b1f;
+    			border-radius:0.05rem;
+    		}
+    		.sign-form{
+    			padding:0 0.24rem;
+    			
+    		}
+    		.sign-form button{
+    			font-size:0.36rem;
+    			border:0;
+    			padding:0;
+    			width:100%;
+    			background:#0f2646;
+    			color:#8b9bb1;
+    			border-radius:5px;
+    			height:0.88rem;
+    			line-height:0.88rem;
+    		}
+    		.mui-popup{
+    			border-radius:4px;
+    		}
+    		
+    		.mui-popup-inner{
+    			padding:0;
+    		}
+    		.mui-popup-title{
+    			height:30px;
+    			background:#0f2646;
+    			line-height:30px;
+    			color:#fff;
+    			text-align:left;
+    			font-size:12px;
+    			padding-left:15px;
+    		}
+    		.mui-popup-text{
+    			min-height:50px;
+    			line-height:30px;
+    			font-size:18px !important;
+    		}
+    		.mui-popup-text p{
+    			text-align:right;
+    			padding-right:5px;
+    			line-height:22px;
+    			font-size:12px;
+    		}
+    		.mui-popup-button{
+    			border-radius:0 !important;
+    			color:#000;
+    		}
+    		.user-img{
+				width:100%;
+				margin:0.32rem 0 0.56rem;
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	            display:-ms-flexbox;  /* TWEENER - IE 10 */
+	            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+	            display:-webkit-flex;  /* NEW - Chrome */
+	            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				align-items:center;
+				justify-content:center;
+				flex-flow: column wrap;
+			}
+			
+			.img-center{
+				width:1.86rem;
+				height:1.86rem;
+				border-radius:50%;
+				overflow:hidden;
+				align-self:center;
+				background:url(../img/personal.png) no-repeat 0 center;
+				background-size:contain;
+			}
+			.sign-form input{	
+				margin:0;
+				height:0.88rem;
+				padding:0 0.24rem;
+				color:#2b2b2b;
+				font-size:0.3rem;
+				background:#f4f4f4;
+			}
+			.input-row{
+				position:relative;
+				margin-bottom:0.16rem;
+			}
+			/*输入正确提示*/
+			.input-row .right.iconfont{
+				font-size:0.44rem;
+				color:#45b208;
+				position:absolute;
+				top:0.23rem;
+				right:0.24rem;
+				display:none;
+			}
+			.input-row .error.iconfont{
+				font-size:0.44rem;
+				color:#c5090a;
+				position:absolute;
+				top:0.23rem;
+				right:0.24rem;
+				display:none;
+			}
+			.input-row .notice{
+				line-height:0.3rem;
+				margin-top:0.02rem;
+				padding:0 0.24rem;
+				color:#909090 !important;
+				font-size:0.22rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部-->
+		<header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href=""></a>
+            <h1 id="title" class="mui-title mui-center">注册</h1>
+    	</header>
+    	<div class="mui-content">
+		    <div class="user-img">
+    	    	<div class="img-center">
+    	    		<img src=""/>
+    	    	</div>
+    	    	<p>设置头像</p>
+    	    </div>
+		    <div class="sign-form">
+		    	<div class="input-row">
+		    		<input type="text" id="username" placeholder="用户名"/>
+		    		<span class="right username iconfont" style="display:none">&#xe64f;</span>
+		    		<span class="error username iconfont" style="display:none">&#xe683;</span>
+		    	</div>
+		    	
+		    	<div class="input-row">
+			    	<input type="text" id="phone" placeholder="手机号"/>
+			    	<span class="right iconfont">&#xe64f;</span>
+			    	<span class="error iconfont" style="display:none">&#xe683;</span>
+		    	</div>
+		    	<div class="input-row idCode">
+			    	<input type="text" id="idCode" placeholder="验证码"/>
+			    	<a id="getCode" style="display:block" href="javaScript:;">获取验证码</a>
+			    	<span class="right iconfont">&#xe64f;</span>
+			    	<span class="error iconfont" style="display:none">&#xe683;</span>
+		    	</div>
+		    	<div class="input-row">
+		    		<input type="password" id="password" placeholder="密码"/>
+		    		<span class="right iconfont">&#xe64f;</span>
+		    		<span class="error iconfont" style="display:none">&#xe683;</span>
+		    		<p class="notice">注意：请将密码设置为6-20位，并且由字母、数字和符号两种以上组合而成</p>
+		    	</div>
+		    	<div class="input-row">
+		    		<input type="password" id="repassword" placeholder="确认密码"/>
+		    		<span class="right iconfont">&#xe64f;</span>
+		    		<span class="error iconfont" style="display:none">&#xe683;</span>
+		    	</div>
+		    	
+		    	<button id='confirmBtn' type="button">完成</button>
+		    </div>
+		    
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			//发送get请求的函数
+			
+			//定义变量获取五个input框及获取验证码的按钮
+			var username = document.getElementById('username');
+			var phone = document.getElementById('phone');
+			var idCode = document.getElementById('idCode');
+			var pwd = document.getElementById('password');
+			var repwd = document.getElementById('repassword');
+			var getCode = document.getElementById('getCode');
+			var confirmBtn = document.getElementById('confirmBtn');
+			var ok1=false,ok2=false,ok3=false,ok4=false,ok5=false;
+			//用户名的验证
+			username.onfocus = function(){
+				this.parentNode.children[1].style.display = 'none';
+				this.parentNode.children[2].style.display = 'none';
+			}
+			
+			username.onblur = function(){
+				if(this.value == ""){
+					this.parentNode.children[2].style.display = 'block';
+					mui.toast("用户名不能为空");
+					return;
+				}else{
+					this.parentNode.children[1].style.display = 'block';
+					ok1 = true;
+				}	
+			}
+			phone.onfocus = function(){
+				this.parentNode.children[1].style.display = 'none';
+				this.parentNode.children[2].style.display = 'none';
+			}
+			phone.onblur = function(){
+				if(phone.value.length < 11){
+					mui.toast("请输入合法的手机号");
+					this.parentNode.children[2].style.display = 'block';
+				}else{
+					this.parentNode.children[1].style.display = 'block';
+					ok2 = true;
+				}	
+			}
+			pwd.onfocus = function(){
+				this.parentNode.children[1].style.display = 'none';
+				this.parentNode.children[2].style.display = 'none';
+			}
+			//密码的验证
+			 pwd.onblur = function(){
+            	var repexNum = /[^0-9]/g;//匹配所有不是数字的字符
+            	var repexWor = /[^a-zA-Z]/g;//匹配所有不是字母的字符
+            	if(this.value == ""){
+                	mui.toast("密码不能为空");
+            	}else if(this.value.length < 6 || this.value.length>20 ){
+                	mui.toast("密码格式错误,请重新设置");
+                	this.parentNode.children[2].style.display = 'block';
+            	}else if(!repexNum.test(this.value)){
+                	mui.toast("密码格式错误,请重新设置");
+                	this.parentNode.children[2].style.display = 'block';
+            	}else if(!repexWor.test(this.value)){
+               		mui.toast("密码格式错误,请重新设置");
+               		this.parentNode.children[2].style.display = 'block';
+            	}else{
+            		this.parentNode.children[1].style.display = 'block';
+            		ok4= true;
+            	}	
+           	}
+			repwd.onfocus = function(){
+			 	this.parentNode.children[1].style.display = 'none';
+			 	this.parentNode.children[2].style.display ='none';
+			 	
+			}
+			repwd.onkeyup = function(){
+			 	if(this.value.length == pwd.value.length){
+			 		if(this.value == pwd.value){
+			 			this.parentNode.children[1].style.display = 'block';
+			 			ok5 = true;
+			 		}else{
+			 			mui.toast('两次输入的不一致');
+			 			this.parentNode.children[2].style.display = 'block';
+			 		}
+			 	}
+			 	
+			}
+			idCode.onfocus = function(){
+				getCode.addEventListener('tap',function(){
+					var number = phone.value;
+					mui.toast('验证码已发送至'+number);
+					this.innerHTML = '重新获取';
+				})
+				if(this.value){
+					this.parentNode.children[1].style.display = 'none';
+				}else{
+					this.parentNode.children[1].style.display = 'block';
+				}
+				
+			}
+			idCode.onblur = function(){
+				if(this.value.length < 6){
+					mui.toast("验证码错误，请重新获取验证码");
+					this.parentNode.children[2].style.display = 'none';
+				}else{
+					this.parentNode.children[1].style.display = 'none';
+					this.parentNode.children[2].style.display = 'block';
+					ok3 = true;
+				}	
+			}
+				
+			
+			
+			
+			//验证码的验证
+			
+			confirmBtn.addEventListener('tap',function(){
+				//如果以上表单验证全部通过，则发送注册信息
+				if(ok1&&ok2&&ok3&&ok4&&ok5){
+					ajax_register({
+						account:username.value,
+						phone:phone.value,
+						idCode:idCode.value,
+						pwd:pwd.value,
+					});	
+					mui.toast('注册成功');
+//					var registerWebview = plus.webview.currentWebview();
+//					
+//					registerWebview.close();
+//					mui.back();
+					
+				}else{
+					mui.toast("请输入正确的注册信息");
+				}
+				
+			},false)	
+			
+			
+			
+		</script>
+	</body>
+
+</html>

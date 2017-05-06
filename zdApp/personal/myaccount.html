@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont.css"/>
+		<script src="../js/font.js"></script>
+		<style>
+			em{
+				font-style:normal;
+				font-family: arial;
+			}
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li,p{
+				margin:0;
+				padding:0;
+				color:#2b2b2b !important;
+			}
+			a{
+				text-decoration: none;
+				/*color:#b9b9b9 !important;*/
+			}
+			img{
+				border:none;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#f4f4f4 !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#f4f4f4 !important;
+			}
+			.mui-bar{
+				line-height:0.88rem;
+				height:0.88rem;
+				box-shadow:none;
+			}
+			.mui-title{
+				line-height:0.88rem;
+				height:0.88rem;
+				font-family:"苹方";
+				font-size:0.36rem;
+				font-weight:bold;
+				color:#fafafa;
+				
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top:0.88rem;
+			}
+			/*顶部导航*/
+	    	header{
+	    		background:#0f2646 !important
+	    	}
+	    	header.mui-bar{
+	    		padding:0 0.24rem;
+	    	}
+	    	
+	    	.mui-icon{
+				color:#fafafa;
+			}
+			.specia{
+				padding-top:0.32rem;
+				font-size:0.36rem;
+				color:#909090 !important;
+			}
+			.specia span{
+				font-size:0.36rem;
+				color:#909090 !important;
+				line-height:0.36rem;
+			}
+			.img-box-top{
+				background:#0f2646;
+				padding-bottom:2.16rem;
+				
+			}
+			.all-img{
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	            display:-ms-flexbox;  /* TWEENER - IE 10 */
+	            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+	            display:-webkit-flex;  /* NEW - Chrome */
+	            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				flex-flow:column wrap;
+				justify-content:center;
+				align-items:center;
+			}
+			.img-box-bottom .img-radius{
+				margin-top:-0.96rem;
+				width:1.92rem;
+				height:1.92rem;
+				/*border:2px solid #EC4B1F;*/
+			}
+			.img-radius img{
+				width:100%;
+			}
+			.user-name{
+				margin-top:0.24rem;
+				font-size:0.3rem;
+				color:#909090;
+				line-height:0.3rem;
+				text-align:center;
+			}
+			.account-list ul{
+				margin-top:0.48rem;
+				background:#fff;
+			}
+			.account-list ul li{
+				margin:0 0.24rem;
+				color:#909090 !important;
+				overflow: hidden;
+				font-size:0.3rem;
+				height:0.88rem;
+				line-height:0.88rem;
+				border-bottom:1px solid #d6d7dc;
+			}
+			.account-list ul li:last-child{
+				border-bottom:0;
+			}
+			.account-list ul li span{
+				color:#323232 !important;
+				font-size:0.3rem;
+			}
+		</style>
+	</head>
+	<body>
+		<!--顶部-->
+		<header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href=""></a>
+            <h1 class="mui-title">我的账号</h1>
+    	</header>
+    	<div class="mui-content">
+    		<div class="img-box-top">
+	    		<div class="specia mui-ellipsis">
+	    			个性签名：
+	    			<span>我的云为我编织了一串绕行的...</span>
+	    		</div>
+    		</div>
+    	   <div class="img-box-bottom">
+    	   	   <div class="all-img">
+    	   	   		<div class="img-radius">
+    	   				<img src="../img/user.png" alt="" />	
+    	   			</div>
+    	   		</div>
+    	   		<div class="user-name"><em>mouseshit</em></div>
+    	   		<div class="account-list">
+    	   			<ul>
+    	   				<li>溯源号<span class="mui-pull-right"><em>mouseshit</em></span></li>
+    	   				<li>微信号<span class="mui-pull-right"><em>feel</em></span></li>
+    	   				<li>QQ号<span class="mui-pull-right"><em>497585348</em></span></li>
+    	   				<li>手机号<span class="mui-pull-right"><em>18333188095</em></span></li>
+    	   				<li>新浪微博<span class="mui-pull-right">未绑定</span></li>
+    	   			</ul>
+    	   		</div>
+    	   </div> 
+    	</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

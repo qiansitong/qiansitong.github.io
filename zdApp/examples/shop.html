@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css"/>
+		<style type="text/css">
+                    
+.iconfont{font-family:"iconfont";
+
+font-size:25px;font-style:normal;
+color: #000000;}
+		body{
+			color: #646464;
+		}
+			#shopMain{
+				margin-top: 1px;
+				position: relative;
+			}
+			.shopMainO{
+				display: flex;
+				flex-direction: row;
+			}
+			.shopMainO .shopMainP{
+				font-size: 14px;
+				color: #646464;
+                width: 80%; 
+			}
+			.shopMainO .shopMainA{
+				position: absolute;
+				right: 10px;
+			}
+			.shopMainO .shopMainA button.mui-btn{
+				border-left: 1px solid #e1e1e1;
+				color: #ffa200;
+				padding: 0px 10px;
+				text-align: center;
+				margin-left: 10px;
+			}
+			.shopMainO .shopMainA button.mui-btn p{
+				margin: 0px;
+				color: #ffa200;
+			}
+			.shopMainY{
+				margin-top: 5px;
+				color: #f00c0c;
+				font-size: 20px;
+			}
+			.shopMainY b{
+				font-size: 25px;
+				padding-left: 10px;
+			}
+			.mui-navigate-right b{
+				color: #323232;
+				font-weight: 400;
+			}
+			.mui-navigate-right span{
+				float: right;
+				margin-right: 20px;
+			}
+			.mui-navigate-right span b{
+				color: #f00c0c;
+			}
+			#shopStr{
+				background-color: white;
+			}
+			#shopStr h2{
+				padding: 10px 0px;
+				font-size: 18px;
+				text-align: center;
+			}
+			#shopStr p{
+				padding: 0px 20px;
+				color: #646464;
+				margin-bottom: 0px;
+			}
+			
+			/*页脚位置*/
+			.footer5{
+				background: #ffa200;
+				width: 5px !important;
+				color: white !important;
+			}
+			.mui-content{
+				padding-bottom: 50px;
+			}
+			.mImg{
+				max-width:110px;
+				height: 100px;
+				line-height: 100px;
+			}
+			#shopImgs li{
+				background: #fff;
+			}
+			#shopImg div img{
+				max-height: 300px;
+			}
+			header{
+				background: #659aea !important;
+			}
+			header a{
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title" style="color: #fff;">立即订购</h1>
+		</header>
+		<div class="mui-content">
+		<!--商品图片介绍开始-->
+		   <div class="mui-slider">
+		     <div id="shopImg" class="mui-slider-group">
+		       <div class="mui-slider-item"><a href="#"><img src="../img/189120-12060215034551.jpg" /></a></div>
+    		   <div class="mui-slider-item"><a href="#"><img src="../img/189120-12060215034551.jpg" /></a></div>
+               <div class="mui-slider-item"><a href="#"><img src="../img/189120-12060215034551.jpg" /></a></div>
+               <div class="mui-slider-item"><a href="#"><img src="../img/189120-12060215034551.jpg" /></a></div>
+		     </div>
+		   </div>
+		 <!--商品图片介绍结束-->
+		<!--商品介绍开始-->
+		<div id="shopMain">
+ 			<ul class="mui-table-view">
+ 			        <li class="mui-table-view-cell">
+ 			        	<div class="shopMainO">			        		
+ 			        	<div id="title" class="shopMainP">【B族豌豆】草本植物 蜜糖豆 蜜豆 青豆 小寒豆长日性冷季植物 二倍体植物</div>	                      
+						<div class="shopMainA">
+							<button type="button" class="mui-btn mui-btn-link"><p class="iconfont">&#xe64a;</p>购物车</button>							
+						</div>						
+						</div>
+						<div class="shopMainY">
+							¥<b id="price">24.7</b>
+						</div>
+ 			        </li>
+ 			        <li class="mui-table-view-cell">
+ 			           <a class="mui-navigate-right">
+			              已选择：<b>1件</b>
+			            </a>
+ 			        </li>
+ 			        <li class="mui-table-view-cell">
+ 			          <a class="mui-navigate-right">
+			           	 评价<b>（237）</b><span>好评<b>98%</b></span>			            
+			           </a>
+ 			        </li>
+ 			   </ul>	
+ 			   <!--商品介绍结束-->
+ 			   <!--宝贝详情开始-->
+ 			   <div id="shopStr">
+ 			 	<h2>宝贝详情</h2>
+ 			   	<p>品种：B族豌豆是甘肃省农业科学院作物研究所选育成功的半无叶型新品种。
+形态特征：攀援草本，高80～180厘米，全株绿色，光滑无毛，被粉霜。
+食疗功效：豌豆味甘、性平，归脾、胃经，具有益中气、止泻痢、调营卫、利小便、消痈肿、解乳石毒之功效。对脚气、痈肿、乳汁不通、脾胃不适、呃逆呕吐、心腹胀痛、口渴泄痢等病症，有一定的食疗作用。</p>
+ 			   </div>
+ 			   <!--宝贝详情结束-->
+ 			 
+ 			   <!--循环图片-->
+ 			    <div class="mui-slider">
+		        <div class="mui-slider-group mui-slider-loop">
+		        	<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一个图文表格) -->
+		            <!--<div class="mui-slider-item mui-slider-item-duplicate">
+		                <ul class="mui-table-view mui-grid-view">
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">Color of SIP CBD</div></a></li>
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">静静看这世界</div></a></li>
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">静静看这世界</div></a></li>
+		                </ul>
+		            </div>
+		            <div class="mui-slider-item">
+		                <ul class="mui-table-view mui-grid-view">
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">Color of SIP CBD</div></a></li>
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">静静看这世界</div></a></li>
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">静静看这世界</div></a></li>
+		                </ul>
+		            </div>
+		            <div class="mui-slider-item">
+		                <ul class="mui-table-view mui-grid-view">
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">Color of SIP CBD</div></a></li>
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">静静看这世界</div></a></li>
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">静静看这世界</div></a></li>
+		                </ul>
+		            </div>-->
+		            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一个图文表格) -->
+		            <!--<div class="mui-slider-item mui-slider-item-duplicate">
+		                <ul class="mui-table-view mui-grid-view">
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">Color of SIP CBD</div></a></li>
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">静静看这世界</div></a></li>
+		                    <li class="mui-table-view-cell mui-media mui-col-xs-4"><a href="#"><img class="mui-media-object" src="../img/product2.jpg">
+		                            <div class="mui-media-body">静静看这世界</div></a></li>
+		                </ul>
+		            </div>-->
+		        </div>
+		    </div>
+ 			   <!--循环图片结束-->
+ 			   	<div id="pullrefresh" class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+ 			   	<div id="shopImgs">
+				<!--<ul id="mss" class="mui-table-view">
+				   <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-pull-left"><img class="mImg" src="../img/188819-12061913423969.jpg"></li>
+				   <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-pull-left"><img class="mImg" src="../img/188819-12061913423969.jpg"></li>
+				   <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-pull-left"><img class="mImg" src="../img/188819-12061913423969.jpg"></li>
+				</ul>			-->
+				</div>
+ 			   </div>
+		</div>
+
+	
+		</div>
+		</div>
+		
+		<nav class="mui-bar mui-bar-tab">
+		    <a class="mui-tab-item mui-active">
+		        <span class="mui-icon iconfont">&#xe678;</span>
+		        <span class="mui-tab-label">客服</span>
+		    </a>
+		    <a class="mui-tab-item">
+		        <span class="mui-icon iconfont">&#xe679;</span>
+		        <span class="mui-tab-label">店铺</span>
+		    </a>
+		    <a class="mui-tab-item">
+		        <span class="mui-icon iconfont">&#xe694;</span>
+		        <span class="mui-tab-label">收藏</span>
+		    </a>
+		    <a class="mui-tab-item">
+		        <span class="mui-icon iconfont">&#xe665;</span>
+		        <span class="mui-tab-label">分享</span>
+		    </a>
+		    <a class="mui-tab-item footer5">
+		        <span class="mui-tab-label">立即订购</span>
+		    </a>
+		</nav>
+	</body>
+<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			mui.plusReady(function(){
+				var self=plus.webview.currentWebview();
+				var title=document.getElementById('title');
+				var price=document.getElementById('price');
+				var shopImg=document.getElementById('shopImg')
+//				title.innerHTML=self.title;
+//				price.innerHTML=self.price;
+				shopImg.innerHTML='<div class="mui-slider-item"><a href="#"><img src="../img/189120-12060215034551.jpg" /></a></div>\
+    		   <div class="mui-slider-item"><a href="#"><img src="../img/189120-12060215034551.jpg" /></a></div>\
+               <div class="mui-slider-item"><a href="#"><img src="../img/189120-12060215034551.jpg" /></a></div>\
+               <div class="mui-slider-item"><a href="#"><img src="../img/189120-12060215034551.jpg" /></a></div>'
+			})
+			/**
+			 * 上拉加载具体业务实现 
+			 */
+			var count = 0;
+			function pullupRefresh() {
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+					var table = document.body.querySelector('#mss');
+					var cells = document.body.querySelectorAll('.mui-col-xs-4');
+					for (var i = cells.length, len = i + 3; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell mui-media mui-col-xs-4 mui-pull-left';
+						li.innerHTML = '<img class="mImg" src="../img/product2.jpg">';
+						table.appendChild(li);
+					}
+				}, 1500);
+			}
+		</script>
+</html>

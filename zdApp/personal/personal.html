@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../fonts/iconfont.css" />
+		<script src="../js/font.js"></script>
+		<style>
+			i{
+				font-style:normal;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li,p{
+				margin:0;
+				padding:0;
+				color:#2b2b2b !important;
+			}
+			a{
+				text-decoration: none;
+				/*color:#b9b9b9 !important;*/
+			}
+			img{
+				border:none;
+			}
+			
+			ul{
+				list-style: none;
+			}
+			body{
+				font-family:"微软雅黑" !important;
+				background-color:#e8e8e8 !important;
+				color:#2b2b2b !important;
+				line-height:0.42rem;
+			}
+			.mui-content{
+				background-color:#e8e8e8 !important;
+			}
+			.mui-bar{
+				line-height:0.88rem;
+				height:0.88rem;
+				box-shadow:none;
+			}
+			.mui-title{
+				line-height:0.88rem;
+				height:0.88rem;
+				font-family:"苹方";
+				font-size:0.36rem;
+				font-weight:bold;
+				color:#fafafa;
+			}
+			/*顶部导航*/
+	    	header{
+	    		background:#0f2646 !important
+	    	}
+	    	header.mui-bar{
+	    		padding:0 0.24rem;
+	    	}
+	    	
+	    	.mui-bar .mui-icon{
+				color:#fafafa;
+				padding:0.2rem;
+				font-size:0.48rem;
+			}
+			.mui-bar-nav~.mui-content{
+				padding-top:0.88rem;
+			}
+			
+			/*弹性布局*/
+			.intro-box-img{
+				margin-top:0.32rem;
+				width:100%;
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	            display:-ms-flexbox;  /* TWEENER - IE 10 */
+	            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+	            display:-webkit-flex;  /* NEW - Chrome */
+	            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				flex-direction:column;
+				/*确定主轴方向：列*/
+				flex-wrap:wrap;
+				/*确定在主轴上的换行方式：换行，第一行在上方*/
+			  	justify-content:center;
+			  	/*确定项目在主轴上的对齐方式*/
+			  	align-items:center;
+			  	/*交叉轴上的对齐方式*/
+			}
+			.username h3{
+				margin-top:0.16rem;
+				margin-bottom:0;
+				color:#909090;
+				font-size:0.3rem;
+			}
+			
+			.img-radius{
+				width:2.16rem;
+				height:2.16rem;
+				border:1px solid #ec4b1f;
+				-webkit-border-radius:100%;
+				overflow:hidden;
+				align-self:center;
+				background-size:contain;
+			}
+			.img-radius img{
+				width:100%;
+				height:100%;
+			}
+			.intro-box{
+				width:100%;
+				background:#0f2646;
+				overflow: hidden;
+			}
+			/*定位及积分*/
+			.intro-box-tit{
+				line-height:0.3rem;
+				margin-top:0.48rem;
+				margin-bottom:1.04rem;
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+	            display:-ms-flexbox;  /* TWEENER - IE 10 */
+	            display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+	            display:-webkit-flex;  /* NEW - Chrome */
+	            display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				justify-content:center;
+			}
+			.intro-item{
+				display:inline-block;
+				font-size:0;
+			}
+			.intro-item span{
+				font-size:0.24rem;
+				color:#c0cee1;
+				display:inline-block;
+				vertical-align: middle;
+			}
+			.station.iconfont{
+				font-size:0.3rem;
+				color:#ec4b1f;
+			}
+			.second.iconfont{
+				margin-left:0.56rem;
+				font-size:0.4rem;
+				color:#ec4b1f;
+			}
+			.special{
+				line-height:0.28rem;
+				border-top:1px solid #2a476f;
+				padding:0.29rem 0 0.29rem 0.24rem;
+				font-size:0.28rem;
+				color:#667998;
+			}
+			
+			.cate-box{
+				font-size:0;
+			}
+			.cate-item{
+				display:inline-block;
+			}
+			.cate-item a{
+				height:100%;
+				height:3.19rem;
+				display:-moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+                display:-ms-flexbox;  /* TWEENER - IE 10 */
+                display:-webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+                display:-webkit-flex;  /* NEW - Chrome */
+                display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+				align-items:center;
+				justify-content: center;
+				flex-direction:column;
+				margin:0 !important;
+				padding:0 !important;
+			}
+			.cate-tit{
+				margin-top:0.16rem;
+				color:#646464;
+				font-size:0.3rem;
+				line-height:0.3rem;
+			}
+			.cate-item img{
+				width:1.68rem;
+				height:1.68rem;	
+			}
+			.mui-table-view.mui-grid-view{
+				padding:0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部-->
+		<header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href=""></a>
+            <h1 class="mui-title">个人中心</h1>
+    	</header>
+    	<div class="mui-content">
+    		<div class="intro-box">
+    	    	<div class="intro-box-img">
+    	    		<div class="img-radius" id="login"><img id="realImg" src="../img/user.png" alt="" /></div>
+    	    		<div class="username" id="username"><h3>匀层</h3></div>
+    	    	</div>
+    	    	<div class="intro-box-tit">
+    	    		<div id="equipotential" class="intro-item">
+    	    			<span class="station iconfont">&#xe68f;</span>
+    	    			<span class="station">湖北 武汉</span>
+    	    		</div>
+    	    		<div id="integral" class="intro-item">
+    	    			<span class="second iconfont">&#xe6b5;</span>
+    	    			<span class="second">积分 <i>56</i></span>
+    	    		</div>
+    	    	</div>
+    	    	<div class="special">
+    	    		个性签名:<span class="content">威尼斯的泪，像玻璃易碎~</span>
+    	    	</div>
+    	   </div>
+    	   <div class="cate-box">
+    	   		<div class="cate-item mui-col-xs-6" style="border-bottom:1px solid #d6d7dc;border-right:1px solid #d6d7dc">
+    	   			<a href="#a">
+    	   	   			<img src="../img/personal/account.png" alt="" />
+    	   	   			<div class="cate-tit">账号管理</div>
+    	   	   		</a>
+    	   		</div>
+    	   		<div class="cate-item mui-col-xs-6" style="border-bottom:1px solid #d6d7dc;">
+    	   			<a href="#b">
+    	   	   			<img src="../img/personal/history.png" alt="" />
+    	   	   			<div class="cate-tit">历史资料</div>
+    	   	   		</a>
+    	   		</div>
+    	   		<div class="cate-item mui-col-xs-6" style="border-right:1px solid #d6d7dc;">
+    	   			<a href="#c">
+    	   	   			<img src="../img/personal/collection.png" alt="" />
+    	   	   			<div class="cate-tit">我的收藏</div>
+    	   	   		</a>
+    	   		</div>
+    	   		<div class="cate-item mui-col-xs-6">
+    	   			<a href="#d">
+    	   	   			<img src="../img/personal/data.png" alt="" />
+    	   	   			<div class="cate-tit">个人资料</div>
+    	   	   		</a>
+    	   		</div>
+    	   		
+    	   </div>
+    	</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+			//定位
+			document.getElementById("equipotential").addEventListener("tap",function(){
+				mui.openWindow({
+							id:'place',
+							url:'place.html'
+						})
+			});
+			//积分
+			document.getElementById("integral").addEventListener("tap",function(){
+				mui.openWindow({
+							id:'second',
+							url:'second.html'
+						})
+			});
+		   //账号管理,历史资料,我的收藏,个人 资料 页面事件		
+		  mui(".cate-box").on("tap","a",function(){
+					if (this.getAttribute('href') =="#a") {
+						mui.openWindow({
+							id:'account',
+							url:'account.html'
+						})
+					}else if(this.getAttribute('href') =="#b"){
+						mui.openWindow({
+							id:'history.html',
+							url:'history.html'
+						})
+					}else if(this.getAttribute('href') =="#c"){
+						mui.openWindow({
+							id:'collection.html',
+							url:'collection.html'
+						})
+					}else if(this.getAttribute('href') =="#d"){
+						mui.openWindow({
+							id:'personal-data.html',
+							url:'personal-data.html'
+						})
+					}
+				});
+			})
+		</script>
+	</body>
+
+</html>

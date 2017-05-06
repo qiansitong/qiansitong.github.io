@@ -1,0 +1,65 @@
+{
+	"status1": "推荐",
+	"message": "获取资讯详细信息成功",
+	"newsImg1":"img/news/index.jpg",
+	"newsImgText1":"小麦可是很贵很贵的，真的不骗你",
+	"result": [
+		{
+			"productId": 6,
+			"productName": "三星新广告暗讽借iPadAir铅笔广告反击",
+			"pastWhen":"10分钟前",
+			"productPrice": "1253",
+			"productImage": "img/index/push3.jpg"
+		}, {
+			"productId": 6,
+			"productName": "三星新广告暗讽借iPadAir铅笔广告反击",
+			"pastWhen":"10分钟前",
+			"productPrice": "1253",
+			"productImage": "img/index/push3.jpg"
+		}, {
+			"productId": 6,
+			"productName": "三星新广告暗讽借iPadAir铅笔广告反击",
+			"pastWhen":"10分钟前",
+			"productPrice": "1253",
+			"productImage": "img/index/push3.jpg"
+		}, {
+			"productId": 6,
+			"productName": "三星新广告暗讽借iPadAir铅笔广告反击",
+			"pastWhen":"10分钟前",
+			"productPrice": "1253",
+			"productImage": "img/index/push3.jpg"
+		}
+	],
+	"status2": "热点",
+	"message": "获取资讯详细信息成功",
+	"newsImg2":"img/news/index.jpg",
+	"newsImgText2":"小麦可是很贵很贵的，真的不骗你",
+	"result2": [
+		{
+			"productId": 6,
+			"productName": "三星新广告暗讽借iPadAir铅笔广告反击",
+			"pastWhen":"10分钟前",
+			"productPrice": "1253",
+			"productImage": "img/index/push3.jpg"
+		}, {
+			"productId": 7,			
+			"productName": "三星新广告暗讽借iPadAir铅笔广告反击",
+			"pastWhen":"10分钟前",
+			"productPrice": "1253",
+			"productImage": "img/index/push3.jpg"
+		}, {
+			"productId": 8,			
+			"productName": "三星新广告暗讽借iPadAir铅笔广告反击",
+			"pastWhen":"10分钟前",
+			"productPrice": "1253",
+			"productImage": "img/index/push3.jpg"
+		}, {
+			"productId": 9,
+			"productName": "三星新广告暗讽借iPadAir铅笔广告反击",
+			"pastWhen":"10分钟前",
+			"productPrice": "1253",
+			"productImage": "img/index/push3.jpg"
+		}
+	]
+		
+}

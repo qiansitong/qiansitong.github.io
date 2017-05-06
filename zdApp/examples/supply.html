@@ -1,0 +1,363 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css"/>
+		<script src="../js/font.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+		html,body{
+			background: #fff;
+		}
+		html,body,h1,h2,h3,h4,h5,h6{
+			color: #323232;
+		}
+         .mui-content{
+         	background: #fff;
+         	padding:0.44rem 0.24rem 1rem  0.24rem;
+         	
+         }         
+		header{
+				background: #649be9 !important;
+			}
+		header a{
+			color: #fff;
+			font-size: 0.44rem;
+		}
+		header h1{
+			color: #fff !important;
+			font-weight: bold !important;
+		}
+		/*文章主题部分开始*/
+		#article h2{
+			text-align: left;
+			font-size: 0.36rem;
+			color: #2b2b2b;
+			margin: 0.32rem 0px 0.24rem 0px;
+		}
+		#article p{
+			font-size: 0.24rem;
+			color: #909090;
+			margin-bottom:0px !important;
+		}
+		#article p span{
+			margin-left: 0.24rem;
+		}
+		#article p b{
+			margin-left: 0.4rem;
+			color: #0F2646;
+		}
+		#article img{
+			max-width: 100%;
+			margin: 0.32rem 0px 0.32rem 0px;
+		}
+		#article p{
+			color:#323232;
+			font-size: 0.3rem;
+			line-height: 0.4rem;
+		}
+		#article p.articleLess{
+			margin-top: 0.64rem;
+			color:#323232;
+			font-size: 0.3rem;
+			margin-bottom: 0.15rem;
+		}
+		#article p.articleZer{
+			text-align: right;
+			margin-top: 0.24rem;
+			color: #909090;	
+			font-size: 0.24rem;		
+		}
+		#article p.articleZer span{
+			color: #0F2646;
+		}
+		/*文章主题部分结束*/
+		
+		/*相关推荐开始*/
+		.recom{
+			margin-top: 0.65rem;			
+		} 
+		h3{
+			margin: 0px;
+			font-size:0.3rem;
+			color: #0f2646;
+			margin-bottom: 0.24rem;
+		}
+		h3 span{
+			font-size:0.32rem;
+			margin-left: 0.08rem;
+			color: #909090;
+		}
+		
+		/*商品区域*/
+		/*修改mui li默认边框*/
+		
+        .mui-table-view-cell:after{
+			left: 0px !important;
+		}
+		.recom ul li a img{
+			max-width: 2.34rem !important;
+			width: 2.34rem !important;
+			height: 1.58rem !important;
+			border: 1px solid #D6D7DC;
+		}
+		.mui-table-view .mui-media-object.mui-pull-right{
+			margin-left: 0px;
+		}
+		.mui-table-view-cell{
+			padding: 11px 8px 11px 0px;
+		}
+		.recom ul li{
+			/*padding-left:0.24rem ;*/
+			
+		}
+		.recom ul li a p{
+			font-size:0.32rem ;
+			color: #323232;
+			margin-right:0.48rem ;
+			white-space:normal;
+		}
+		.recom ul li a p.recomP{
+			color: #909090;
+			font-size: 0.2rem;
+			margin-top: 0.36rem;
+		}
+		.recom ul li a p.recomP span{
+			color: #909090;
+			font-size: 0.24rem;
+		}
+		
+		.recom ul li a p.recomP span.mRight{
+			margin-right: 0.08rem;
+		}
+		.recom ul li a p.recomP span.mLeft{
+			margin-left: 0.16rem;
+		}
+		.mui-table-view-cell>a:not(.mui-btn){
+			margin: -11px -15px -11px 0px;
+		}
+		/*商品区域结束*/
+		/*相关推荐结束*/
+		
+		/*相关评论开始*/
+		.comments{
+			margin-top: 0.2rem;
+		}		
+		.comments div.nocomments{
+			text-align: center;
+			color:#909090 ;
+			font-size: 0.5rem;
+			line-height: 0.8rem;
+			padding: 0.64rem 0px;
+		}
+		/*底部输入区域*/
+		.footer{
+			position: relative;
+			height: 0.98rem !important;
+			background: #FAFAFA;
+			padding-left: 0.24rem;
+			padding-right: 0.24rem;
+		}
+		.footer input{
+			position: absolute;
+			top: 0.27rem;
+			left: 0.24rem;
+			width: 68%;
+			border: none;
+			background: none;
+			border-bottom:1px solid #D6D7DC !important;
+			border-radius: 0;
+			line-height:0.48rem;
+			margin-bottom: 0px;
+			padding: 0px;
+			height: .48rem;
+			z-index: 99999;
+		}
+		.footer p span{
+			font-size: 0.4rem;
+			color: #0F2646;
+			margin: 0px 0.08rem 0.08rem 0.08rem;
+		}
+		.footer p{
+			font-size: 0.22rem;
+			color: #909090;
+			margin-left:0.25rem;
+		}
+		.footer p.share{
+			margin-left: 0.2rem;
+		}
+		.icon{
+			position: absolute;
+			top: .24rem;
+			right: 0.24rem;
+			display:flex ;
+		}
+		
+		#discuss{
+			position: absolute;
+			top: 0.27rem;
+			left: 0.24rem;
+			font-size: 0.24rem;
+			color: #D4D4D4;
+		}
+		#discuss .discussText{
+			width: 200px;
+			position: absolute;
+			top: 0;
+			left: 0.48rem;
+		}
+		#discuss .discussText span{
+			font-size: 0.22rem;
+			color: #909090;
+		}
+		#discuss img{
+			max-width: 0.4rem;
+			height: 0.4rem;
+		}
+		
+		#fotIcon{
+			display: block;
+		}
+		#Fsubmit{
+			width: 0.72rem;
+			position: absolute;
+			font-size: 0.24rem;
+			padding: 0.02rem 0.08rem;
+			top: 0.22rem;
+			right:0.24rem ;
+			border: 1px solid #D6D7DC;
+			border-radius: 2px;
+			display: none;
+		}
+		/*底部输入区域结束*/
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">正大溯源云平台</h1>
+		</header>
+		<div class="mui-content">
+		    <!--文章主题部分开始-->
+		    <div id="article">
+		    	<h2>三星新广告暗讽 借iPad Air铅笔广告反击</h2>
+		    	<p>2016-10-01<span>14:07</span><b>新华网</b></p>
+		    	<p class="articleLess">
+		    	三星在最新的Galaxy Tab Pro 10.1广告中，模仿了苹果iPad Air铅笔广告的创意，
+		    	而且还直接让iPad Air出镜。iPad Air创意铅笔广告去年10月伴随新款iPad发布。
+		    	在三星的这段广告中，三星提到Galaxy Tab Pro 10.1要比iPad Air更薄，
+		    	还支持单屏多任务功能，这些都是iOS无法实现的。虽然三星在广告中没有提到确切的数字，
+		    	但Galaxy Tab Pro 10.1的厚度为7.3毫米，而iPad Air的厚度为7.5毫米，两款产品之间只有0.2毫米的差距。</p>
+		    		<img src="../img/enterprise2.jpg"/>
+		    	<p>此外，广告中还提到Galaxy Tab Pro 10.1采用10.1寸高清显示屏，分辨率为2560*1600，
+		    		每英寸像素数量为299个。iPad Air的分辨率为2048*1536，每英寸分辨率为264个。
+		    		微软也在广告中采用了相同的策略，直接将旗下Surface平板电脑与iPad进行横向对比。
+		    		这段广告中的最后一句话也非常幽默，旁白提到自己要拿走Galaxy Tab Pro 10.1和铅笔，iPad Air不要。</p>		    	
+		    	<p class="articleZer">责任编辑 <span>清云</span></p>
+		    </div>
+		    <!--文章主体部分结束-->
+		    
+		    <!--相关推荐-->
+		     <div class="recom">
+		     	 <h3>相关推荐<span class="iconfont">&#xe671;</span></h3>
+		     	 
+		     	 <!--商品区域-->
+		     	 <ul id="recomUl" class="mui-table-view">
+		     	     <li class="mui-table-view-cell mui-media">
+		     	         <a href="javascript:;">
+		     	             <img class="mui-media-object mui-pull-right" src="../img/189120-12060215034551.jpg">
+		     	             <div class="mui-media-body">
+		     	                 <p>三星新广告暗讽 借iPad Air铅笔广告反击 </p>
+		     	                 <p class="recomP"><span class="iconfont mRight">&#xe601;</span>1123<span class="iconfont mRight mLeft">&#xe63e;</span>106</p>
+		     	             </div>
+		     	         </a>
+		     	     </li>
+		     	     <li class="mui-table-view-cell mui-media">
+		     	         <a href="javascript:;">
+		     	             <img class="mui-media-object mui-pull-right" src="../img/189120-12060215034551.jpg">
+		     	             <div class="mui-media-body">
+		     	                 <p>三星新广告暗讽 借iPad Air铅笔广告反击 </p>
+		     	                 <p class="recomP"><span class="iconfont mRight">&#xe601;</span>1123<span class="iconfont mRight mLeft">&#xe63e;</span>106</p>
+		     	             </div>
+		     	         </a>
+		     	     </li>
+		     	     <li class="mui-table-view-cell mui-media">
+		     	         <a href="javascript:;">
+		     	             <img class="mui-media-object mui-pull-right" src="../img/189120-12060215034551.jpg">
+		     	             <div class="mui-media-body">
+		     	                 <p>三星新广告暗讽 借iPad Air铅笔广告反击 </p>
+		     	                 <p class="recomP"><span class="iconfont mRight">&#xe601;</span>1123<span class="iconfont mRight mLeft">&#xe63e;</span>106</p>
+		     	             </div>
+		     	         </a>
+		     	     </li>
+		     	 </ul>
+		     	 <!--商品区域结束-->
+		     </div>
+		    <!--相关推荐结束-->
+		    
+		     <!--热门评论区域-->
+		     <div class="comments">
+		     	<h3>相关推荐<span class="iconfont">&#xe63e;</span></h3>
+		     	<div class="nocomments iconfont">&#xe673;<br/>暂无评论</div>	     		
+		     </div>
+		    <!--底部输入区域-->
+		</div>
+		<nav class="mui-bar mui-bar-tab footer">
+		    		<input type="text" name="" id="Footinput" value="" placeholder=""/>
+		    		<div id="fotIcon">
+		    		<div class="icon">
+		    			<p><span class="iconfont">&#xe694;</span>1006</p>
+		    			<p class="share"><span class="iconfont">&#xe675;</span></p>
+		    		</div>		    		
+		    		<!--评论区域输入样式-->
+		    		<div id="discuss">
+		    			<img src="../img/icon/609.png"/>
+		    			<div class="discussText">
+		    			<span>评论（106）</span>
+		    			最多可输入200字
+		    			</div>
+		    		</div>
+		    		
+		    		</div>
+		    		<div id="Fsubmit">
+		    			发送
+		    		</div>
+		 </nav>
+	</body>
+<script src="../js/mui.min.js"></script>
+<script src="../js/app/app.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  mui.init()
+  mui.plusReady(function(){
+  document.querySelector(".share").addEventListener('tap',function(){
+				App.openShare({});
+			});
+			
+  //页脚评论区域动作	
+    //input获得焦点
+	document.getElementById("Footinput").addEventListener("tap",myFunction);
+	function myFunction() {
+		document.getElementById("fotIcon").style.display = "none";	
+		document.getElementById("Fsubmit").style.display = "block";
+		document.getElementById("Footinput").style.width ="80%";
+	}
+	//input失去焦点
+	document.querySelector(".mui-content").addEventListener("tap", unFunction);
+	function unFunction() {
+		document.getElementById("fotIcon").style.display = "block";
+		document.getElementById("Fsubmit").style.display = "none";
+		document.getElementById("Footinput").style.width ="68%";
+		
+	}
+
+	//接收资讯页传递参数
+	var self = plus.webview.currentWebview();
+	var price=JSON.parse(self.point);
+	console.log(self.point);
+  })
+</script>
+</html>
