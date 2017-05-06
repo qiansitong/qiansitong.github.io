@@ -332,7 +332,7 @@
 <script src="../js/app/app.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
   mui.init()
-  mui.plusReady(function(){
+  // mui.plusReady(function(){
   document.querySelector(".share").addEventListener('tap',function(){
 				App.openShare({});
 			});
@@ -358,6 +358,6 @@
 	var self = plus.webview.currentWebview();
 	var price=JSON.parse(self.point);
 	console.log(self.point);
-  })
+  // })
 </script>
 </html>

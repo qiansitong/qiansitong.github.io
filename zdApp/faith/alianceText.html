@@ -118,7 +118,7 @@
 	<script type="text/javascript">
 			mui.init();
 		//获取父级aliance页面数据
-		mui.plusReady(function() {
+		// mui.plusReady(function() {
 			var self = plus.webview.currentWebview();
 			var price=JSON.parse(self.name);
 			console.log(self.name);
@@ -170,7 +170,7 @@
 		    
 		    //等加载完启用跳转事件
 		    onOpen(price);
-		});
+		// });
 		
 		
 		//打开工商执照,店铺名称,企业详细页面并传值

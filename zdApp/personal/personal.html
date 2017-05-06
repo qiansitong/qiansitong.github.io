@@ -245,23 +245,23 @@
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init();
-			mui.plusReady(function(){
+			// mui.plusReady(function(){
 			//定位
-			document.getElementById("equipotential").addEventListener("tap",function(){
-				mui.openWindow({
-							id:'place',
-							url:'place.html'
-						})
-			});
-			//积分
-			document.getElementById("integral").addEventListener("tap",function(){
-				mui.openWindow({
-							id:'second',
-							url:'second.html'
-						})
-			});
+				document.getElementById("equipotential").addEventListener("tap",function(){
+					mui.openWindow({
+								id:'place',
+								url:'place.html'
+							})
+				});
+				//积分
+				document.getElementById("integral").addEventListener("tap",function(){
+					mui.openWindow({
+								id:'second',
+								url:'second.html'
+							})
+				});
 		   //账号管理,历史资料,我的收藏,个人 资料 页面事件		
-		  mui(".cate-box").on("tap","a",function(){
+		  		mui(".cate-box").on("tap","a",function(){
 					if (this.getAttribute('href') =="#a") {
 						mui.openWindow({
 							id:'account',
@@ -284,7 +284,7 @@
 						})
 					}
 				});
-			})
+			// })
 		</script>
 	</body>
 

@@ -48,14 +48,14 @@
 	<script src="../js/mui.min.js"></script>
 	<script type="text/javascript">
 	mui.init();
-	mui.plusReady(function(){
+	// mui.plusReady(function(){
 		var self = plus.webview.currentWebview();
 		document.getElementsByClassName("mui-title")[0].innerText = self.shopkeeper;
 		document.getElementsByClassName("Mtop")[0].innerHTML = '<h2>武汉正大溯源云平台进驻企业执照信息</h2>\
 		    	<p>根据国家工商总局 <span>《网络交易管理办法》</span>要求</p>\
 		    	<p>对网店营业执照信息公示如下</p>\
 		    	<img src="' + self.uplincense + '" alt="营业执照" />';
-	})
+	// })
 	 
 	</script>
 </html>

@@ -253,13 +253,13 @@
 		<script type="text/javascript">
 			 mui.previewImage();
 			 mui.init();
-			 mui.plusReady(function(){
+			 // mui.plusReady(function(){
 			//接收资讯页传递参数
 			var self = plus.webview.currentWebview();
 			var detail=JSON.parse(self.name);
 			document.getElementsByClassName('img-body')[0].children[0].setAttribute('src',detail.imgUrl);
 			document.getElementsByClassName('vertify-body')[0].children[0].innerHTML = detail.cateName;
-		  })
+		  // })
 		</script>
 	</body>
 
